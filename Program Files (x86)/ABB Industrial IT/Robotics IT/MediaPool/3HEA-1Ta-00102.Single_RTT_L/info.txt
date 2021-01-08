@@ -1,0 +1,121 @@
+Created       : 2008-04-25
+Time          : 10:08:55
+Order no      : 000000
+Robot/License : 00-00000
+Robot Key 0   : virtual robot
+Article no    : 3HEA503751935
+Program no    : 3HEA0005-10.00 rev 1442
+Option name   : 3HEA-000-00000.01
+Option key    : rABRRRRg4TheaOQQQOQQQQa
+Created by    : BDM
+To            : None
+
+
+#SELECTIONS
+#------------------------------------
+
+Robot
+  -  SMS - Single motion system
+  -  IRB1600
+IRBP
+  -  1
+IRBP 1
+  -  L
+  -  250
+  -  RS485 DM1
+Track
+  -  RTT
+  -  RTT åklängd 21.7m
+  -  Bobin
+Operator Panel
+  -  OP
+  -  1 OP låda med IO kort
+ARC
+  -  Ingen processutrustning
+Cell
+  -  812-1 Production Manager prepared
+
+#END_SELECTIONS
+#------------------------------------
+
+
+#SELECTIONSPEC
+#------------------------------------
+SEL_LINE:244
+SEL_HEAD:Robot
+SEL_TEXT:SMS - Single motion system
+SEL_INDEX:0
+SEL_LINE:267
+SEL_HEAD:Robot
+SEL_TEXT:IRB1600
+SEL_INDEX:2
+SEL_LINE:420
+SEL_HEAD:IRBP
+SEL_TEXT:1
+SEL_INDEX:0
+SEL_LINE:447
+SEL_HEAD:IRBP 1
+SEL_TEXT:L
+SEL_INDEX:6
+SEL_LINE:658
+SEL_HEAD:IRBP 1
+SEL_TEXT:250
+SEL_INDEX:0
+SEL_LINE:739
+SEL_HEAD:IRBP
+SEL_TEXT:RS485 DM1
+SEL_INDEX:1
+SEL_LINE:1584
+SEL_HEAD:Manual Jog
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:1635
+SEL_HEAD:Track
+SEL_TEXT:RTT
+SEL_INDEX:0
+SEL_LINE:1640
+SEL_HEAD:Track
+SEL_TEXT:RTT åklängd 21.7m
+SEL_INDEX:21
+SEL_LINE:1641
+SEL_HEAD:Track
+SEL_TEXT:Bobin
+SEL_INDEX:1
+SEL_LINE:1654
+SEL_HEAD:Säkerhet
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:1680
+SEL_HEAD:Operator Panel
+SEL_TEXT:OP
+SEL_INDEX:0
+SEL_LINE:1686
+SEL_HEAD:Operator Panel
+SEL_TEXT:1 OP låda med IO kort
+SEL_INDEX:1
+SEL_LINE:1716
+SEL_HEAD:ARC
+SEL_TEXT:Ingen processutrustning
+SEL_INDEX:0
+SEL_LINE:1961
+SEL_HEAD:BullsEye
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:2010
+SEL_HEAD:Smartac
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:2101
+SEL_HEAD:Torch Service
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:2204
+SEL_HEAD:WeldGuide
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:2272
+SEL_HEAD:Cell
+SEL_TEXT:812-1 Production Manager prepared
+SEL_INDEX:0
+#END_SELECTIONSPEC
+#------------------------------------

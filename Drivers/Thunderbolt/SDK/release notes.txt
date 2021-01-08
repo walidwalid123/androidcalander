@@ -1,0 +1,66 @@
+﻿Thunderbolt(TM) DCH SDK release notes
+======================================
+This document is the release notes for the Thunderbolt DCH SDK.
+The SDK is designed to be backward compatible with the previous Thunderbolt(TM) Firmware update SDK API.
+The only limitation is that the existing software, which uses the previous SDK, needs to be recompiled to use the new one.
+
+Supported Operating Systems
+===========================
+  Windows* 10  64-bit RS4/RS5
+			
+
+Supported Thunderbolt Controllers
+=================================
+  DSL6540/6340  Series - "Alpine Ridge"  
+  JHL6540/6340  Series - "Alpine Ridge"  
+  JHL6240       Series - "Alpine Ridge LP" 
+  JHL7540/7340  Series - "Titan Ridge"    
+				Series - "Yosemite falls"    
+
+ 
+Changes:
+========
+
+The delivery structure:
+	- Docs
+		Thunderbolt_UWD_SDK_Guide.pdf : document which describes the API and samples.
+
+	- Samples
+		FwUpdateApiSample : A sample which wraps the API with the DCH driver, used by the samples below as a driver interface.
+		DeviceFWUTool : Device update command line tool
+		FwUpdateCmd : Command line tool
+		FwUpdateTool : Windows App
+
+	- Sdk
+		FwUpdateDriverAPI.dll: Includes the provided API implementation.
+		FwUpdateAPI.dll: It is compiled version of FwUpdateApiSample, for legacy compliance.
+	
+The API implementation interfaces with DCH Thunderbolt(TM) driver.
+	
+System prerequisites:
+=====================
+	- .Net 4.5.2	 installed
+
+		
+Fixed Issues
+============
+
+
+Known Issues
+============
+
+        
+Limitations
+============
+
+
+Legal Information
+=================
+Thunderbolt is a trademark of Intel Corporation in the U.S. and/or other countries.
+
+Microsoft, Windows, and the Windows logo are trademarks, or registered trademarks of
+Microsoft Corporation in the U.S. and/or other countries.
+
+* Other names and brands may be claimed as the property of others.
+
+Copyright(C) 2013-2019 Intel Corporation. All rights reserved.

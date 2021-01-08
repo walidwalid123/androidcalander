@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="FwUpdateTool.WizardSteps.WelcomeScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="280"
+                   Margin="10,10,10,10" FontSize="14">
+                <Run Text="Welcome to the Thunderbolt™ firmware update utility." />
+            <LineBreak /><LineBreak />
+                <Run Text="This utility will allow you to update your Thunderbolt™ firmware." />
+            <LineBreak /><LineBreak />
+                <Run
+                    Text="Please connect at least one Thunderbolt™ device to your PC and make sure not to perform any actions related to Thunderbolt™ through the Thunderbolt™  system tray aplication." />
+            <LineBreak /><LineBreak />
+                <Run
+                    Text="Important - please make sure your PC is connected to an AC power source and do not turn off the power during the update process. The update may take several minutes to complete." />
+            <LineBreak /><LineBreak />
+                <Run Text="Press Continue to proceed." />
+        </TextBlock>
+    </Grid>
+</UserControl>

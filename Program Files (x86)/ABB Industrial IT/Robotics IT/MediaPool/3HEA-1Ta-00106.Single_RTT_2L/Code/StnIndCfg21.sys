@@ -1,0 +1,43 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE StnIndCfg21(SYSMODULE,NOSTEPIN,READONLY)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       <MODULE NAME>
+  !
+  ! Written by:   <AUTHOR NAME>
+  !
+  ! Description:  <DESCRIPTION>
+  !
+  ! Procedures:   <PROCEDURE LIST>
+  !
+  ! Functions:    <FUNCTION LIST>
+  !
+  ! Created:      <CREATION DATE>
+  !
+  ! Version:      <VERSION>
+  !
+  ! History:      <HISTORY LIST>
+  !
+  !---------------------------------------------------------------------------!
+  !
+  PROC InitStnInd21()
+    VAR bool bValid;
+    VAR num nStnIndNo;
+
+    nStnIndNo:=2;
+    StnIndAdd nStnIndNo,bValid;
+    IF (bValid) THEN
+      StnIndWarmStart nStnIndNo;
+    ELSE
+      StnIndCompAdd nStnIndNo,1,2;
+    ENDIF
+  ENDPROC
+ENDMODULE

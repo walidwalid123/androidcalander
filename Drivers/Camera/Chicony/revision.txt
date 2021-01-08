@@ -1,0 +1,402 @@
+---------------------
+Version Information
+---------------------
+----------------------------
+Silent Installation Command 
+----------------------------
+Run "setup.exe /s /f2<path\LogFile>"
+i.e. setup.exe /s /f2c:\mylog.log
+
+-------------------------------
+Silent Uninstallation Command
+-------------------------------
+Run "setup.exe /removeonly /s /f1<path\usetup.iss> /f2<path\LogFile>"
+i.e. setup.exe /removeonly /s /f1c:\usetup.iss /f2c:\mylog.log
+
+--------------------
+Support Languages
+--------------------
+Arabic, Arabic Lebanon, Arabic Saudi Arabia
+Basque, Brazilian, Bulgarian, Catalan
+Chinese-Traditional-HK, Chinese-Simplified, Chinese-Traditional-TW
+Croatian, Czech, Danish, Dutch
+English, English-Euro, Estonian, Finnish
+French, French/Canadian, German, Greek
+Hebrew, Hungarian, Italian
+Japanese, Korean, Latvian
+Lithuanian, Norwegian, Polish, Portuguese
+Romanian, Russian, Slovak, Slovenian
+Spanish, Swedish, Thai
+Turkish, Ukrainian 
+
+--------------------
+Change Histroy
+--------------------
+[10.0.18362.20096]
+1.Fix AE/ROI issue for 13D3/5619
+2.Try to fix flush image issue for 04F2/B604
+3.Enable TSP 2.6 for some BIOS IDs
+
+[10.0.17763.20095]
+1.Enable Face tracking for VID/PID = 174F|1790
+2.Change AE full size window for some projects
+3.Fix IR LED off issue for some projects
+4.Add profile for some projects
+5.Fix crash issue for LEi project
+
+[10.0.17763.20094]
+1.add customized settings for VID/PID = 0408|3090
+2.add function of auto flicker
+
+[10.0.17763.20093]
+1.add customized settings for VID/PID = 04CA|7074,04F2|B679,04F2|B6A9
+2.Modify drop frame behavior
+
+[10.0.17763.20092]
+1.modify the way to create mediatype
+2.fix the issure that face detect stop that caused by a deadlock
+3.update ECP function form new ECP Spec
+4.add customized settings for VID/PID = 5986|115A
+
+[10.0.17763.20091]
+1.fix the issure that can not preview in skype for business
+
+[10.0.17763.20090]
+1.fix the issure that privacy icon do not show in metro ap
+2.fix the issure that color enable
+
+[10.0.17763.20089]
+1.fix the issure that blur function failure because there is no face
+2.update blur algorithm
+3.disable gain control for 5986|114E
+
+[10.0.17763.20088]
+1.reduce cpu loading when open FaceDetect 
+2.update blur algorithm
+
+[10.0.17763.20087]
+1.add customized settings for VID/PID = 0BDA|5677、04F2|B6A8、04F2|B6A6
+2.update blur algorithm
+3.make jpeg to yuv and rgb when enable blur
+
+[10.0.17763.20085]
+1.fix the issure that preview will hang up when plug the power supply again
+2.support AWB control for 13D3|5815
+
+[10.0.17763.20084]
+1.fix the issure that DrawFaceROI always open
+
+[10.0.17763.20083]
+1.fix the issure that would produce flowers screen when swtich resolutioin
+2.update blur algorithm
+3.Add Blur & FaceROI video processor
+
+[10.0.17763.20082]
+1.update blur algorithm
+2.set power lower limit value to twenty two percent
+3.add customized settings for VID/PID = 04F2|B690
+
+[10.0.17763.20081]
+1.fix the issure of functional conflict between blur and zoom
+2.support the function that stop blur when power power is less than twenty percent
+3.add customized settings for VID/PID = 0EDC|3080、04F2|B59E
+3.add customized settings for VID/PID = 04F2|B59D、04F2|B676
+
+[10.0.17763.20080]
+1.update blur algorithm 
+
+[10.0.17763.20079]
+1.update blur algorithm 
+2.fix the issure that preview will hang when repeatedly plug
+
+[10.0.17763.20078]
+1.add customized settings for VID/PID = 13D3|56D7、04F2|B689、04F2|B5E8
+2.add customized settings for VID/PID = 04F2|B65F、04F2|B5FE
+3.fix the issure blur is not clear that caused by drop frames
+
+[10.0.17763.20077]
+1.add customized settings for VID/PID = 2EF4|4665、5986|1157
+2.fix the issure that can not preview when less than 30 fps
+3.fix the issure of blur memory
+
+[10.0.17763.20076]
+1.add customized settings for VID/PID = 174F|1803、174F|177C、174F|2439
+2.add customized settings for VID/PID = 13D3|5266、13D3|5268、5986|1158
+3.fix the issure of lag for FHD resolution
+
+[10.0.17763.20075]
+1.fix the issure that auto check not disable for pan/tilt/zoom/roll
+2.update blur algorithm 
+3.add customized settings for VID/PID = 174F|118A
+
+[10.0.17763.20073]
+1.fix the issure of color enable
+2.add bios id for ECP
+
+[10.0.17763.20072]
+1.fix the issure that IR device cant not do window hello
+
+[10.0.17763.20071]
+1.update special privacy image
+2.update blur algorithm 
+
+[10.0.17763.20070]
+1.fix the issure that face detect can not work in recording mode
+2.change customized settings for auto flicker modules
+
+[10.0.17763.20069]
+1.add customized settings for VID/PID = 04CA|B69F
+2.update blur algorithm
+
+[10.0.17763.20068]
+1.add customized settings for VID/PID = 04CA|707A
+2.fix the issure of IR Led off when relogin
+3.fix the issure of abnormal privacy image for 720p
+
+[10.0.17763.20067]
+1.add fuction that support speciao privacy image
+2.fix flicker issue for SUB_VGA if saved registry is empty
+3.add support RTK_EXT_PRIVACY_ENABLE_CTL
+
+[10.0.17763.20066]
+1.fix the HLK issure of FaceAuthMode
+2.Fix flicker issue for SUB_VGA
+
+[10.0.17763.20065]
+1.fix the HLK of 5849 IR for FaceAuth mode
+2.update blur algorithm
+
+[10.0.17763.20064]
+1.update blur algorithm
+2.fix the issure that can not preview for 5849 module
+
+[10.0.17763.20063]
+1.fix the HLK issure of torch mode
+2.diable still pin for VID/PID = 04F2|B604
+
+[10.0.17134.20062]
+1.add BIOS list for Blur Control
+
+[10.0.17134.20061]
+1.fix the privacy issure
+2.fix the issure of face Detect
+
+[10.0.17134.20060]
+1.add customized settings for VID/PID = 5986|1121
+2.fix the issure of lag for face detect
+
+[10.0.17134.20059]
+1.add customized settings for VID/PID = 04F2|B698
+
+[10.0.17134.20058]
+1.fix the HLK issure of 5849 IR
+2.add customized settings for VID/PID = 2FEE|1024
+
+[10.0.17134.20057]
+1.fix the issure of color enable on RS5
+2.fix the HLK issure of powerline
+3.fix the issure of ECP
+
+[10.0.17134.20056]
+1.add customized settings for VID/PID = 0BDA|5786
+2.add customized settings for VID/PID = 04F2|B5EB
+3.fix the issure of color enable in Property 
+4.add function for get hardware URL in updated OS
+5.support blur control for mode
+
+[10.0.17134.20055]
+1.fix the issure of ECP that not show icon
+2.add customized settings for VID/PID = 2EF4|4742
+3.add customized settings for VID/PID = 05C8|0704
+
+[10.0.17134.20054]
+1.fix the issure of format change in Amcap
+2.add customized settings for VID/PID = 5986|1155
+3.add customized settings for VID/PID = 05C8|0822
+4.add customized settings for VID/PID = 05C8|0823
+
+[10.0.17134.20053]
+1.disable face AE for default
+
+[10.0.17134.20052]
+1.fix the issure of change format for YUY2RGB24
+
+[10.0.17134.20051]
+1.fix the issure of ECP when restart preview in shutter mode
+
+[10.0.17134.20050]
+1.fix the issure of change format
+2.add customized settings for VID/PID = 5986/114B
+3.remove restore function for VID/PID = 04F2/B674
+4.add R10E for ECP
+
+[10.0.17134.20049]
+1.fix the issure that hang up when change between start and stop in preview
+2.add customized settings for VID/PID = 04CA/709C
+
+[10.0.17134.20048]
+1.add customized settings for VID/PID = 04F2/B688
+2.enable rotate function for VID/PID = 04F2/B570
+3.fix the issure of focus infinity mode
+
+[10.0.17134.20047]
+1.fix the issure of handle leaked
+2.fix the issure that stack will corruption in RestoreControl
+3.remove AWB for 5986/1137 and 5986/1143
+4.keep auto and disable for VGA modules
+5.add optimize of face ROI coordinates that getted from UWP API
+6.add customized settings for VID/PID = 04F2/B681
+
+[10.0.17134.20046]
+1.fix the issure that resolution will disorderly jump when preview
+2.diable RGB24 for VID/PID = 5986/1137,5986/1143
+
+[10.0.17134.20045]
+1.optimize ECP polling time
+2.add customized settings for VID/PID = 0BDA/5788
+3.add customized settings for VID/PID = 174F/1800
+4.add customized settings for VID/PID = 174F/1801
+
+[10.0.17134.20044]
+1.remove Shutter speed for 5986/1137 and 5986/1143
+2.fix the HLK issure of FaceAuthMode
+
+[10.0.17134.20043]
+1.fix the issure that hang up when Enroll
+
+[10.0.17134.20042]
+1.fix the issure that pan/tilt/zoom not fuction for still pin
+2.optimize face ROI coordinates that getted from UWP API
+3.fix the issure that LED not close when close AP
+4.disable shutter mode to on when exposure in manual mode
+
+[10.0.17134.20041]
+1.fix the issure of can't keep auto for deflicker when restore from sleep
+2.add customized settings for VID/PID = 04F2/B67C
+
+[10.0.17134.20040]
+1.fix the issure of can't preview for 340x340 privacy image
+2.add pan/tilt/zoom for 04CA/7078 and 04f2/B62F
+3.add flip/mirror for 13D3/5755 and 04f2/6969
+
+[10.0.17134.20039]
+1.add pan/tilt/zoom for 5986/1120
+2.support the function of WhiteBalance
+3.support the function of Exposure
+
+[10.0.16299.20038]
+1.add pan/tilt/zoom for 0BDA/562B
+2.remove pan/tilt/zoom for 04CA/7078 and 04f2/B62F
+
+[10.0.16299.20037]
+1.fix the issure of privacy off when restart preview
+
+[10.0.16299.20036]
+1.fix the issure of ECP privacy when in shutter on mode
+2.fix the issure that cant't preivew for VGA modules
+
+[10.0.16299.20035]
+1.fix the issure of event Processing mechanism
+
+[10.0.16299.20034]
+1.surport function of scene mode
+2.fix the issure of focus auto mode
+
+[10.0.16299.20033]
+1.fix the issure of preview hang up when switch framing grid mode
+2.fix the issure of jitter of focus manual mode
+3.fix the issure of ECP
+
+[10.0.16299.20032]
+1.fix the issure of take photo when enable privacy
+2.support the function set Def value 60 for Saturation
+
+[10.0.16299.20031]
+1.fix the issure of take photo when enable privacy
+2.fix the issure of value flipMirror
+3.support the function set Def value 6 for HUE
+
+[10.0.16299.20030]
+1.update blur algorithm
+2.add blacklist for ROI control
+
+[10.0.16299.20029]
+1.enable Roll for 13D3/5755,O4F2/6969
+2.add blacklist for tnr
+3.set defaut 50 for auto Flicker
+4.fix the issure of focus mode
+
+[10.0.16299.20028]
+1.fix the issure of focus mode
+2.support special process for VGA modules
+3.fix the issure for front HD RGB camera
+
+[10.0.16299.20027]
+1.fix the HLK issure of focus mode
+2.fix the issure of can not enroll
+3.fix the issure of RGB24
+
+[10.0.16299.20026]
+1.fix the error of garbage caused by RestartMarker
+2.remove the N1ZE from ECP support list
+
+[10.0.16299.20025]
+1.support function of torch mode
+2.fix the error of property save function
+3.convert special format for IR solution(340x374)
+
+[10.0.16299.20024]
+1.set auto for powerline when first connect camera
+2.support the function of property save
+3.support touch af
+4.cancle group ID for OBDA/562B,O4F2/B616,5986/113D,174F/1D02,04CA/7074
+
+[10.0.16299.20023]
+1.fix the issure of hang when connect USB camera
+2.increase the condition for Run ECP
+3.update package
+4.support IR LED tag 13 for tobii
+
+[10.0.16299.20022]
+1.update tnr
+2.fix the issure of RGB24
+3.support function of Flash LED
+
+[10.0.16299.20021]
+1.fix the issure that resolution shows negative for RGB24
+2.support fuction of color enable
+
+[10.0.16299.20020]
+1.fix the HLK issure for ROI control
+
+[10.0.16299.20019]
+1.fix the issure of caton for ECP
+2.fix the HLK issure for IR camera
+
+[10.0.16299.20018]
+1.fix the issure that shadow of the residual in preview when privacy enable
+
+[10.0.16299.20017]
+1.fix the issure of preview lag for tnr
+
+[10.0.16299.20016]
+1.fix the issure of RGB24 output
+2.fix the issure of still pin take photo
+3.support fuction of face AE
+
+[10.0.16299.20015]
+1.support fuction of privacy cover mode 
+2.support fuction of rotate and flipMirror
+3.fix the issure that IR Camera can not enroll
+
+[10.0.15063.20014]
+1.support fuction of privacy
+2.support fuction of tnr
+3.support fuction of autoFlicker
+
+[10.0.15063.20013]
+1.support RGB24 and Jpeg format Convert for RGB
+2.support fuction of pan/tilt/room
+
+[10.0.15063.20012]
+1.support RGB and IR for DCHU

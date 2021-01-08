@@ -1,0 +1,125 @@
+; Copyright (c) Lenovo Corporation
+; LCD Monitor INF/Color Profile
+; Supported OS: Windows 10 64bit only
+
+[version]
+signature="$WINDOWS NT$"
+Class=Monitor
+ClassGuid={4D36E96E-E325-11CE-BFC1-08002BE10318}
+Provider=%Lenovo%
+CatalogFile=LNBLCD.CAT
+DriverVer=05/24/2019, 1.940.0.4
+
+[DestinationDirs]
+DefaultDestDir  = 11
+LNBLCD.CopyFiles = 23         ; System\Color directory
+
+[SourceDisksNames]
+1=%SRCDISK%
+
+[SourceDisksFiles]
+MHC2_AUOFHD_400nits.icm = 1
+MHC2_BOEUHD_500nits.icm = 1
+MHC2_JDIUHD_500nits.icm = 1
+MHC2_LGDFHD_400nits.icm = 1
+
+[Manufacturer]
+%Lenovo%=Lenovo,NTamd64
+
+[Lenovo.NTamd64]                                            ; ===== Win10 64 ============================
+
+%LNBFHD%   = LNBLCDFHD_8894.Install,         Monitor\LEN8894   ; AUO FHD          1920x1080
+%LNBFHD%   = LNBLCDFHD_8894.Install,         Monitor\AUO501D   ; AUO FHD old sample for Dolby test          1920x1080
+%LNBFHD%   = LNBLCDFHD_8895.Install,         Monitor\LEN8895   ; LGD FHD          1920x1080
+
+%LNBUHD%   = LNBLCDUHD_8B92.Install,         Monitor\LEN8B92   ; JDI UHD          3840x2160
+%LNBUHD%   = LNBLCDUHD_8B93.Install,         Monitor\LEN8B93   ; BOE UHD          3840x2160
+
+;Test for S540,Yoga C930
+%LNBFHD%   = LNBLCDFHD_8894.Install,         Monitor\LGD05EC   ;           1920x1080
+%LNBUHD%   = LNBLCDUHD_8B92.Install,         Monitor\LEN8B90   ;  YOGA C930         3840x2160
+
+
+[LNBLCDFHD_8894.Install]                   ; AUO FHD 16:9 1920x1080
+DelReg=DEL_CURRENT_REG
+AddReg=HD1920, ICM_8894
+CopyFiles=LNBLCD.CopyFiles
+
+[LNBLCDFHD_8895.Install]                   ; LGD FHD 16:9 1920x1080
+DelReg=DEL_CURRENT_REG
+AddReg=HD1920, ICM_8895
+CopyFiles=LNBLCD.CopyFiles
+
+[LNBLCDUHD_8B92.Install]                   ; JDI UHD 16:9 3840x2160
+DelReg=DEL_CURRENT_REG
+AddReg=HD3840, ICM_8B92
+CopyFiles=LNBLCD.CopyFiles
+
+[LNBLCDUHD_8B93.Install]                   ; BOE UHD 16:9 3840x2160
+DelReg=DEL_CURRENT_REG
+AddReg=HD3840, ICM_8B93
+CopyFiles=LNBLCD.CopyFiles
+
+[DEL_CURRENT_REG]                      
+HKR,MODES
+HKR,,MaxResolution
+; HKR,,DPMS
+HKR,,ICMProfile
+HKR,,ICMProfileAC
+
+
+[HD1920]
+HKR,,MaxResolution,,"1920,1080"
+
+[HD3840]
+HKR,,MaxResolution,,"3840,2160"
+
+
+;[DPMS]
+;HKR,,DPMS,,1
+
+;AUO FHD
+[ICM_8894]
+HKR,,ICMProfile,0,"MHC2_AUOFHD_400nits.icm"
+HKR,,ICMProfileAC,0,"MHC2_AUOFHD_400nits.icm"
+
+;LGD FHD
+[ICM_8895]
+HKR,,ICMProfile,0,"MHC2_LGDFHD_400nits.icm"
+HKR,,ICMProfileAC,0,"MHC2_LGDFHD_400nits.icm"
+
+;JDI UHD 
+[ICM_8B92]
+HKR,,ICMProfile,0,"MHC2_JDIUHD_500nits.icm"
+HKR,,ICMProfileAC,0,"MHC2_JDIUHD_500nits.icm"
+
+;BOE UHD 
+[ICM_8B93]
+HKR,,ICMProfile,0,"MHC2_BOEUHD_500nits.icm"
+HKR,,ICMProfileAC,0,"MHC2_BOEUHD_500nits.icm"
+
+
+[LNBLCD.CopyFiles]
+MHC2_AUOFHD_400nits.icm
+MHC2_BOEUHD_500nits.icm
+MHC2_JDIUHD_500nits.icm
+MHC2_LGDFHD_400nits.icm
+
+
+[Strings]
+; Non-Localizable Strings
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+
+SRCDISK   = "Monitor INF File"
+
+
+; IPS 16:9
+
+LNBFHD = "Lenovo Display 1920x1080"
+LNBUHD = "Lenovo Display 3840x2160"
+
+Lenovo    = "Lenovo"

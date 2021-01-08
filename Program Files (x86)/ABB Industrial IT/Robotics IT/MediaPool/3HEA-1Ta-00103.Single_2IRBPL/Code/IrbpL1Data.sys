@@ -1,0 +1,29 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE Irbp1Data(SYSMODULE)
+  !*****************************************************************************
+  !
+  !  MODULE: IrbpL1Data
+  !
+  !  History:  2004-10-01
+  !             Created
+  !
+  !  Description: Module used for irbp L 1 data
+  !
+  !  History:     2005-11-09 SÖ
+  !                 Added data for service position
+  !
+  !*****************************************************************************
+  !
+  ! adv partdata
+  TASK PERS partadv padvStn1:=[[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,[0,0,0],[0,0,0,0],0,0,0]];
+  !
+  ! Loaddata
+  CONST loaddata ldDefLoadStn1:=[250,[0.001,0.001,0.001],[1,0,0,0],30,30,60];
+  TASK PERS loaddata ldLoadStn1:=[0,[0,0,0],[0,0,0,0],0,0,0];
+  TASK PERS loaddata ldTemp1:=[0.001,[0,0,0.001],[1,0,0,0],0,0,0];
+  !
+ENDMODULE

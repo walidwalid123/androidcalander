@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MUPDefinition xsi:schemaLocation="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd mupdefinition.xsd" xmlns="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <packageinformation>
+    <installertype>custom</installertype>
+    <packagegrouping>pair_driver_and_application</packagegrouping>
+    <packagingtype>executable</packagingtype>
+    <releasetype>DRVR</releasetype>
+    <name>Thunderbolt(TM) Software</name>
+    <version>1.41.648.4</version>
+    <mupspecificationversion>2.4.5</mupspecificationversion>
+    <supportedoperatingsystems>
+      <osidentifier name="Windows10" architecture="x64" />
+    </supportedoperatingsystems>
+    <content>
+      <Device componentID="103992">
+        <PCIInfo vendorID="8086" deviceID="15BF"/>
+        <PCIInfo vendorID="8086" deviceID="15D2"/>
+        <PCIInfo vendorID="8086" deviceID="15D9"/>
+        <PCIInfo vendorID="8086" deviceID="1575"/>
+        <PCIInfo vendorID="8086" deviceID="1577"/>
+        <PCIInfo vendorID="8086" deviceID="15E8"/>
+        <PCIInfo vendorID="8086" deviceID="15EB"/>
+        <PCIInfo vendorID="8086" deviceID="15DC"/>
+        <PCIInfo vendorID="8086" deviceID="15DD"/>
+        <PCIInfo vendorID="8086" deviceID="15DE"/>
+		<PCIInfo vendorID="8086" deviceID="8A17"/>
+		<PCIInfo vendorID="8086" deviceID="8A0D"/>
+		<PCIInfo vendorID="8086" deviceID="8AA3"/>
+		<PCIInfo vendorID="8086" deviceID="8AA0"/>
+		<PCIInfo vendorID="8086" deviceID="8AB3"/>
+		<PCIInfo vendorID="8086" deviceID="8AB0"/>
+		<PCIInfo vendorID="8086" deviceID="9A1B"/>
+		<PCIInfo vendorID="8086" deviceID="9A1D"/>
+		<PCIInfo vendorID="8086" deviceID="9A1F"/>
+		<PCIInfo vendorID="8086" deviceID="9A21"/>
+		<PCIInfo vendorID="8086" deviceID="463E"/>
+		<PCIInfo vendorID="8086" deviceID="466D"/>
+		<PCIInfo vendorID="8086" deviceID="464E"/>
+		<PCIInfo vendorID="8086" deviceID="467D"/>
+		<PCIInfo vendorID="8086" deviceID="465E"/>
+		<PCIInfo vendorID="8086" deviceID="468D"/>		
+        <Image type="DRVR" version="1.41.648.4">
+			<file>TbtAppLauncherComServer.exe</file>
+			<file>TbtBusDrv.sys</file>
+			<file>TbtFilterDrv.dll</file>
+			<file>TbtHostController.inf</file>
+			<file>tbthostcontrollerextension.cat</file>
+			<file>TbtHostControllerExtension.inf</file>
+			<file>tbthostcontrollerhsacomponent.cat</file>
+			<file>TbtHostControllerHsaComponent.inf</file>
+			<file>tbtp2pndisdrv.cat</file>
+			<file>TbtP2pNdisDrv.inf</file>
+			<file>TbtP2pNdisDrv.sys</file>
+			<file>thunderboltcontroller.cat</file>
+			<file>ThunderboltService.exe</file>
+        </Image>
+      </Device>
+    </content>
+  </packageinformation>
+  <executable architecture="x64">
+    <executablename>MUPSetup.bat</executablename>
+  </executable>
+  <behaviors>
+    <behavior name="attended">
+		<vendoroption>
+        <optionvalue switch=" " valuedelimiter="=" requiresvalue="true" enclose="&quot;">EXTRACTDRIVERS</optionvalue>
+      </vendoroption>
+	</behavior>
+    <behavior name="unattended">
+		<vendoroption>
+        <optionvalue switch=" " valuedelimiter="=" requiresvalue="true" enclose="&quot;">EXTRACTDRIVERS</optionvalue>
+      </vendoroption>
+	</behavior>
+    <behavior name="extractdrivers">
+      <vendoroption>
+        <optionvalue switch=" " valuedelimiter="=" requiresvalue="true" enclose="&quot;">EXTRACTDRIVERS</optionvalue>
+      </vendoroption>
+    </behavior>
+    <behavior name="freshinstall">
+    </behavior>
+  </behaviors>
+  <parameters>
+    <parametermapping name="logfile">
+      <vendoroption>
+        <optionvalue switch=" " valuedelimiter="=" requiresvalue="true" enclose="&quot;">LOGFILE</optionvalue>
+      </vendoroption>
+    </parametermapping>
+  </parameters>
+  <returncodes>
+    <returncodemapping name="SUCCESS">
+      <vendorreturncode>0</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR">
+      <vendorreturncode>1</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="NO_DOWNGRADE">
+      <vendorreturncode>2</vendorreturncode>
+    </returncodemapping>
+  </returncodes>
+  <inventorymetadata>
+    <fullpackageidentifier>
+      <pnpids>
+        <pnpdevice componentID="103992" display="Thunderbolt(TM) Software">
+          <driverversion>1.41.648.4</driverversion>
+          <pciinfo  vendorID="8086" deviceID="15BF"/>
+          <pciinfo  vendorID="8086" deviceID="15D2"/>
+          <pciinfo  vendorID="8086" deviceID="15D9"/>
+          <pciinfo  vendorID="8086" deviceID="1575"/>
+          <pciinfo  vendorID="8086" deviceID="1577"/>
+          <pciinfo  vendorID="8086" deviceID="15E8"/>
+          <pciinfo  vendorID="8086" deviceID="15EB"/>
+          <pciinfo  vendorID="8086" deviceID="15DC"/>
+          <pciinfo  vendorID="8086" deviceID="15DD"/>
+          <pciinfo  vendorID="8086" deviceID="15DE"/>
+		  <pciinfo  vendorID="8086" deviceID="8A17"/>
+		  <pciinfo  vendorID="8086" deviceID="8A0D"/>
+		  <pciinfo  vendorID="8086" deviceID="8AA3"/>
+		  <pciinfo  vendorID="8086" deviceID="8AA0"/>
+		  <pciinfo  vendorID="8086" deviceID="8AB3"/>
+		  <pciinfo  vendorID="8086" deviceID="8AB0"/>
+		  <pciinfo  vendorID="8086" deviceID="9A1B"/>
+		  <pciinfo  vendorID="8086" deviceID="9A1D"/>
+		  <pciinfo  vendorID="8086" deviceID="9A1F"/>
+		  <pciinfo  vendorID="8086" deviceID="9A21"/>
+		  <pciinfo  vendorID="8086" deviceID="463E"/>
+		  <pciinfo  vendorID="8086" deviceID="466D"/>
+		  <pciinfo  vendorID="8086" deviceID="464E"/>
+		  <pciinfo  vendorID="8086" deviceID="467D"/>
+		  <pciinfo  vendorID="8086" deviceID="465E"/>
+		  <pciinfo  vendorID="8086" deviceID="468D"/>	
+        </pnpdevice>
+      </pnpids>
+    </fullpackageidentifier>
+  </inventorymetadata>
+</MUPDefinition>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Resource Name="Poscalib" Language="en">
+  <Text Name="1">
+    <Value>IRBP Interchange calibration</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="2">
+    <Value>IRBP Station calibration</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="3">
+    <Value>Interchange calibration will now start</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="4">
+    <Value>Station calibration will now start</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="5">
+    <Value>- Press Cancel to quit</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="6">
+    <Value>- Press OK to continue</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="7">
+    <Value>Cancel</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="8">
+    <Value>OK</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Calibration finished</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="10">
+    <Value>Wrong operating mode.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="11">
+    <Value>Press OK, change to MANUAL MODE</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="12">
+    <Value>Press OK, change to MANUAL 100% MODE</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="13">
+    <Value>Press OK, change to AUTO MODE</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="14">
+    <Value>and restart.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="15">
+    <Value>1. Press OK.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="16">
+    <Value>2. Jogg the robot to a position it</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="17">
+    <Value>   can stand in during calibration.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="18">
+    <Value>3. Then restart the program again.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="19">
+    <Value>The station interchange might now</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="20">
+    <Value>move. Make sure that you keep your</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="21">
+    <Value>safety distance.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="22">
+    <Value>The station interchange is not in</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="23">
+    <Value>position. Press OK and jog</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="24">
+    <Value>interchange axis in position.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="25">
+    <Value>Calibrating</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="26">
+    <Value>% done...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="27">
+    <Value>1. Press OK.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="28">
+    <Value>2. Fine calibrate</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="29">
+    <Value>axis</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="30">
+    <Value>3. Restart program.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="31">
+    <Value>Torque:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="32">
+    <Value>Angle:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="33">
+    <Value>(Nm)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="34">
+    <Value>(deg)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="35">
+    <Value>IRBP Interchange check</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="36">
+    <Value>checking positions (side 1)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="37">
+    <Value>checking positions (side 2)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="38">
+    <Value>checking positions (side 3)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="39">
+    <Value>checking positions (side 4)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="40">
+    <Value>Data has been written to file</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="41">
+    <Value>Should data be presented on TPU?</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="42">
+    <Value>Yes</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="43">
+    <Value>No</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Side 1. Angle 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="45">
+    <Value>Side 1. Angle 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="46">
+    <Value>Side 1. Break angle=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Side 2. Angle 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Side 2. Angle 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Side 2. Break angle=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Side 3. Angle 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Side 3. Angle 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="52">
+    <Value>Side 3. Break angle=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Side 4. Angle 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Side 4. Angle 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="55">
+    <Value>Side 4. Break angle=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="56">
+    <Value>Torque is too large. Please remove</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="57">
+    <Value>load and run calibration again.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="58">
+    <Value></Value>
+    <Comment></Comment>
+  </Text>
+</Resource>

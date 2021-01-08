@@ -1,0 +1,181 @@
+#---------------------------------------------------------------------------#
+# Text definition Poscalib.de
+# (c)Copyright ABB - 2004-09-28 15:32:09
+#---------------------------------------------------------------------------#
+#
+Poscalib::
+#
+#
+0: #tdrvIntrchCal
+Interchange Achse Kalibrieren
+#
+1: #tdrvStnCal
+IRBP Station Kalibrieren
+#
+2: #tdrvIntCalStart
+Kalibrieren der Achse startet jetzt
+#
+3: #tdrvStnCalStart
+Kalibrieren der Stationen startet jetzt
+#
+4: #tdrvCancelTxt
+- Abbruch zum Beenden
+#
+5: #tdrvOKTxt
+- OK zum Fortfahren
+#
+6: #tdrvFkCancel
+Abbruch
+#
+7: #tdrvFkOK
+OK
+#
+8: #tdrvCalibFin
+Kalibrieren Beendet
+#
+9: #tdrvWrongOpMode
+Falsche Betriebsart
+#
+10: #tdrvOpModeMan
+Weiter mit OK, Wechseln nach HAND
+#
+11: #tdrvOpModeManFs
+Weiter mit OK, Wechseln nach HAND 100%
+#
+12: #tdrvOpModeAuto
+Drücke OK, Wechseln nach AUTOMATIK
+#
+13: #tdrvOpModeRest
+und Neustarten.
+#
+14: #tdrvRobMov1
+Um Interchange zu Kalibrieren
+#
+15: #tdrvRobMov2
+Roboter in sichere Position bewegen
+#
+16: #tdrvRobMov3
+Programm erneut starten.
+#
+17: #tdrvIntchMov1
+Achtung der Positionierer kann sich
+#
+18: #tdrvIntchMov2
+bewegen. Auf ausreichenden
+#
+19: #tdrvIntchMov3
+Sicherheitsabstand achten
+#
+20: #tdrvIntchPos1
+Interchange Achse ist nicht in
+#
+21: #tdrvIntchPos2
+Position. Drücke OK und bewege
+#
+22: #tdrvIntchPos3
+Achse manuell in Position.
+#
+23: #tdrvCalDone1
+Kalibriere
+#
+24: #tdrvCalDone2
+% fertig...
+#
+25: #tdrvCalOkPr
+1. Weiter mit OK
+#
+26: #tdrvCalFine1
+2. Fine Kalibrieren
+#
+27: #tdrvCalFine2
+Achse
+#
+28: #tdrvCalRest
+3. Programm Neustart
+#
+29: #tdrvTorque
+Drehmoment:
+#
+30: #tdrvAngle
+Winkel:
+#
+31: #tdrvNM
+(Nm)
+#
+32: #tdrvDeg
+(deg)
+#
+33: #tdrvItchChk
+IRBP Interchange check
+#
+34: #tdrvChkPos1
+Überprüfe Position (Seite 1)...
+#
+35: #tdrvChkPos2
+Überprüfe Position (Seite 2)...
+#
+36: #tdrvChkPos3
+Überprüfe Position (Seite 3)...
+#
+37: #tdrvChkPos4
+Überprüfe Position (Seite 4)...
+#
+38: #tdrvDataWrite
+Daten wurden in Datei gespeichert
+#
+39: #tdrvTPU
+Sollen Daten am PHG anzeigen werden?
+#
+40: #tdrvYES
+JA
+#
+41: #tdrvNO
+NEIN
+#
+42: #tdrvStnLA1
+Seite 1. Winkel 1=
+#
+43: #tdrvStnRA1
+Seite 1. Winkel 2=
+#
+44: #tdrvStnBA1
+Seite 1. Bremswinkel=
+#
+45: #tdrvStnLA2
+Seite 2. Winkel 1=
+#
+46: #tdrvStnRA2
+Seite 2. Winkel 2=
+#
+47: #tdrvStnBA
+Seite 2. Bremswinkel=
+#
+48: #tdrvStnLA3
+Seite 3. Winkel 1=
+#
+49: #tdrvStnRA3
+Seite 3. Winkel 2=
+#
+50: #tdrvStnBA3
+Seite 3. Bremswinkel=
+#
+51: #tdrvStnLA4
+Seite 4. Winkel 1=
+#
+52: #tdrvStnRA4
+Seite 4. Winkel 2=
+#
+53: #tdrvStnBA4
+Seite 4. Bremswinkel=
+#
+54: #tdrvTorqueErr1
+Drehmoment ist zu groß.Bitte Last
+#
+55: #tdrvTorqueErr2
+entfernen und neu Kalibrieren.
+#
+56: #tdrvTorqueErr3
+""
+#
+# END OF FILE
+#

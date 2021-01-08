@@ -1,0 +1,195 @@
+;/*
+;   Copyright(C) 2011-2018 Intel Corporation All Rights Reserved.
+;
+;   The source code, information  and  material ("Material") contained herein is
+;   owned  by Intel Corporation or its suppliers or licensors, and title to such
+;   Material remains  with Intel Corporation  or its suppliers or licensors. The
+;   Material  contains proprietary information  of  Intel or  its  suppliers and
+;   licensors. The  Material is protected by worldwide copyright laws and treaty
+;   provisions. No  part  of  the  Material  may  be  used,  copied, reproduced,
+;   modified, published, uploaded, posted, transmitted, distributed or disclosed
+;   in any way  without Intel's  prior  express written  permission. No  license
+;   under  any patent, copyright  or  other intellectual property rights  in the
+;   Material  is  granted  to  or  conferred  upon  you,  either  expressly,  by
+;   implication, inducement,  estoppel or  otherwise.  Any  license  under  such
+;   intellectual  property  rights must  be express  and  approved  by  Intel in
+;   writing.
+;
+;   *Third Party trademarks are the property of their respective owners.
+;
+;   Unless otherwise  agreed  by Intel  in writing, you may not remove  or alter
+;   this  notice or  any other notice embedded  in Materials by Intel or Intel's
+;   suppliers or licensors in any way.
+;
+;*/
+[Version]
+Signature   = "$Windows NT$"
+Provider    = %INTC%
+DriverVer = 03/20/2019,2.3.100.49777
+CatalogFile = sgx_psw.cat
+Class       = SoftwareComponent
+ClassGuid   = {5c4c3332-344d-483c-8739-259e934c9cc8}
+
+;;;;;;;;;;;;;;;;;;https://docs.microsoft.com/en-us/windows-hardware/drivers/install/using-dirids
+; 10 is %SystemRoot%
+; 11 is %SystemRoot%\system32
+; 12 is %SystemRoot%\system32\drivers
+; 13 is FileRepository 
+[DestinationDirs]
+urts.x64      = 11
+psw.bin.x64   = 13   
+psw.data      = 13
+urts.win32    = 10, SysWOW64
+psw.bin.win32 = 13, Win32
+
+[SourceDisksNames]
+1 = %DiskId1%,,,
+
+[SourceDisksFiles]
+AESMProxyConfigure.exe = 1,
+aesm_service.exe = 1,
+aesm_helper.dll = 1,
+le.signed.dll = 1,
+le_prod_css.bin = 1,
+pce.signed.dll = 1,
+PSDA.dalp = 1,
+pse_op.signed.dll = 1,
+pse_pr.signed.dll = 1,
+pse_pr_2.signed.dll = 1,
+pve.signed.dll = 1,
+qe.signed.dll = 1,
+sgx_uae_service.dll = 1,
+sgx_urts.dll = 1,
+sgx_enclave_common.dll = 1,
+extended_epid_group.blob.00000000 = 1,
+prebuild_pse_vmc.db = 1,
+white_list_cert.bin = 1,
+INTEL Software License Agreement 11.2.17.pdf=1,
+Intel SGX SW Collateral.pdf=1,
+third_party.rtf=1,
+sgx_uae_service.dll.win32 = 1,\Win32,
+sgx_urts.dll.win32 = 1,\Win32,
+sgx_enclave_common.dll.win32 = 1,\Win32,
+
+;*****************************************
+; Software Guard Extensions Device Driver Install Section
+;*****************************************
+
+[Manufacturer]
+%StdMfg%=Standard,NTamd64.6.1
+
+[Standard.NTamd64.6.1]
+;
+; These is the Software Guard Extensions Device PnP ID
+;
+"Intel(R) Software Guard Extensions Platform Software Component"=SGX_PSW, SWC\VEN_INT&DEV_0E0C 
+
+
+[SGX_PSW.NT]
+CopyFiles=psw.bin.x64, urts.x64, psw.data, urts.win32, psw.bin.win32
+AddReg= aesm_inteface_reg, aesm_win_events_reg, driver_store_reg
+
+[driver_store_reg]
+HKR,Parameters,"DriverStore",,%13%
+
+[aesm_inteface_reg]
+HKLM,SOFTWARE\Classes\AppId\{D5D53ADA-EAFD-4AA8-BD6B-DA32F20171C4},LocalService,,"AESMService"
+
+[aesm_win_events_reg]
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\SGX/Admin,OwningPublisher,,"{ce6e83d3-a7d9-4a91-96e0-e018ad574610}"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\SGX/Admin,Enabled,0x00010001,1
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\SGX/Admin,Isolation,0x00010001,0
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\SGX/Admin,ChannelAccess,,"O:BAG:SYD:(A;;0x2;;;S-1-15-2-1)(A;;0x2;;;S-1-15-3-1024-3153509613-960666767-3724611135-2725662640-12138253-543910227-1950414635-4190290187)(A;;0xf0007;;;SY)(A;;0x7;;;BA)(A;;0x7;;;SO)(A;;0x3;;;IU)(A;;0x3;;;SU)(A;;0x3;;;S-1-5-3)(A;;0x3;;;S-1-5-33)(A;;0x1;;;S-1-5-32-573)"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\SGX/Admin,Type,0x00010001,0
+
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\SGX/Diagnostic,OwningPublisher,,"{ce6e83d3-a7d9-4a91-96e0-e018ad574610}"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\SGX/Diagnostic,Enabled,0x00010001,1
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\SGX/Diagnostic,Isolation,0x00010001,0
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\SGX/Diagnostic,ChannelAccess,,"O:BAG:SYD:(A;;0x2;;;S-1-15-2-1)(A;;0x2;;;S-1-15-3-1024-3153509613-960666767-3724611135-2725662640-12138253-543910227-1950414635-4190290187)(A;;0xf0007;;;SY)(A;;0x7;;;BA)(A;;0x7;;;SO)(A;;0x3;;;IU)(A;;0x3;;;SU)(A;;0x3;;;S-1-5-3)(A;;0x3;;;S-1-5-33)(A;;0x1;;;S-1-5-32-573)"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\SGX/Diagnostic,Type,0x00010001,1
+
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610},,,"AESMService"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610},ResourceFileName,,"%13%\aesm_service.exe"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610},MessageFileName,,"%13%\aesm_service.exe"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610},Enabled,0x00010001,1
+
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610}\ChannelReferences,Count,0x00010001,2
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610}\ChannelReferences\0,,,"SGX/Admin"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610}\ChannelReferences\0,Id,0x00010001,16
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610}\ChannelReferences\0,Flags,0x00010001,0
+
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610}\ChannelReferences\1,,,"SGX/Diagnostic"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610}\ChannelReferences\1,Id,0x00010001,17
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{ce6e83d3-a7d9-4a91-96e0-e018ad574610}\ChannelReferences\1,Flags,0x00010001,0
+
+HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\EventLog-Application\{ce6e83d3-a7d9-4a91-96e0-e018ad574610},Enabled,0x00010001,1
+HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\EventLog-Application\{ce6e83d3-a7d9-4a91-96e0-e018ad574610},EnableLevel,0x00010001,0
+HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\EventLog-Application\{ce6e83d3-a7d9-4a91-96e0-e018ad574610},LoggerName,,"EventLog-Application"
+HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\EventLog-Application\{ce6e83d3-a7d9-4a91-96e0-e018ad574610},MatchAnyKeyword,0x000B0001,0xc000000000000000
+HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\EventLog-Application\{ce6e83d3-a7d9-4a91-96e0-e018ad574610},MatchAllKeyword,0x000B0001,0
+HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\EventLog-Application\{ce6e83d3-a7d9-4a91-96e0-e018ad574610},EnableProperty,0x00010001,1
+                                                                           
+[psw.bin.x64]
+AESMProxyConfigure.exe
+aesm_service.exe
+aesm_helper.dll
+le.signed.dll
+le_prod_css.bin
+pce.signed.dll
+PSDA.dalp
+pse_op.signed.dll
+pse_pr.signed.dll
+pse_pr_2.signed.dll
+pve.signed.dll
+qe.signed.dll      
+
+[psw.data]
+extended_epid_group.blob.00000000
+prebuild_pse_vmc.db
+white_list_cert.bin
+INTEL Software License Agreement 11.2.17.pdf
+Intel SGX SW Collateral.pdf
+third_party.rtf
+
+
+[urts.x64]
+sgx_uae_service.dll
+sgx_urts.dll
+sgx_enclave_common.dll
+
+[psw.bin.win32]
+
+[urts.win32] 
+sgx_uae_service.dll, sgx_uae_service.dll.win32
+sgx_urts.dll, sgx_urts.dll.win32
+sgx_enclave_common.dll, sgx_enclave_common.dll.win32
+
+[SGX_PSW.NT.Services]
+AddService = AESMService,%SPSVCSINST_STARTSERVICE%, aesm_service_install
+AddService = ,%SPSVCINST_ASSOCSERVICE%
+
+; -------------- 
+[aesm_service_configuration_reg]
+HKR,,Description,,"The system services management agent for Intel(R) Software Guard Extensions enabled applications."
+HKR,,DependOnService,0x00010000,"RPCSS"
+HKR,,DelayedAutostart,0x00010001,1
+HKR,,RequiredPrivileges,0x00010000,SeChangeNotifyPrivilege,SeCreateGlobalPrivilege,SeSystemEnvironmentPrivilege
+HKR,,ServiceSidType,0x00010001,1
+HKR,,InitHelper,0x00010001,1
+
+[aesm_service_install]
+ServiceName    = AESMService
+DisplayName    = "Intel(R) SGX AESM"
+ServiceType    = 0x00000010      ; SERVICE_WIN32_OWN_PROCESS
+StartType      = 2               ; SERVICE_AUTO_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\aesm_service.exe
+AddReg         = aesm_service_configuration_reg
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+SPSVCSINST_STARTSERVICE= 0x00000800
+INTC = "Intel Corporation"
+StdMfg = "Intel Corporation"
+DiskId1 = "Intel(R) Software Guard Extensions Install Disk"
+REG_EXPAND_SZ = 0x00020000

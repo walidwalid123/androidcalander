@@ -1,0 +1,128 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE GpOpEEv(SYSMODULE)
+  !**********************************************************
+  !
+  ! (c) ABB Automation Technology Products AB,
+  !     Arc Welding and Application System
+  !
+  !**********************************************************
+  !
+  ! Module:       GpOpEEv1.sys
+  !
+  ! Description:  Handles GAP event for OP Ready functionality
+  !               for 1 OP panel.
+  !
+  ! Procedures:
+  !
+  ! Created:      2005-05-10
+  !
+  ! Version:      1.0.0
+  !
+  ! History:      2005-05-10 SÖ
+  !                 First version
+  !               2006-09-12 SÖ
+  !                 Added subscription to new event EE_ABORT.
+  !                  Opens up OP after aborted cycle.
+  !               2007-02-16 SÖ
+  !                 Changed from EE_CYCLE_START to EE_WAIT_ORDER,
+  !                 activates station earlier in cycle.
+  !
+  !************************************************************
+  !
+  ! common events
+  CONST ee_event peEeAbortOP:=[EE_ABORT,"GpOpEEv:EeEvtOpAbort","",255,255];
+  CONST ee_event peEeStartOP:=[EE_START,"GpOpEEv:EeEvtOpOpenAll","",255,255];
+  CONST ee_event peEeCycStartOP:=[EE_WAIT_ORDER,"GpOpEEv:ActivateOpStn","",1,255];
+  !
+  CONST ee_event peEePrProdOP1:=[EE_PRE_PROD,"GpOpEEv:EeEvtOpClose1","",1,3];
+  CONST ee_event peEeEvtOpenOP1:=[EE_PRE_PART,"GpOpEEv:EeEvtOpOpen1","",255,3];
+  !
+  LOCAL CONST byte GAP_STN_1:=1;
+  LOCAL CONST byte GAP_STN_2:=2;
+  LOCAL CONST byte GAP_STN_3:=4;
+  LOCAL CONST byte GAP_STN_4:=8;
+  LOCAL CONST byte GAP_STN_5:=16;
+  LOCAL CONST byte GAP_STN_6:=32;
+  LOCAL CONST byte GAP_STN_7:=64;
+  LOCAL CONST byte GAP_STN_8:=128;
+  !
+  LOCAL VAR num nClosedOp;
+
+  LOCAL PROC EeEvtOpAbort()
+    IF (nClosedOp>0) THEN
+      IF (OpMode()<>OP_AUTO) TPWrite "Opening OP Ready "+ValToStr(nClosedOp);
+      opOpen nClosedOp;
+      nClosedOp:=0;
+      SetDO soGap_Run_Part_P1,0;
+    ENDIF
+  ENDPROC
+
+  LOCAL PROC EeEvtOpClose1()
+    IF (OpMode()<>OP_AUTO) TPWrite "Closing OP Ready 1";
+    SetDO soGap_Run_Part_P1,0;
+    opClose 1;
+    nClosedOp:=1;
+  ENDPROC
+
+  LOCAL PROC EeEvtOpOpen1()
+    IF (OpMode()<>OP_AUTO) TPWrite "Opening OP Ready 1";
+    SetDO soGap_Run_Part_P1,0;
+    opOpen 1;
+    nClosedOp:=0;
+  ENDPROC
+
+  LOCAL PROC EeEvtOpOpenAll()
+    IF (OpMode()<>OP_AUTO) TPWrite "Opening all OP Ready";
+    SetDO soGap_Run_Part_P1,0;
+    opOpen nOP_ALL;
+    nClosedOp:=0;
+  ENDPROC
+
+  LOCAL PROC ActivateOpStn()
+    VAR bool bOp;
+    VAR num nOp;
+    VAR num nNextOpStn;
+    bOp:=opcStartProc(nOp,nNextOpStn);
+    IF (bOp) THEN
+      OpSelectStn nNextOpStn;
+      nClosedOp:=nOp;
+      SetDO soGap_Run_Part_P1,1;
+    ELSE
+      SetDO soGap_Run_Part_P1,0;
+    ENDIF
+  ENDPROC
+
+  LOCAL PROC OpSelectStn(num NextStation)
+    SetStnGO goGap_NextStn,NextStation;
+  ENDPROC
+
+  LOCAL PROC SetStnGO(VAR signalgo sig, num value)
+    VAR num stn_val;
+
+    TEST value
+    CASE 1:
+      stn_val:=GAP_STN_1;
+    CASE 2:
+      stn_val:=GAP_STN_2;
+    CASE 3:
+      stn_val:=GAP_STN_3;
+    CASE 4:
+      stn_val:=GAP_STN_4;
+    CASE 5:
+      stn_val:=GAP_STN_5;
+    CASE 6:
+      stn_val:=GAP_STN_6;
+    CASE 7:
+      stn_val:=GAP_STN_7;
+    CASE 8:
+      stn_val:=GAP_STN_8;
+    default:
+      stn_val:=GAP_STN_1;
+    ENDTEST
+    SetGO sig,stn_val;
+  ENDPROC
+ENDMODULE

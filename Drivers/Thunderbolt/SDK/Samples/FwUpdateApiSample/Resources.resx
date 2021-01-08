@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChipSizeError" xml:space="preserve">
+    <value>Image file doesn't fit into chip size.</value>
+  </data>
+  <data name="CloseDuringUpdate" xml:space="preserve">
+    <value>Please wait for firmware update process to complete.</value>
+  </data>
+  <data name="FileNotExists" xml:space="preserve">
+    <value>File does not exist.</value>
+  </data>
+  <data name="FWUpdateFailedMessage" xml:space="preserve">
+    <value>Firmware update failed.</value>
+  </data>
+  <data name="FWUpdateSuccessMessage" xml:space="preserve">
+    <value>Firmware was updated successfully.</value>
+  </data>
+  <data name="InvalidImageFile" xml:space="preserve">
+    <value>Selected file is invalid.
+Please select a valid image file.</value>
+  </data>
+  <data name="MessageBoxCaption" xml:space="preserve">
+    <value>Thunderbolt(TM) Firmware Update Utility</value>
+  </data>
+  <data name="NoEPStringPart0" xml:space="preserve">
+    <value>There is no usable Thunderbolt(TM) device connected to the system</value>
+  </data>
+  <data name="SWNotInstalled" xml:space="preserve">
+    <value>Thunderbolt(TM) UWD software is not installed.
+Please install the Thunderbolt(TM) UWD software and run the tool again.</value>
+  </data>
+  <data name="ValidationFailedPart1" xml:space="preserve">
+    <value>Firmware image does not match current hardware: </value>
+  </data>
+  <data name="LoadControllersFailed" xml:space="preserve">
+    <value>Failed to load Thunderbolt(TM) controllers.</value>
+  </data>
+  <data name="InvalidControllerID" xml:space="preserve">
+    <value>The provided controller ID is invalid.</value>
+  </data>
+  <data name="NoDeviceStringPart2CMD" xml:space="preserve">
+    <value>Then connect Thunderbolt(TM) device and retry.</value>
+  </data>
+  <data name="NoDeviceStringPart2GUI" xml:space="preserve">
+    <value>Then connect Thunderbolt(TM) device and press OK to retry or press Cancel to abort firmware update process.</value>
+  </data>
+  <data name="MaskIsntSupported" xml:space="preserve">
+    <value>Mask isn't supported for data with length &gt; 1.</value>
+  </data>
+  <data name="OutOfControllerSection" xml:space="preserve">
+    <value>Requested property is out of controller section; probably an issue with the tool.</value>
+  </data>
+  <data name="OutOfFileSection" xml:space="preserve">
+    <value>Requested property is out of file section; probably a corrupted or incompatible file.</value>
+  </data>
+  <data name="UnknownChip" xml:space="preserve">
+    <value>Unknown Thunderbolt(TM) chip.</value>
+  </data>
+  <data name="RedwoodNotSupported" xml:space="preserve">
+    <value>DSL4000 series controllers are not supported by this firmware update tool</value>
+  </data>
+  <data name="GetFirmwareVersionFailed" xml:space="preserve">
+    <value>Error while getting the firmware version</value>
+  </data>
+  <data name="ReadFirmwareFailed" xml:space="preserve">
+    <value>ReadFirmware function failed</value>
+  </data>
+  <data name="ServiceDoesntExist" xml:space="preserve">
+    <value>Thunderbolt(TM) service doesn't exist</value>
+  </data>
+  <data name="IncompatibleHWGeneration" xml:space="preserve">
+    <value>Firmware image file is not compatible with controller hardware generation</value>
+  </data>
+  <data name="IncompatiblePortCount" xml:space="preserve">
+    <value>Firmware image file is not compatible with controller port count</value>
+  </data>
+  <data name="NoHWInfo" xml:space="preserve">
+    <value>Hardware information is not available</value>
+  </data>
+  <data name="NoEPUpdateSupport" xml:space="preserve">
+    <value>This controller doesn't support device firmware update</value>
+  </data>
+  <data name="DeviceNotSupported" xml:space="preserve">
+    <value>This device doesn't support device firmware update</value>
+  </data>
+  <data name="InvalidDeviceUUID" xml:space="preserve">
+    <value>The provided device UUID is invalid.</value>
+  </data>
+  <data name="LoadDevicesFailed" xml:space="preserve">
+    <value>Failed to load Thunderbolt(TM) devices.</value>
+  </data>
+  <data name="EPUpdateNotSupported" xml:space="preserve">
+    <value>This controller doesn't support device firmware update</value>
+  </data>
+  <data name="NoControllerStringPart0" xml:space="preserve">
+    <value>No active Thunderbolt(TM) controller found in the system</value>
+  </data>
+  <data name="NoDeviceStringPart1" xml:space="preserve">
+    <value>or Thunderbolt(TM) software is not present in the system.
+Make sure you have Thunderbolt(TM) software installed.</value>
+  </data>
+  <data name="PdMismatchError" xml:space="preserve">
+    <value>The controller and the file differ regarding PD existence (one of them has it and one doesn't)</value>
+  </data>
+  <data name="CommandNotFound" xml:space="preserve">
+    <value>Command not found</value>
+  </data>
+  <data name="CommandTableError" xml:space="preserve">
+    <value>Error in command finding (probably an error in command table)</value>
+  </data>
+  <data name="DromMismatchError" xml:space="preserve">
+    <value>The controller and the file differ regarding DROM existence (one of them has it and one doesn't)</value>
+  </data>
+  <data name="ImageForHostError" xml:space="preserve">
+    <value>The image file is for host controller</value>
+  </data>
+  <data name="IncorrectArgumentCount" xml:space="preserve">
+    <value>Wrong number of arguments for this command</value>
+  </data>
+  <data name="NoCommandSupplied" xml:space="preserve">
+    <value>No command supplied</value>
+  </data>
+  <data name="NoDromInFileError" xml:space="preserve">
+    <value>The file doesn't include DROM section</value>
+  </data>
+  <data name="NoDromWarning" xml:space="preserve">
+    <value>Warning: no DROM existing (no vendor/model check)</value>
+  </data>
+  <data name="ModelMismatchError" xml:space="preserve">
+    <value>The image file is for another product model</value>
+  </data>
+  <data name="VendorMismatchError" xml:space="preserve">
+    <value>The image file is for another vendor product</value>
+  </data>
+  <data name="ValidationFailedPart2" xml:space="preserve">
+    <value>Please supply a valid image file.</value>
+  </data>
+  <data name="SafeModeError" xml:space="preserve">
+    <value>This command is not supported on controller in safe mode</value>
+  </data>
+  <data name="ImageForDeviceError" xml:space="preserve">
+    <value>The image file is for device controller</value>
+  </data>
+  <data name="MinimalValidationInSafeMode" xml:space="preserve">
+    <value>Only minimal validation was done to the image file because the controller is in safe mode</value>
+  </data>
+  <data name="ReadI2CFailed" xml:space="preserve">
+    <value>Error while reading an I2C register</value>
+  </data>
+  <data name="WriteI2CFailed" xml:space="preserve">
+    <value>Error while writing to an I2C register</value>
+  </data>
+  <data name="GetPdVersionFailed" xml:space="preserve">
+    <value>Error while getting the PD firmware version</value>
+  </data>
+  <data name="HostNeedsPowerDownMessage" xml:space="preserve">
+    <value>The new PD version on your machine is different from the previous PD version. In order to complete the upgrade you must put your computer in G3 mode (shut down completely and unplug).</value>
+  </data>
+  <data name="DeviceNeedsPowerDownMessage" xml:space="preserve">
+    <value>The new PD version on your device controller is different from the previous PD version. In order to complete the upgrade you must disconnect and unplug the device.</value>
+  </data>
+  <data name="MultipleImagesFound" xml:space="preserve">
+    <value>Multiple files found</value>
+  </data>
+  <data name="CommandNotSupportedOnDevice" xml:space="preserve">
+    <value>Command is not supported on devices</value>
+  </data>
+  <data name="NoMatchingDeviceFound" xml:space="preserve">
+    <value>No matching devices found</value>
+  </data>
+  <data name="SafeModeWarning" xml:space="preserve">
+    <value>Not all Thunderbolt(TM) ports are functioning properly.
+Some controller's information is not available.</value>
+  </data>
+  <data name="DeprecatedMethod" xml:space="preserve">
+    <value>The command is deprecated</value>
+  </data>
+  <data name="I2CAccessNotSupported" xml:space="preserve">
+    <value>I2C access is not supported</value>
+  </data>
+  <data name="InvalidArgument" xml:space="preserve">
+    <value>One or more of the provided arguments are invalid</value>
+  </data>
+  <data name="DromNotFound" xml:space="preserve">
+    <value>No DROM found</value>
+  </data>
+  <data name="NativeModeMismatch" xml:space="preserve">
+    <value>Native/BIOS-Assisted mode mismatch between the controller and the image file</value>
+  </data>
+  <data name="AuthFailed" xml:space="preserve">
+    <value>The image provided is not signed. Therefore rejected.</value>
+  </data>
+  <data name="DriverCommunicationError" xml:space="preserve">
+    <value>Got an error while communicating with the UWD driver</value>
+  </data>
+  <data name="ImageWriteError" xml:space="preserve">
+    <value>There was an error during firmware update. Please make sure device stays connected and the image is signed.</value>
+  </data>
+  <data name="FWUpdateTimeout" xml:space="preserve">
+    <value>A timeout has expired while FW update was performed.</value>
+  </data>
+  <data name="DriverAPIUnknown" xml:space="preserve">
+    <value>Driver API unknown</value>
+  </data>
+  <data name="MultiHandleOpenDuringFWUpdate" xml:space="preserve">
+    <value>More than one handle open during FW Update</value>
+  </data>
+  <data name="UnsuportedOperation" xml:space="preserve">
+    <value>The operation is not supported</value>
+  </data>
+</root>

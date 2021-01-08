@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Resource Name="CellText" Language="da">
+  <Text Name="1">
+    <Value>TCP Setup</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="2">
+    <Value>TCP Kontrol frekvens</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="3">
+    <Value>TCP Kontrol</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="4">
+    <Value>TCP Opdatering</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="5">
+    <Value>TCP Ved reference punkt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="7">
+    <Value>(0 for at ikke kontrollere TCP under produktion)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="8">
+    <Value>Nuværende værdi:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Angiv nyt værdi (frek)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="15">
+    <Value>Sikkerheds position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="16">
+    <Value>Parkerings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="17">
+    <Value>Service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="18">
+    <Value>1. Tryk OK</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="19">
+    <Value>2. Flyt robotten til sikkerheds position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="20">
+    <Value>2. Flyt robotten til parkerings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="21">
+    <Value>2. Flyt robotten til service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="22">
+    <Value>3. Start program kørsel</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="23">
+    <Value>MANUEL</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="24">
+    <Value>AUTO</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="25">
+    <Value>Robotten er ikke i sin sikkerheds position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="26">
+    <Value>Robotten er ikke i sin parkerings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="27">
+    <Value>Robotten er ikke i sin service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="28">
+    <Value>Vælg MANUEL eller AUTO</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="29">
+    <Value>MANUEL => Jog robotten til sikkerheds position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="30">
+    <Value>AUTO   => Kør robotten direkte til sikkerheds positionen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="31">
+    <Value>MANUEL => Jog robotten til parkerings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="32">
+    <Value>AUTO   => Kør robotten direkte til parkerings positionen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="33">
+    <Value>MANUEL => Jog robotten til service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="34">
+    <Value>AUTO   => Kør robotten direkte til service positionen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="35">
+    <Value>Kør robot til synk position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="36">
+    <Value>Kør robot til sikkerhedsposition 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="37">
+    <Value>Kør robot til sikkerhedsposition 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="38">
+    <Value>Kør robot til sikkerhedsposition 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="39">
+    <Value>Kør robot til sikkerhedsposition 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="40">
+    <Value>Kør robot til sikkerhedsposition 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="41">
+    <Value>Kør robot til service position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="42">
+    <Value>Kør robot til service position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="43">
+    <Value>Kør robot til service position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Kør robot til service position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="45">
+    <Value>Kør robot til service position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="46">
+    <Value>Kør robot til parkerings position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Kør robot til parkerings position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Kør robot til parkerings position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Kør robot til parkerings position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Kør robot til parkerings position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Ændre robottens sikkerheds position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="52">
+    <Value>Ændre robottens sikkerheds position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Ændre robottens sikkerheds position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Ændre robottens sikkerheds position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="55">
+    <Value>Ændre robottens sikkerheds position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="56">
+    <Value>Ændre robottens service position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="57">
+    <Value>Ændre robottens service position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="58">
+    <Value>Ændre robottens service position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="59">
+    <Value>Ændre robottens service position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="60">
+    <Value>Ændre robottens service position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="61">
+    <Value>Ændre robottens parkerings position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="62">
+    <Value>Ændre robottens parkerings position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="63">
+    <Value>Ændre robottens parkerings position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="64">
+    <Value>Ændre robottens parkerings position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="65">
+    <Value>Ændre robottens parkerings position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="75">
+    <Value>Lastdefinere interchAngiv 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="76">
+    <Value>Lastdefinere interchAngiv 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="77">
+    <Value>Lastdefinere interchAngiv 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="78">
+    <Value>Lastdefinere interchAngiv 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="79">
+    <Value>Lastdefinere station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="80">
+    <Value>Lastdefinere station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="81">
+    <Value>Lastdefinere station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="82">
+    <Value>Lastdefinere station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="83">
+    <Value>Lastdefinere station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="84">
+    <Value>Lastdefinere station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="85">
+    <Value>Lastdefinere station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="86">
+    <Value>Lastdefinere station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="95">
+    <Value>Ændre ladeposition for station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="96">
+    <Value>Ændre ladeposition for station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="97">
+    <Value>Ændre ladeposition for station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="98">
+    <Value>Ændre ladeposition for station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="99">
+    <Value>Ændre ladeposition for station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="100">
+    <Value>Ændre ladeposition for station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="101">
+    <Value>Ændre ladeposition for station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="102">
+    <Value>Ændre ladeposition for station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="103">
+    <Value>Ændre proces position for station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="104">
+    <Value>Ændre proces position for station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="105">
+    <Value>Ændre proces position for station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="106">
+    <Value>Ændre proces position for station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="107">
+    <Value>Ændre proces position for station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="108">
+    <Value>Ændre proces position for station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="109">
+    <Value>Ændre proces position for station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="110">
+    <Value>Ændre proces position for station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="111">
+    <Value>Ændre service position for station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="112">
+    <Value>Ændre service position for station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="113">
+    <Value>Ændre service position for station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="114">
+    <Value>Ændre service position for station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="115">
+    <Value>Ændre service position for station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="116">
+    <Value>Ændre service position for station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="117">
+    <Value>Ændre service position for station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="118">
+    <Value>Ændre service position for station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="119">
+    <Value>Kalibrere irbp1 bordvendings positioner</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="120">
+    <Value>Kalibrere irbp2 bordvendings positioner</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="121">
+    <Value>Kalibrere irbp3 bordvendings positioner</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="122">
+    <Value>Kalibrere irbp4 bordvendings positioner</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="135">
+    <Value>Indexera til station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="136">
+    <Value>Indexera til station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="137">
+    <Value>Indexera til station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="138">
+    <Value>Indexera til station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="139">
+    <Value>Indexera til station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="140">
+    <Value>Indexera til station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="141">
+    <Value>Indexera til station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="142">
+    <Value>Indexera til station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="143">
+    <Value>Kør station 1 til ladeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="144">
+    <Value>Kør station 2 til ladeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="145">
+    <Value>Kør station 3 til ladeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="146">
+    <Value>Kør station 4 til ladeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="147">
+    <Value>Kør station 5 til ladeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="148">
+    <Value>Kør station 6 til ladeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="149">
+    <Value>Kør station 7 til ladeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="150">
+    <Value>Kør station 8 til ladeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="151">
+    <Value>Kør station 1 til proces position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="152">
+    <Value>Kør station 2 til proces position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="153">
+    <Value>Kør station 3 til proces position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="154">
+    <Value>Kør station 4 til proces position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="155">
+    <Value>Kør station 5 til proces position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="156">
+    <Value>Kør station 6 til proces position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="157">
+    <Value>Kør station 7 til proces position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="158">
+    <Value>Kør station 8 til proces position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="159">
+    <Value>Kør station 1 til service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="160">
+    <Value>Kør station 2 til service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="161">
+    <Value>Kør station 3 til service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="162">
+    <Value>Kør station 4 til service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="163">
+    <Value>Kør station 5 til service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="164">
+    <Value>Kør station 6 til service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="165">
+    <Value>Kør station 7 til service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="166">
+    <Value>Kør station 8 til service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="167">
+    <Value>Kør irbp1 til synkroniserings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="168">
+    <Value>Kør irbp2 til synkroniserings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="169">
+    <Value>Kør irbp3 til synkroniserings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="170">
+    <Value>Kør irbp4 til synkroniserings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="171">
+    <Value>Kør irbp5 til synkroniserings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="172">
+    <Value>Kør irbp6 til synkroniserings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="173">
+    <Value>Kør irbp7 til synkroniserings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="174">
+    <Value>Kør irbp8 til synkroniserings position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="190">
+    <Value>IRBP ladeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="191">
+    <Value>IRBP procesposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="192">
+    <Value>IRBP serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="193">
+    <Value>Ladeposition fejl</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="194">
+    <Value>Procesposition fejl</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="195">
+    <Value>Serviceposition fejl</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="196">
+    <Value>Axel</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="197">
+    <Value>Nuværende værdi: </Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="198">
+    <Value>Angiv nyt værdi (grad)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="199">
+    <Value>Opdatering af ladeposition mislykkedes for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="200">
+    <Value>Opdatering af procesposition mislykkedes for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="201">
+    <Value>Opdatering af serviceposition mislykkedes for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="202">
+    <Value>Ingen part valgt for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="203">
+    <Value>Vælg part og gør operationen om igen for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="204">
+    <Value>Ingen advpart definerad i valgt part for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="205">
+    <Value>Definera advpart i valgt part og gør operationen om igen for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="206">
+    <Value>Lastidentificerings fejl</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="207">
+    <Value>Opdatering af lastdata mislykkedes for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="208">
+    <Value>Ingen last definerad for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="209">
+    <Value>Default last kommer at bruges</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="210">
+    <Value>Ladepositions advarsel</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="211">
+    <Value>Procespositions advarsel</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="212">
+    <Value>Servicepositions advarsel</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="213">
+    <Value>Default værdi for ladeposition kommer at bruges</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="214">
+    <Value>Default værdi for procesposition kommer at bruges</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="215">
+    <Value>Default værdi for serviceposition kommer at bruges</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="216">
+    <Value>Aktiverings advarsel</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="217">
+    <Value>ADVARSEL</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="218">
+    <Value>Bordvendings advarsel</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="219">
+    <Value>Interchangen kan komme til at bevæge sig</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="220">
+    <Value>Sørg for at holde sikkerheds afstand</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="221">
+    <Value>Station</Value>
+    <Comment></Comment>
+  </Text>
+</Resource>

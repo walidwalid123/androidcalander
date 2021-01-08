@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Resource Name="Poscalib" Language="de">
+  <Text Name="1">
+    <Value>Interchange Achse Kalibrieren</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="2">
+    <Value>IRBP Station Kalibrieren</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="3">
+    <Value>Kalibrieren der Achse startet jetzt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="4">
+    <Value>Kalibrieren der Stationen startet jetzt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="5">
+    <Value>- Abbruch zum Beenden</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="6">
+    <Value>- OK zum Fortfahren</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="7">
+    <Value>Abbruch</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="8">
+    <Value>OK</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Kalibrieren Beendet</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="10">
+    <Value>Falsche Betriebsart</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="11">
+    <Value>Weiter mit OK, Wechseln nach HAND</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="12">
+    <Value>Weiter mit OK, Wechseln nach HAND 100%</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="13">
+    <Value>Drücke OK, Wechseln nach AUTOMATIK</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="14">
+    <Value>und Neustarten.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="15">
+    <Value>1. Drücke OK.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="16">
+    <Value>2. Um Interchange zu Kalibrieren</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="17">
+    <Value>   Roboter in sichere Position bewegen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="18">
+    <Value>3. Programm erneut starten.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="19">
+    <Value>Achtung der Positionierer kann sich</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="20">
+    <Value>bewegen. Auf ausreichenden</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="21">
+    <Value>Sicherheitsabstand achten</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="22">
+    <Value>Interchange Achse ist nicht in</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="23">
+    <Value>Position. Drücke OK und bewege</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="24">
+    <Value>Achse manuell in Position.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="25">
+    <Value>Kalibriere</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="26">
+    <Value>% fertig...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="27">
+    <Value>1. Weiter mit OK</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="28">
+    <Value>2. Fine Kalibrieren</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="29">
+    <Value>Achse</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="30">
+    <Value>3. Programm Neustart</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="31">
+    <Value>Drehmoment:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="32">
+    <Value>Winkel:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="33">
+    <Value>(Nm)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="34">
+    <Value>(deg)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="35">
+    <Value>IRBP Interchange check</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="36">
+    <Value>Überprüfe Position (Seite 1)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="37">
+    <Value>Überprüfe Position (Seite 2)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="38">
+    <Value>Überprüfe Position (Seite 3)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="39">
+    <Value>Überprüfe Position (Seite 4)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="40">
+    <Value>Daten wurden in Datei gespeichert</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="41">
+    <Value>Sollen Daten am PHG anzeigen werden?</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="42">
+    <Value>JA</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="43">
+    <Value>NEIN</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Seite 1. Winkel 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="45">
+    <Value>Seite 1. Winkel 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="46">
+    <Value>Seite 1. Bremswinkel=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Seite 2. Winkel 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Seite 2. Winkel 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Seite 2. Bremswinkel=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Seite 3. Winkel 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Seite 3. Winkel 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="52">
+    <Value>Seite 3. Bremswinkel=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Seite 4. Winkel 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Seite 4. Winkel 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="55">
+    <Value>Seite 4. Bremswinkel=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="56">
+    <Value>Drehmoment ist zu groß.Bitte Last</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="57">
+    <Value>entfernen und neu Kalibrieren.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="58">
+    <Value></Value>
+    <Comment></Comment>
+  </Text>
+</Resource>

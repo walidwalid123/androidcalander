@@ -1,0 +1,110 @@
+Created       : 2005-05-02
+Time          : 10:08:31
+Order no      : 000000
+Robot/License : 00-00000
+Robot Key 0   : virtual robot
+Article no    : 3HEA503751918
+Program no    : 3HEA0005-0.05 rev 01
+Option name   : 3HEA-000-00000.01
+Option key    : dyzDDDDSsFTQMACCCACCCCo
+Created by    : BDM
+To            : None
+
+
+#SELECTIONS
+#------------------------------------
+
+Robot
+  -  MMS - Multi motion system
+  -  2 Robots
+  -  IRB1600
+  -  IRB1600
+IRBP
+  -  1
+IRBP 1
+  -  K
+  -  250
+  -  D=1000
+AW System 1
+  -  No ArcWelding
+AW System 2
+  -  No ArcWelding
+Cell
+  -  Nivå 1 - Endast hårdvarukonfig
+
+#END_SELECTIONS
+#------------------------------------
+
+
+#SELECTIONSPEC
+#------------------------------------
+SEL_LINE:180
+SEL_HEAD:Robot
+SEL_TEXT:MMS - Multi motion system
+SEL_INDEX:1
+SEL_LINE:208
+SEL_HEAD:Robot
+SEL_TEXT:2 Robots
+SEL_INDEX:1
+SEL_LINE:245
+SEL_HEAD:Robot
+SEL_TEXT:IRB1600
+SEL_INDEX:2
+SEL_LINE:250
+SEL_HEAD:Robot
+SEL_TEXT:IRB1600
+SEL_INDEX:2
+SEL_LINE:347
+SEL_HEAD:IRBP
+SEL_TEXT:1
+SEL_INDEX:0
+SEL_LINE:371
+SEL_HEAD:IRBP 1
+SEL_TEXT:K
+SEL_INDEX:5
+SEL_LINE:511
+SEL_HEAD:IRBP 1
+SEL_TEXT:250
+SEL_INDEX:0
+SEL_LINE:519
+SEL_HEAD:IRBP 1
+SEL_TEXT:D=1000
+SEL_INDEX:0
+SEL_LINE:543
+SEL_HEAD:IRBP 1
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:1192
+SEL_HEAD:RTT
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:1206
+SEL_HEAD:Säkerhet
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:1218
+SEL_HEAD:Operator Panel
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:1645
+SEL_HEAD:AW System 1
+SEL_TEXT:No ArcWelding
+SEL_INDEX:0
+SEL_LINE:1699
+SEL_HEAD:AW System 2
+SEL_TEXT:No ArcWelding
+SEL_INDEX:0
+SEL_LINE:2207
+SEL_HEAD:BullsEye Robot1
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:2208
+SEL_HEAD:BullsEye Robot2
+SEL_TEXT:
+SEL_INDEX:
+SEL_LINE:2308
+SEL_HEAD:Cell
+SEL_TEXT:Nivå 1 - Endast hårdvarukonfig
+SEL_INDEX:0
+#END_SELECTIONSPEC
+#------------------------------------

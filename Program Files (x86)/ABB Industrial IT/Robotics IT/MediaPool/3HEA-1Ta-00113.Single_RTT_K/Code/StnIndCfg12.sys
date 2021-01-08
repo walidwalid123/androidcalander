@@ -1,0 +1,47 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE StnIndCfg12(SYSMODULE,NOSTEPIN,READONLY)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       <MODULE NAME>
+  !
+  ! Written by:   <AUTHOR NAME>
+  !
+  ! Description:  <DESCRIPTION>
+  !
+  ! Procedures:   <PROCEDURE LIST>
+  !
+  ! Functions:    <FUNCTION LIST>
+  !
+  ! Created:      <CREATION DATE>
+  !
+  ! Version:      <VERSION>
+  !
+  ! History:      <HISTORY LIST>
+  !
+  !         2007-04-25 SÖ
+  !           Changed to use at station signals used in GAP
+  !
+  !---------------------------------------------------------------------------!
+  !
+  PROC InitStnInd12()
+    VAR bool bValid;
+    VAR num nStnIndNo;
+
+    nStnIndNo:=1;
+    StnIndAdd nStnIndNo,bValid;
+    IF (bValid) THEN
+      StnIndWarmStart nStnIndNo;
+    ELSE
+      StnIndCompAdd nStnIndNo,1,1\SignalInPos:="siGap_AtStn_1";
+      StnIndCompAdd nStnIndNo,2,2\SignalInPos:="siGap_AtStn_2";
+    ENDIF
+  ENDPROC
+ENDMODULE

@@ -1,0 +1,252 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE GoSafeData(SYSMODULE,NOSTEPIN)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       GoSafeData.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:  data/init for home joint rob1, two positions with track.
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:      2004-10-04
+  !
+  ! Version:
+  !  BUILD REV  = 197
+  !  BUILD DATE = 2008/03/20 13:27:50
+  !
+  ! History:      1.0.0
+  !                 First release
+  !               1.1
+  !                 2005-04-27 SÖ
+  !                 Added menus for GAP
+  !               2005-09-21
+  !                Fix if RESTART is executed after POWER_ON
+  !               2005-11-14 SÖ
+  !                Changed InitHomeJoint to match new parameters in HomeJointAdd
+  !               2006-12-21 SÖ
+  !                Added menus and procs for service and park positions. Menus for
+  !                 park/service position commented out.
+  !               2007-01-12 SÖ
+  !                Fix: Wrong text in menus, word robot twice.
+  !               2007-04-17 SÖ
+  !                 Added language support for menus.
+  !
+  !---------------------------------------------------------------------------!
+  !
+  CONST identno id_safe1 := 1;
+  !
+  VAR syncident sync_safe_1;
+  VAR syncident sync_safe_2;
+  VAR syncident sync_safe_3;
+  !
+  CONST ee_event peGoSafeData:=[EE_START,"GoSafeData:ChangeMenuLang","",255,255];
+  !
+  !service menu(s) safe homejoint
+  TASK PERS menudata mdRobMoveSync:=["Move robot to sync position","GapIRB140Icon.gif","MoveRobSyncPos",255,"",255,TRUE,2,0,FALSE,0];
+  TASK PERS menudata mdRobSafe1:=["Move robot to safe position 1","GapIRB140Icon.gif","CheckSafePos1",255,"",255,TRUE,2,0,FALSE,0];
+  TASK PERS menudata mdRobSafe2:=["Move robot to safe position 2","GapIRB140Icon.gif","CheckSafePos2",255,"",255,TRUE,2,0,FALSE,0];
+  !
+  !TASK PERS menudata mdRobService1:=["Move robot to service position 1","GapIRB140Icon.gif","CheckServicePos1",255,"",255,TRUE,2,0,FALSE,0];
+  !TASK PERS menudata mdRobservice2:=["Move robot to service position 2","GapIRB140Icon.gif","CheckServicePos2",255,"",255,TRUE,2,0,FALSE,0];
+  !
+  !TASK PERS menudata mdRobPark1:=["Move robot to park position 1","GapIRB140Icon.gif","CheckParkPos1",255,"",255,TRUE,2,0,FALSE,0];
+  !TASK PERS menudata mdRobPark2:=["Move robot to park position 2","GapIRB140Icon.gif","CheckParkPos2",255,"",255,TRUE,2,0,FALSE,0];
+  !setup menu(s) safe homejoint
+  TASK PERS menudata mdRobSetSafe1:=["Set/Change robot safe position 1","GapIRB140Icon.gif","SetSafePos1",255,"",255,TRUE,1,0,FALSE,0];
+  TASK PERS menudata mdRobSetSafe2:=["Set/Change robot safe position 2","GapIRB140Icon.gif","SetSafePos2",255,"",255,TRUE,1,0,FALSE,0];
+  !
+  !TASK PERS menudata mdRobSetServ1:=["Set/Change robot service position 1","GapIRB140Icon.gif","SetServicePos1",255,"",255,TRUE,1,0,FALSE,0];
+  !TASK PERS menudata mdRobSetServ2:=["Set/Change robot service position 2","GapIRB140Icon.gif","SetServicePos2",255,"",255,TRUE,1,0,FALSE,0];
+  !
+  !TASK PERS menudata mdRobSetPark1:=["Set/Change robot park position 1","GapIRB140Icon.gif","SetParkPos1",255,"",255,TRUE,1,0,FALSE,0];
+  !TASK PERS menudata mdRobSetPark2:=["Set/Change robot park position 2","GapIRB140Icon.gif","SetParkPos2",255,"",255,TRUE,1,0,FALSE,0];
+  !
+  TASK PERS home_joint_data ROB1_1_HomeData:=[[[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],FALSE,
+                                              [[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],FALSE,
+                                              [[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],FALSE];
+  TASK PERS home_joint_data ROB1_2_HomeData:=[[[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],FALSE,
+                                              [[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],FALSE,
+                                              [[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],FALSE];
+  LOCAL VAR bool homeJointInit:=FALSE;
+  !
+  LOCAL PROC ChangeMenuLang(\switch dummy)
+    VAR num text_res_no;
+    text_res_no:=TextResTabGet("CellText");
+    mdRobMoveSync.description:=TextResGet(text_res_no,35);
+    mdRobSafe1.description:=TextResGet(text_res_no,36);
+    mdRobSafe2.description:=TextResGet(text_res_no,37);
+    !mdRobService1.description:=TextResGet(text_res_no,41);
+    !mdRobService2.description:=TextResGet(text_res_no,42);
+    !mdRobPark1.description:=TextResGet(text_res_no,46);
+    !mdRobPark2.description:=TextResGet(text_res_no,47);
+
+    mdRobSetSafe1.description:=TextResGet(text_res_no,51);
+    mdRobSetSafe2.description:=TextResGet(text_res_no,52);
+    !mdRobSetServ1.description:=TextResGet(text_res_no,56);
+    !mdRobSetServ2.description:=TextResGet(text_res_no,57);
+    !mdRobSetPark1.description:=TextResGet(text_res_no,61);
+    !mdRobSetPark2.description:=TextResGet(text_res_no,62);
+  ENDPROC
+
+  PROC InitHomeJoint()
+    VAR jointtarget jRange:=[[2,2,2,2,2,2],[4,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    VAR num nZoneSphRadius:=100;
+    VAR num nHomeCompNo;
+    VAR bool bStatus;
+
+    IF (homeJointInit) RETURN;
+    bSafeMutex:=FALSE;
+    HomeJointAdd 1,ROB1_1_HomeData,"soAtSafeR1_1"\SafeRange:=jRange\ParkSignal:="soAtParkR1_1"\ParkRange:=jRange\ServiceSignal:="soAtServiceR1_1"\ServRange:=jRange\HomeCompNo:=nHomeCompNo\Status:=bStatus;
+    HomeJointAdd 2,ROB1_2_HomeData,"soAtSafeR1_2"\SafeRange:=jRange\ParkSignal:="soAtParkR1_2"\ParkRange:=jRange\ServiceSignal:="soAtServiceR1_2"\ServRange:=jRange\HomeCompNo:=nHomeCompNo\Status:=bStatus;
+    homeJointInit:=TRUE;
+  ENDPROC
+
+  PROC HomeJointPwrOn()
+    ! reset flag if RESTART is executed after power on
+    homeJointInit:=FALSE;
+  ENDPROC
+
+  PROC CheckSafePos1()
+    VAR num nAtPos;
+
+    nAtPos:=RobAtHomepos();
+    IF (nAtPos<>1 AND nAtPos>0) THEN
+      CheckSafePos nAtPos;
+    ENDIF
+    CheckSafePos 1;
+  ENDPROC
+
+  PROC CheckSafePos2()
+    VAR num nAtPos;
+
+    nAtPos:=RobAtHomepos();
+    IF (nAtPos<>2 AND nAtPos>0) THEN
+      CheckSafePos nAtPos;
+    ENDIF
+    CheckSafePos 2;
+  ENDPROC
+
+  PROC CheckServicePos1()
+    VAR num nAtPos;
+
+    nAtPos:=RobAtHomepos();
+    IF (nAtPos<>1 AND nAtPos>0) THEN
+      CheckServicePos nAtPos;
+    ENDIF
+    CheckServicePos 1;
+  ENDPROC
+
+  PROC CheckServicePos2()
+    VAR num nAtPos;
+
+    nAtPos:=RobAtHomepos();
+    IF (nAtPos<>2 AND nAtPos>0) THEN
+      CheckServicePos nAtPos;
+    ENDIF
+    CheckServicePos 2;
+  ENDPROC
+
+  PROC CheckParkPos1()
+    VAR num nAtPos;
+
+    nAtPos:=RobAtHomepos();
+    IF (nAtPos<>1 AND nAtPos>0) THEN
+      CheckParkPos nAtPos;
+    ENDIF
+    CheckParkPos 1;
+  ENDPROC
+
+  PROC CheckParkPos2()
+    VAR num nAtPos;
+
+    nAtPos:=RobAtHomepos();
+    IF (nAtPos<>2 AND nAtPos>0) THEN
+      CheckParkPos nAtPos;
+    ENDIF
+    CheckParkPos 2;
+  ENDPROC
+
+  PROC SetSafePos1()
+    VAR bool bValid;
+    VAR bool bRet;
+
+    bRet:=AtSafePos(1\Valid:=bValid);
+    IF (bValid) THEN
+      SetSafePos 1\Cancel;
+    ELSE
+      SetSafePos 1;
+    ENDIF
+  ENDPROC
+
+  PROC SetSafePos2()
+    VAR bool bValid;
+    VAR bool bRet;
+
+    bRet:=AtSafePos(2\Valid:=bValid);
+    IF (bValid) THEN
+      SetSafePos 2\Cancel;
+    ELSE
+      SetSafePos 2;
+    ENDIF
+  ENDPROC
+
+  PROC SetServicePos1()
+    VAR bool bValid;
+    VAR bool bRet;
+
+    bRet:=AtServPos(1\Valid:=bValid);
+    IF (bValid) THEN
+      SetServicePos 1\Cancel;
+    ELSE
+      SetServicePos 1;
+    ENDIF
+  ENDPROC
+
+  PROC SetServicePos2()
+    VAR bool bValid;
+    VAR bool bRet;
+
+    bRet:=AtServPos(2\Valid:=bValid);
+    IF (bValid) THEN
+      SetServicePos 2\Cancel;
+    ELSE
+      SetServicePos 2;
+    ENDIF
+  ENDPROC
+
+  PROC SetParkPos1()
+    VAR bool bValid;
+    VAR bool bRet;
+
+    bRet:=AtParkPos(1\Valid:=bValid);
+    IF (bValid) THEN
+      SetParkPos 1\Cancel;
+    ELSE
+      SetParkPos 1;
+    ENDIF
+  ENDPROC
+
+  PROC SetParkPos2()
+    VAR bool bValid;
+    VAR bool bRet;
+
+    bRet:=AtParkPos(2\Valid:=bValid);
+    IF (bValid) THEN
+      SetParkPos 2\Cancel;
+    ELSE
+      SetParkPos 2;
+    ENDIF
+  ENDPROC
+ENDMODULE

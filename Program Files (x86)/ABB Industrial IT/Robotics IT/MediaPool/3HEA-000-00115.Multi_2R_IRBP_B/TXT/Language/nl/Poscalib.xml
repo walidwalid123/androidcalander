@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Resource Name="Poscalib" Language="nl">
+  <Text Name="1">
+    <Value>IRBP Interchange calibratie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="2">
+    <Value>IRBP Station calibratie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="3">
+    <Value>Interchange calibratie zal nu starten</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="4">
+    <Value>Station calibratie zal nu starten</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="5">
+    <Value>- Druk Annuleren te stoppen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="6">
+    <Value>- Druk OK te doorgaan</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="7">
+    <Value>Annuleren</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="8">
+    <Value>OK</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Calibratie gedaan</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="10">
+    <Value>Verkeerd operating mode.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="11">
+    <Value>Druk OK, wissel naar MANUAL MODE</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="12">
+    <Value>Druk OK, wissel naar MANUAL 100% MODE</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="13">
+    <Value>Druk OK, wissel naar AUTO MODE</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="14">
+    <Value>en herstart.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="15">
+    <Value>1. Druk OK.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="16">
+    <Value>2. Beweeg de robot naar een positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="17">
+    <Value>   dat velig is tijdens calibratie.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="18">
+    <Value>3. Dan herstart de programma opnieuw.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="19">
+    <Value>De station interchange zou kunnen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="20">
+    <Value>beweegen, houd een ruime velige</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="21">
+    <Value>afstand.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="22">
+    <Value>De station interchange is niet in</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="23">
+    <Value>positie. Druk OK and beweeg</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="24">
+    <Value>interchange axis in positie.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="25">
+    <Value>Calibratie bezig</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="26">
+    <Value>% klaar...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="27">
+    <Value>1. Druk OK.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="28">
+    <Value>2. Fine calibratie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="29">
+    <Value>axis</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="30">
+    <Value>3. Herstart programma.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="31">
+    <Value>Koppel:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="32">
+    <Value>Hoek:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="33">
+    <Value>(Nm)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="34">
+    <Value>(deg)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="35">
+    <Value>IRBP Interchange controle</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="36">
+    <Value>controle posities (kant 1)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="37">
+    <Value>controle posities (kant 2)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="38">
+    <Value>controle posities (kant 3)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="39">
+    <Value>controle posities (kant 4)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="40">
+    <Value>Data is geschrijven naar bestand</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="41">
+    <Value>Toon data op TPU?</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="42">
+    <Value>Ja</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="43">
+    <Value>Neen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Kant 1. Hoek 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="45">
+    <Value>Kant 1. Hoek 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="46">
+    <Value>Kant 1. Rem Hoek=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Kant 2. Hoek 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Kant 2. Hoek 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Kant 2. Rem Hoek=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Kant 3. Hoek 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Kant 3. Hoek 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="52">
+    <Value>Kant 3. Rem Hoek=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Kant 4. Hoek 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Kant 4. Hoek 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="55">
+    <Value>Kant 4. Rem Hoek=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="56">
+    <Value>Koppel is te hoog. Aub vewijderen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="57">
+    <Value>last een probeer opnieuw.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="58">
+    <Value></Value>
+    <Comment></Comment>
+  </Text>
+</Resource>

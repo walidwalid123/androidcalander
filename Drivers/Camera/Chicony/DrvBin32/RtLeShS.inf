@@ -1,0 +1,298 @@
+; Copyright (c) Realtek. All rights reserved.
+
+[Version]
+signature="$Windows NT$"
+Class=Camera
+ClassGUID={ca3e7ab9-b4c3-4ae6-8251-579ef933890f}
+Provider=%Realtek%
+Catalogfile=RsDMFT.cat
+DriverVer= 04/25/2019,10.0.18362.20096
+
+[SignatureAttributes]
+RsDMFT.dll = SignatureAttributes.WindowsHello
+
+[SignatureAttributes.WindowsHello]
+WindowsHello = true
+
+[SourceDisksNames]
+5800 = %cdname%,,,
+
+[SourceDisksFiles]
+RsDMFT.dll   =  5800
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[DestinationDirs]
+Realtek.NTx86.CopyFiles = 11
+
+[Realtek.NTx86.CopyFiles]
+RsDMFT.dll,,,2
+
+[Manufacturer]
+%ModuleManufacture% = Realtek , NTx86.6
+
+[Realtek.NTx86.6]
+;RS_IR_CAMERA.NTx86 ,RS_EX_IR_CAMERA.NTx86,RS_RGB_CAMERA,RS_EX_RGB_CAMERA
+%rtsuvc.DeviceDesc%=RS_RGB_DMFT_CAMERA.NTx86,USB\VID_0408&PID_2010&MI_00
+%rtsuvc.DeviceDesc%=RS_RGB_DMFT_CAMERA.NTx86,USB\VID_04F2&PID_B5A2&MI_00
+
+
+;---------------------------------------------------------------
+;                x 86  D D I n s t a l l
+;---------------------------------------------------------------
+
+[RS_RGB_DMFT_CAMERA.NTx86]
+Include    =  usbvideo.inf
+Needs=USBVideo.NT
+CopyFiles = Realtek.NTx86.CopyFiles
+AddReg = RtsPreferDeviceInfo.AddReg, RS_DMFT32.AddReg
+PreferDeviceInfo=1
+
+[RS_IR_CAMERA.NTx86]
+Include    =  usbvideo.inf
+Needs      =  USBVideo.NT
+CopyFiles  =  Realtek.NTx86.CopyFiles
+AddReg = RtsPreferDeviceInfo.AddReg, RS_DMFT32.AddReg
+PreferDeviceInfo=1
+
+[RS_EX_IR_CAMERA.NTx86]
+Include    =  usbvideo.inf
+Needs      =  USBVideo.NT
+CopyFiles  =  Realtek.NTx86.CopyFiles
+AddReg = RtsPreferDeviceInfo.AddReg, RS_DMFT32.AddReg
+PreferDeviceInfo=1
+
+[RS_RGB_CAMERA]
+Include = usbvideo.inf
+Needs = USBVideo.NT
+PreferDeviceInfo=1
+AddReg = RtsPreferDeviceInfo.AddReg
+
+[RS_EX_RGB_CAMERA]
+Include = usbvideo.inf
+Needs = USBVideo.NT
+PreferDeviceInfo=1
+AddReg = RtsPreferDeviceInfo.AddReg
+
+[RtsPreferDeviceInfo.AddReg]
+HKR,,PreferDeviceInfo,0x00010001,1
+
+[RS_DMFT32.AddReg]
+HKLM,Software\Classes\CLSID\{09824200-9A44-4B06-8C74-92D99E09B435},,,"RsDMFT"
+HKLM,Software\Classes\CLSID\{09824200-9A44-4B06-8C74-92D99E09B435}\InProcServer32,,0x00020000,"%%SystemRoot%%\System32\RsDMFT.dll"
+HKLM,Software\Classes\CLSID\{09824200-9A44-4B06-8C74-92D99E09B435}\InProcServer32,ThreadingModel,,"Both"
+
+;---------------------------------------------------------------
+;                H W
+;---------------------------------------------------------------
+
+[RS_RGB_CAMERA.HW]
+AddReg=RS_RGB_DMFT_CAMERA.HW.AddReg
+Include = usbvideo.inf
+Needs = usbvideo.NT.HW
+
+[RS_RGB_DMFT_CAMERA.NTamd64.HW]
+AddReg=RS_RGB_DMFT_CAMERA.HW.AddReg
+Include = usbvideo.inf
+Needs = usbvideo.NT.HW
+
+[RS_IR_CAMERA.NTx86.HW]
+AddReg = RS_IR_CAMERA.NT.HW.AddReg
+Include = usbvideo.inf
+Needs = usbvideo.NT.HW
+
+[RS_EX_IR_CAMERA.NTx86.HW]
+AddReg = RS_EX_IR_CAMERA.NT.HW.AddReg
+Include = usbvideo.inf
+Needs = usbvideo.NT.HW
+
+
+;---------------------------------------------------------------
+;                I n t e r f a c e s
+;---------------------------------------------------------------
+
+[RS_RGB_DMFT_CAMERA.NTx86.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,RS_RGB_DMFT_CAMERA_AddInterface
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,RS_RGB_DMFT_CAMERA_AddInterface
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,RS_RGB_DMFT_CAMERA_AddInterface
+
+[RS_IR_CAMERA.NTx86.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface = %KSCATEGORY_SENSOR_CAMERA%,GLOBAL,RS_IR_CAMERA_AddInterface
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,USBVideo.Interface
+
+[RS_EX_IR_CAMERA.NTx86.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface = %KSCATEGORY_SENSOR_CAMERA%,GLOBAL,RS_EX_IR_CAMERA_AddInterface
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,USBVideo.Interface
+
+[RS_RGB_CAMERA.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface = %KSCATEGORY_VIDEO_CAMERA%,GLOBAL,RS_RGB_CAMERA_AddInterface
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,USBVideo.Interface
+
+[RS_EX_RGB_CAMERA.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface = %KSCATEGORY_VIDEO_CAMERA%,GLOBAL,RS_EX_RGB_CAMERA_AddInterface
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,USBVideo.Interface
+
+[USBVideo.Interface]
+AddReg=USBVideo.Interface.AddReg
+
+[USBVideo.Interface.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%USBVideo.DeviceDesc%
+HKR,,RTCFlags,0x00010001,0x00000010
+
+
+;---------------------------------------------------------------
+;                S e r v i c e s
+;---------------------------------------------------------------
+
+[RS_RGB_DMFT_CAMERA.NTx86.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[RS_IR_CAMERA.NTx86.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[RS_EX_IR_CAMERA.NTx86.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[RS_RGB_CAMERA.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[RS_EX_RGB_CAMERA.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+;---------------------------------------------------------------
+;                A d d R e g
+;---------------------------------------------------------------
+
+[CaptureInterface.NT]
+AddReg=RS_RGB_DMFT_CAMERA.HW.AddReg
+
+[RS_RGB_DMFT_CAMERA.HW.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+;HKR,,FriendlyName,,%rtsuvc.FriendlyName%
+HKR,,EnableDshowRedirection,0x00010001,0x00000001
+HKR,,UVC-EnableDependentStillPinCapture,0x00010001,0x00000000
+
+
+[RS_IR_CAMERA.NT.HW.AddReg]
+HKR,,SensorCameraMode,0x00010001,0x00000001
+HKR,,SkipCameraEnumeration,0x00010001,0x00000001
+HKR,,EnableDshowRedirection,0x00010001,0x00000001
+
+[RS_EX_IR_CAMERA.NT.HW.AddReg]
+HKR,,SensorCameraMode,0x00010001,0x00000001
+HKR,,SkipCameraEnumeration,0x00010001,0x00000001
+HKR,,EnableDshowRedirection,0x00010001,0x00000001
+
+[RS_SensorGroup.AddReg]
+HKR,,FSSensorGroupID,0x00000000,%FSSensorGroupID%
+HKR,,FSSensorGroupName,0x00000000,%FSSensorGroupName%
+
+[RS_EX_SensorGroup.AddReg]
+HKR,,FSSensorGroupID,0x00000000,%EXFSSensorGroupID%
+HKR,,FSSensorGroupName,0x00000000,%EXFSSensorGroupName%
+
+[RS_RGB_DMFT_CAMERA_AddInterface]
+AddReg = RS_RGB_DMFT_CAMERA.Interface.AddReg,RS_SensorGroup.AddReg
+
+[RS_IR_CAMERA_AddInterface]
+AddReg = RS_IR_CAMERA.Interface.AddReg, RS_SensorGroup.AddReg
+
+[RS_EX_IR_CAMERA_AddInterface]
+AddReg = RS_EX_IR_CAMERA.Interface.AddReg, RS_EX_SensorGroup.AddReg
+
+[RS_RGB_CAMERA_AddInterface]
+AddReg = RS_SensorGroup.AddReg
+
+[RS_EX_RGB_CAMERA_AddInterface]
+AddReg = RS_EX_SensorGroup.AddReg
+
+[RS_RGB_DMFT_CAMERA.Interface.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+;HKR,,FriendlyName,,%Realtek.DeviceDesc%
+HKR,,RTCFlags,0x00010001,0x00000010
+HKR,,CameraDeviceMFTCLSID,0x00000000,"{09824200-9A44-4B06-8C74-92D99E09B435}"
+HKR,,CameraDeviceMftCLSIDChain,0x00010000,"{09824200-9A44-4B06-8C74-92D99E09B435}"
+
+[RS_IR_CAMERA.Interface.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+;HKR,,FriendlyName,,%Realtek.DeviceDesc%
+HKR,,RTCFlags,0x00010001,0x00000010
+HKR,,CameraDeviceMFTCLSID,0x00000000,"{09824200-9A44-4B06-8C74-92D99E09B435}"
+
+[RS_EX_IR_CAMERA.Interface.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+;HKR,,FriendlyName,,%Realtek.DeviceDesc%
+HKR,,RTCFlags,0x00010001,0x00000010
+HKR,,CameraDeviceMFTCLSID,0x00000000,"{09824200-9A44-4B06-8C74-92D99E09B435}"
+
+
+;---------------------------------------------------------------
+;                S t r i n g s
+;---------------------------------------------------------------
+
+[Strings]
+; Localizable
+Realtek = "Realtek"
+Package = "Installation Package"
+Realtek.DeviceDesc = "Realtek DMFT Device"
+Realtek.RGB_DeviceDesc = "Realtek DMFT - RGB"
+Realtek.IR_DeviceDesc = "Realtek DMFT - IR"
+KSCATEGORY_SENSOR_CAMERA = "{24E552D7-6523-47F7-A647-D3465BF1F5CA}"
+KSCATEGORY_VIDEO_CAMERA = "{E5323777-F976-4f5b-9B55-B94699C46E44}"
+ProxyVCap.CLSID = "{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+FSSensorGroupID = "{78DCB7D0-33EA-458B-B98A-56E9A3A40B50}"
+FSSensorGroupName = "Rts-DMFT-Group"
+EXFSSensorGroupID = "{676AEB6E-F5B9-446F-8969-B1B73DF0FA27}"
+EXFSSensorGroupName = "Rts-External-DMFT-Group"
+RSProvider="Software\Microsoft\Analog\Providers\RsProvider"
+MsProvider="Software\Microsoft\Analog\Providers"
+USBVideo.DeviceDesc="USB Video Device"
+
+; non-localizeable
+Proxy.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_VIDEO="{6994AD05-93EF-11D0-A3CC-00A0C9223196}"
+
+;RTSUVCCPAFILTER="{B7A8FBA3-1AE2-4617-B9BD-A7AB63F5FDDA}"
+
+AUTORUN="Software\Microsoft\Windows\CurrentVersion\Run"
+
+LenovoCamera="Software\Lenovo\Camera\Integrated"
+
+SERVICE_KERNEL_DRIVER=1
+SERVICE_DEMAND_START=3
+SERVICE_ERROR_NORMAL=1
+REG_DWORD=0x00010001
+
+
+ModuleManufacture="Realtek"
+OrganizationName="Realtek Semiconductor Corp."
+rtsuvc.DeviceDesc="Lenovo EasyCamera"
+rtsuvc.FriendlyName="Lenovo EasyCamera"
+;rtsuvc.UninstallName="Lenovo EasyCamera"
+;RTSUVC_UNINSTALL="Software\Microsoft\Windows\CurrentVersion\Uninstall\{E399A5B3-ED53-4DEA-AF04-8011E1EB1EAC}"
+cdname="Lenovo EasyCamera"
+Lite-On.mfgname="Lite-On"
+DMAX-AVC.mfgname="DMAX-AVC"
+Bison.mfgname="Bison"
+Azurewave.mfgname="Azurewave"
+Realtek.mfgname="Realtek"
+Intel.mfgname="Intel"
+DriverVersion = "10.0.18362.20096"

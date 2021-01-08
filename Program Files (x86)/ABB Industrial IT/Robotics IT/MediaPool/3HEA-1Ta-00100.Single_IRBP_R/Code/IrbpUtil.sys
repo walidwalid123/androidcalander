@@ -1,0 +1,87 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE IrbpUtil(SYSMODULE)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       IrbpUtil.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:      2004-10-01
+  !
+  ! Version:      1.0.0
+  !
+  ! History:      1.0.0
+  !                 First release
+  !
+  !---------------------------------------------------------------------------!
+  !
+  CONST num nUNDEFINED_ANGLE:=9E+09;
+  !
+  PROC SetEAxAngleJoint(
+    VAR extjoint Angle,
+    num JointNum,
+    num NewAngle)
+
+    TEST JointNum
+    CASE 1:
+      Angle.eax_a:=NewAngle;
+      RETURN;
+    CASE 2:
+      Angle.eax_b:=NewAngle;
+      RETURN;
+    CASE 3:
+      Angle.eax_c:=NewAngle;
+      RETURN;
+    CASE 4:
+      Angle.eax_d:=NewAngle;
+      RETURN;
+    CASE 5:
+      Angle.eax_e:=NewAngle;
+      RETURN;
+    CASE 6:
+      Angle.eax_f:=NewAngle;
+      RETURN;
+    ENDTEST
+  ENDPROC
+
+  FUNC bool GetEAxAngleJoint(
+    VAR extjoint Angle,
+    num JointNum,
+    VAR num AngleToGet)
+
+    TEST JointNum
+    CASE 1:
+      AngleToGet:=Angle.eax_a;
+      RETURN AngleToGet<>nUNDEFINED_ANGLE;
+    CASE 2:
+      AngleToGet:=Angle.eax_b;
+      RETURN AngleToGet<>nUNDEFINED_ANGLE;
+    CASE 3:
+      AngleToGet:=Angle.eax_c;
+      RETURN AngleToGet<>nUNDEFINED_ANGLE;
+    CASE 4:
+      AngleToGet:=Angle.eax_d;
+      RETURN AngleToGet<>nUNDEFINED_ANGLE;
+    CASE 5:
+      AngleToGet:=Angle.eax_e;
+      RETURN AngleToGet<>nUNDEFINED_ANGLE;
+    CASE 6:
+      AngleToGet:=Angle.eax_f;
+      RETURN AngleToGet<>nUNDEFINED_ANGLE;
+    ENDTEST
+  ENDFUNC
+ENDMODULE

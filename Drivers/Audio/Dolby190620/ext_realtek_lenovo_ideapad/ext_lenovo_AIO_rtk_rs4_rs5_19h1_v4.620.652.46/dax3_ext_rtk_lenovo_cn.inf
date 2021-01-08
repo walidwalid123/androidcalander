@@ -1,0 +1,366 @@
+;===================================================================
+; Dolby DAX APO driver package
+; Copyright (c)2019, Dolby Laboratories, INC.
+;===================================================================
+[Version]
+Signature 	= "$Windows NT$"
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider 	= %ManufacturerName%
+ExtensionId = {2C0454A3-AB52-4F33-8FD1-21140301103B}
+CatalogFile = dax3_ext_rtk_lenovo_cn.cat
+DriverVer = 06/19/2019,4.620.652.46
+
+[Manufacturer]
+%ManufacturerName% = DeviceExtensions,NTamd64
+
+[DeviceExtensions.NTamd64]
+; %Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmos,
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmos,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA3806
+; %Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,HDAUDIO\FUNC_01&VEN_10EC&DEV_0298&SUBSYS_17AA381B
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0298&SUBSYS_17AA381B
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0298&SUBSYS_17AA3818
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,HDAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA383B
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA383B
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,HDAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA3803
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA3803
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA381A
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA3804
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA3813
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA3818
+; %Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3841
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA382F
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3832
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3836
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3807
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3806
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA384A
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA383E
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA383D
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3808
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA381E
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3847
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3845
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3805
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA383C
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3849
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA3712
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA3710
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA370E
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA370B
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA3719
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA3713
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3835
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA370F
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA370D
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA370C
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA3718
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0235&SUBSYS_17AA3711
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3809
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA384B
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA383F
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA380A
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA380E
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA380D
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3848
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3840
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudio,HDAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3842
+; %Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudioPremium,
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudioPremium,HDAUDIO\FUNC_01&VEN_10EC&DEV_0274&SUBSYS_17AA3703
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudioPremium,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0274&SUBSYS_17AA3702
+; %Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudioSpeakerSystem,
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudioSpeakerSystem,HDAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA384C
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudioSpeakerSystem,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA384C
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudioSpeakerSystem,HDAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3830
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAudioSpeakerSystem,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0257&SUBSYS_17AA3830
+; %Device.ExtensionDesc% = DeviceExtension_Install_Gaming,
+; %Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystemForGaming,
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystemForGaming,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA383D
+%Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystemForGaming,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0285&SUBSYS_17AA3807
+; %Device.ExtensionDesc% = DeviceExtension_Install_DolbyAtmosSpeakerSystem_VLLDP120,
+
+[DeviceExtension_Install_DolbyAtmos.NT]
+AddReg = PresetAddReg, DolbyAPO_AddReg
+CopyFiles = DolbyAPO_CopyFiles_Common, DolbyAPO_CopyFiles_DolbyAtmos
+
+[DeviceExtension_Install_DolbyAtmosSpeakerSystem.NT]
+AddReg = PresetAddReg, DolbyAPO_AddReg
+CopyFiles = DolbyAPO_CopyFiles_Common, DolbyAPO_CopyFiles_DolbyAtmosSpeakerSystem
+
+[DeviceExtension_Install_DolbyAudio.NT]
+AddReg = PresetAddReg, DolbyAPO_AddReg
+CopyFiles = DolbyAPO_CopyFiles_Common, DolbyAPO_CopyFiles_DolbyAudio
+
+[DeviceExtension_Install_DolbyAudioPremium.NT]
+AddReg = PresetAddReg, DolbyAPO_AddReg
+CopyFiles = DolbyAPO_CopyFiles_Common, DolbyAPO_CopyFiles_DolbyAudioPremium
+
+[DeviceExtension_Install_DolbyAudioSpeakerSystem.NT]
+AddReg = PresetAddReg, DolbyAPO_AddReg
+CopyFiles = DolbyAPO_CopyFiles_Common, DolbyAPO_CopyFiles_DolbyAudioSpeakerSystem
+
+[DeviceExtension_Install_Gaming.NT]
+AddReg = PresetAddReg, DolbyAPO_AddReg
+CopyFiles = DolbyAPO_CopyFiles_Common, DolbyAPO_CopyFiles_Gaming
+
+[DeviceExtension_Install_DolbyAtmosSpeakerSystemForGaming.NT]
+AddReg = PresetAddReg, DolbyAPO_AddReg
+CopyFiles = DolbyAPO_CopyFiles_Common, DolbyAPO_CopyFiles_DolbyAtmosSpeakerSystemForGaming
+
+[DeviceExtension_Install_DolbyAtmosSpeakerSystem_VLLDP120.NT]
+AddReg = PresetAddReg, DolbyAPO_AddReg
+CopyFiles = DolbyAPO_CopyFiles_Common, DolbyAPO_CopyFiles_DolbyAtmosSpeakerSystem_VLLDP120
+
+[PresetAddReg]
+;; render endpoint settings for HDAudio
+HKR,InterfaceSetting,PrimaryLineOutTopo,%REG_MULTI_SZ_APPEND%,"ApoPreset1"                  ;; PrimaryLineOutTopo stands for Speakers(or Redirected headphone/speaker) endpoint
+HKR,InterfaceSetting,SingleLineOutTopo,%REG_MULTI_SZ_APPEND%,"ApoPreset1"                   ;; SingleLineOutTopo stands for Speakers(or Redirected headphone/speaker) endpoint
+HKR,InterfaceSetting,SecondaryLineOutTopo,%REG_MULTI_SZ_APPEND%,"ApoPreset2"                ;; SecondaryLineOutTopo stands for Headphone endpoint
+;; render endpoint settings for Intel SST
+HKR,InterfaceSetting,RearLineOutTopoSST,%REG_MULTI_SZ_APPEND%,"ApoPreset1"					;; Speakers(or Redirected headphone/speaker) endpoint with audio offloading DSP supported (Intel SST) 
+HKR,InterfaceSetting,RearLineOutTopoSST3,%REG_MULTI_SZ_APPEND%,"ApoPreset2"					;; Headphone endpoint with audio offloading DSP supported (Intel SST)
+;; render endpoint settings for AMD DSP
+HKR,InterfaceSetting,RearLineOutTopoHAP,%REG_MULTI_SZ_APPEND%,"ApoPreset1"					;; Speakers(or Redirected headphone/speaker) endpoint with audio offloading DSP supported (AMD HAP) 
+HKR,InterfaceSetting,RearLineOutTopoHAP3,%REG_MULTI_SZ_APPEND%,"ApoPreset2"					;; Headphone endpoint with audio offloading DSP supported (AMD HAP)
+
+[DolbyAPO_AddReg]
+; Add Dolby enabled device indicator string here.
+HKR, InterfaceSetting\ApoPreset1\EP\0, "{6CA6A085-3041-482B-9113-C61E7F250356},0",         ,"0.4.0"
+HKR, InterfaceSetting\ApoPreset2\EP\0, "{6CA6A085-3041-482B-9113-C61E7F250356},0",         ,"0.4.0"
+
+; AddComponent definition for all SKUs
+[DeviceExtension_Install_DolbyAtmos.NT.Components]
+AddComponent = DolbyAPO_DAX3APOSVC,, DolbyAPO_ComponentInstall_DAX3APOSVC
+AddComponent = DolbyAPO_DAX3HSA_DolbyAtmos,, DolbyAPO_ComponentInstall_DAX3HSA_DolbyAtmos
+
+[DeviceExtension_Install_DolbyAtmosSpeakerSystem.NT.Components]
+AddComponent = DolbyAPO_DAX3APOSVC,, DolbyAPO_ComponentInstall_DAX3APOSVC
+AddComponent = DolbyAPO_DAX3HSA_DolbyAtmosSpeakerSystem,, DolbyAPO_ComponentInstall_DAX3HSA_DolbyAtmosSpeakerSystem
+
+[DeviceExtension_Install_DolbyAudio.NT.Components]
+AddComponent = DolbyAPO_DAX3APOSVC,, DolbyAPO_ComponentInstall_DAX3APOSVC
+AddComponent = DolbyAPO_DAX3HSA_DolbyAudio,, DolbyAPO_ComponentInstall_DAX3HSA_DolbyAudio
+
+[DeviceExtension_Install_DolbyAudioPremium.NT.Components]
+AddComponent = DolbyAPO_DAX3APOSVC,, DolbyAPO_ComponentInstall_DAX3APOSVC
+AddComponent = DolbyAPO_DAX3HSA_DolbyAudioPremium,, DolbyAPO_ComponentInstall_DAX3HSA_DolbyAudioPremium
+
+[DeviceExtension_Install_DolbyAudioSpeakerSystem.NT.Components]
+AddComponent = DolbyAPO_DAX3APOSVC,, DolbyAPO_ComponentInstall_DAX3APOSVC
+AddComponent = DolbyAPO_DAX3HSA_DolbyAudioSpeakerSystem,, DolbyAPO_ComponentInstall_DAX3HSA_DolbyAudioSpeakerSystem
+
+[DeviceExtension_Install_Gaming.NT.Components]
+AddComponent = DolbyAPO_DAX3APOSVC,, DolbyAPO_ComponentInstall_DAX3APOSVC
+AddComponent = DolbyAPO_DAX3HSA_Gaming,, DolbyAPO_ComponentInstall_DAX3HSA_Gaming
+
+[DeviceExtension_Install_DolbyAtmosSpeakerSystemForGaming.NT.Components]
+AddComponent = DolbyAPO_DAX3APOSVC,, DolbyAPO_ComponentInstall_DAX3APOSVC
+AddComponent = DolbyAPO_DAX3HSA_DolbyAtmosSpeakerSystemForGaming,, DolbyAPO_ComponentInstall_DAX3HSA_DolbyAtmosSpeakerSystemForGaming
+
+[DeviceExtension_Install_DolbyAtmosSpeakerSystem_VLLDP120.NT.Components]
+AddComponent = DolbyAPO_DAX3APOSVC,, DolbyAPO_ComponentInstall_DAX3APOSVC
+AddComponent = DolbyAPO_DAX3HSA_DolbyAtmosSpeakerSystem,, DolbyAPO_ComponentInstall_DAX3HSA_DolbyAtmosSpeakerSystem
+
+; APOSVC component
+[DolbyAPO_ComponentInstall_DAX3APOSVC]
+ComponentIds = VEN_DOLBY&PID_DAX3APOSVC  ; Matches with SWC\VEN_DOLBY&PID_DAX3APOSVC
+
+; HSA component definition for all SKUs
+[DolbyAPO_ComponentInstall_DAX3HSA_DolbyAtmos]
+ComponentIds = VEN_DOLBY&PID_DAX3HSA_DolbyAtmos ; Matches with SWC\VEN_DOLBY&PID_DAX3HSA_DolbyAtmos
+
+[DolbyAPO_ComponentInstall_DAX3HSA_DolbyAtmosSpeakerSystem]
+ComponentIds = VEN_DOLBY&PID_DAX3HSA_DolbyAtmosSpeakerSystem ; Matches with SWC\VEN_DOLBY&PID_DAX3HSA_DolbyAtmosSpeakerSystem
+
+[DolbyAPO_ComponentInstall_DAX3HSA_DolbyAudio]
+ComponentIds = VEN_DOLBY&PID_DAX3HSA_DolbyAudio ; Matches with SWC\VEN_DOLBY&PID_DAX3HSA_DolbyAudio
+
+[DolbyAPO_ComponentInstall_DAX3HSA_DolbyAudioPremium]
+ComponentIds = VEN_DOLBY&PID_DAX3HSA_DolbyAudioPremium ; Matches with SWC\VEN_DOLBY&PID_DAX3HSA_DolbyAudioPremium
+
+[DolbyAPO_ComponentInstall_DAX3HSA_DolbyAudioSpeakerSystem]
+ComponentIds = VEN_DOLBY&PID_DAX3HSA_DolbyAudioSpeakerSystem ; Matches with SWC\VEN_DOLBY&PID_DAX3HSA_DolbyAudioSpeakerSystem
+
+[DolbyAPO_ComponentInstall_DAX3HSA_Gaming]
+ComponentIds = VEN_DOLBY&PID_DAX3HSA_Gaming ; Matches with SWC\VEN_DOLBY&PID_DAX3HSA_Gaming
+
+[DolbyAPO_ComponentInstall_DAX3HSA_DolbyAtmosSpeakerSystemForGaming]
+ComponentIds = VEN_DOLBY&PID_DAX3HSA_DolbyAtmosSpeakerSystemForGaming ; Matches with SWC\VEN_DOLBY&PID_DAX3HSA_DolbyAtmosSpeakerSystemForGaming
+
+[SourceDisksNames]
+222="APO Installation Disk",,,
+
+[SourceDisksFiles]
+;;; Headphone tunings
+; Dolby Atmos
+Headphone_Default_Generic_Default_DolbyAtmos.xml = 222
+; Dolby Atmos Speaker System
+Headphone_Default_Generic_Default_DolbyAtmosSpeakerSystem.xml = 222
+; Dolby Audio
+Headphone_Default_Generic_Default_DolbyAudio.xml = 222
+; Dolby Audio Premium
+Headphone_Default_Generic_Default_DolbyAudioPremium.xml = 222
+; Dolby Audio Speaker System
+Headphone_Default_Generic_Default_DolbyAudioSpeakerSystem.xml = 222
+; Gaming
+Headphone_Default_Generic_Default_Gaming.xml = 222
+; Dolby Atmos Speaker System For Gaming
+Headphone_Default_Generic_Default_DolbyAtmosSpeakerSystemForGaming.xml = 222
+; Dolby Atmos Speaker System (VLLDP1.2)
+Headphone_Default_Generic_Default_DolbyAtmosSpeakerSystem_VLLDP1.2.xml = 222
+; Speaker tunings
+INTELAUDIO_DEV_0285_SUBSYS_17AA383D_PCI_SUBSYS_382417AA.xml = 222
+INTELAUDIO_DEV_0285_SUBSYS_17AA3807_PCI_SUBSYS_382417AA.xml = 222
+DEV_0257_SUBSYS_17AA384C_PCI_SUBSYS_381617AA.xml = 222
+DEV_0257_SUBSYS_17AA3830_PCI_SUBSYS_380F17AA.xml = 222
+HDAUDIO_DEV_0274_SUBSYS_17AA3703_PCI_SUBSYS_370317AA.xml = 222
+INTELAUDIO_DEV_0274_SUBSYS_17AA3702_PCI_SUBSYS_370217AA.xml = 222
+HDAUDIO_DEV_0257_SUBSYS_17AA3841_PCI_SUBSYS_381617AA.xml = 222
+HDAUDIO_DEV_0257_SUBSYS_17AA382F_PCI_SUBSYS_382F17AA.xml = 222
+HDAUDIO_DEV_0257_SUBSYS_17AA3832_PCI_SUBSYS_383217AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3836_PCI_SUBSYS_381717AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3807_PCI_SUBSYS_381617AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3806_PCI_SUBSYS_381617AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA384A_PCI_SUBSYS_382117AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA383E_PCI_SUBSYS_381017AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA383D_PCI_SUBSYS_381017AA.xml = 222
+HDAUDIO_DEV_0257_SUBSYS_17AA3808_PCI_SUBSYS_381417AA.xml = 222
+HDAUDIO_DEV_0257_SUBSYS_17AA381E_PCI_SUBSYS_381417AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3847_PCI_SUBSYS_382117AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3845_PCI_SUBSYS_382117AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3805_PCI_SUBSYS_381617AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA383C_PCI_SUBSYS_381017AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3849_PCI_SUBSYS_382117AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA3712_PCI_SUBSYS_36FC17AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA3710_PCI_SUBSYS_36FE17AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA370E_PCI_SUBSYS_36FA17AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA370B_PCI_SUBSYS_370B17AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA3719_PCI_SUBSYS_371917AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA3713_PCI_SUBSYS_370517AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3835_PCI_SUBSYS_381617AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA370F_PCI_SUBSYS_36FF17AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA370D_PCI_SUBSYS_36FB17AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA370C_PCI_SUBSYS_370C17AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA3718_PCI_SUBSYS_371817AA.xml = 222
+HDAUDIO_DEV_0235_SUBSYS_17AA3711_PCI_SUBSYS_36FD17AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3809_PCI_SUBSYS_381617AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA384B_PCI_SUBSYS_382117AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA383F_PCI_SUBSYS_381017AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA380A_PCI_SUBSYS_381617AA.xml = 222
+HDAUDIO_DEV_0257_SUBSYS_17AA380E_PCI_SUBSYS_381417AA.xml = 222
+HDAUDIO_DEV_0257_SUBSYS_17AA380D_PCI_SUBSYS_381417AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3848_PCI_SUBSYS_382117AA.xml = 222
+INTELAUDIO_DEV_0257_SUBSYS_17AA3840_PCI_SUBSYS_381017AA.xml = 222
+HDAUDIO_DEV_0257_SUBSYS_17AA3842_PCI_SUBSYS_381617AA.xml = 222
+DEV_0298_SUBSYS_17AA381B_PCI_SUBSYS_380217AA.xml = 222
+INTELAUDIO_DEV_0298_SUBSYS_17AA3818_PCI_SUBSYS_382E17AA.xml = 222
+DEV_0285_SUBSYS_17AA383B_PCI_SUBSYS_382717AA.xml = 222
+DEV_0285_SUBSYS_17AA3803_PCI_SUBSYS_382717AA.xml = 222
+INTELAUDIO_DEV_0285_SUBSYS_17AA381A_PCI_SUBSYS_380417AA.xml = 222
+INTELAUDIO_DEV_0285_SUBSYS_17AA3804_PCI_SUBSYS_380317AA.xml = 222
+INTELAUDIO_DEV_0285_SUBSYS_17AA3813_PCI_SUBSYS_381017AA.xml = 222
+INTELAUDIO_DEV_0285_SUBSYS_17AA3818_PCI_SUBSYS_380317AA.xml = 222
+INTELAUDIO_DEV_0285_SUBSYS_17AA3806_PCI_SUBSYS_380617AA.xml = 222
+; Operator xml
+Operator_Info_Lenovo.xml = 222
+; Operator Settings xml
+operator_settings.xml = 222
+
+[DestinationDirs]
+DolbyAPO_CopyFiles_Common = 10,system32\dolbyaposvc
+DolbyAPO_CopyFiles_DolbyAtmos = 10,system32\dolbyaposvc
+DolbyAPO_CopyFiles_DolbyAtmosSpeakerSystem = 10,system32\dolbyaposvc
+DolbyAPO_CopyFiles_DolbyAudio = 10,system32\dolbyaposvc
+DolbyAPO_CopyFiles_DolbyAudioPremium = 10,system32\dolbyaposvc
+DolbyAPO_CopyFiles_DolbyAudioSpeakerSystem = 10,system32\dolbyaposvc
+DolbyAPO_CopyFiles_Gaming = 10,system32\dolbyaposvc
+DolbyAPO_CopyFiles_DolbyAtmosSpeakerSystemForGaming = 10,system32\dolbyaposvc
+DolbyAPO_CopyFiles_DolbyAtmosSpeakerSystem_VLLDP120 = 10,system32\dolbyaposvc
+
+[DolbyAPO_CopyFiles_Common]
+Operator_Info_Lenovo.xml
+operator_settings.xml
+
+[DolbyAPO_CopyFiles_DolbyAtmos]
+INTELAUDIO_DEV_0285_SUBSYS_17AA3806_PCI_SUBSYS_380617AA.xml
+Headphone_Default_Generic_Default_DolbyAtmos.xml
+
+[DolbyAPO_CopyFiles_DolbyAtmosSpeakerSystem]
+DEV_0298_SUBSYS_17AA381B_PCI_SUBSYS_380217AA.xml
+INTELAUDIO_DEV_0298_SUBSYS_17AA3818_PCI_SUBSYS_382E17AA.xml
+DEV_0285_SUBSYS_17AA383B_PCI_SUBSYS_382717AA.xml
+DEV_0285_SUBSYS_17AA3803_PCI_SUBSYS_382717AA.xml
+INTELAUDIO_DEV_0285_SUBSYS_17AA381A_PCI_SUBSYS_380417AA.xml
+INTELAUDIO_DEV_0285_SUBSYS_17AA3804_PCI_SUBSYS_380317AA.xml
+INTELAUDIO_DEV_0285_SUBSYS_17AA3813_PCI_SUBSYS_381017AA.xml
+INTELAUDIO_DEV_0285_SUBSYS_17AA3818_PCI_SUBSYS_380317AA.xml
+Headphone_Default_Generic_Default_DolbyAtmosSpeakerSystem.xml
+
+[DolbyAPO_CopyFiles_DolbyAudio]
+HDAUDIO_DEV_0257_SUBSYS_17AA3841_PCI_SUBSYS_381617AA.xml
+HDAUDIO_DEV_0257_SUBSYS_17AA382F_PCI_SUBSYS_382F17AA.xml
+HDAUDIO_DEV_0257_SUBSYS_17AA3832_PCI_SUBSYS_383217AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3836_PCI_SUBSYS_381717AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3807_PCI_SUBSYS_381617AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3806_PCI_SUBSYS_381617AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA384A_PCI_SUBSYS_382117AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA383E_PCI_SUBSYS_381017AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA383D_PCI_SUBSYS_381017AA.xml
+HDAUDIO_DEV_0257_SUBSYS_17AA3808_PCI_SUBSYS_381417AA.xml
+HDAUDIO_DEV_0257_SUBSYS_17AA381E_PCI_SUBSYS_381417AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3847_PCI_SUBSYS_382117AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3845_PCI_SUBSYS_382117AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3805_PCI_SUBSYS_381617AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA383C_PCI_SUBSYS_381017AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3849_PCI_SUBSYS_382117AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA3712_PCI_SUBSYS_36FC17AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA3710_PCI_SUBSYS_36FE17AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA370E_PCI_SUBSYS_36FA17AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA370B_PCI_SUBSYS_370B17AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA3719_PCI_SUBSYS_371917AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA3713_PCI_SUBSYS_370517AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3835_PCI_SUBSYS_381617AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA370F_PCI_SUBSYS_36FF17AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA370D_PCI_SUBSYS_36FB17AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA370C_PCI_SUBSYS_370C17AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA3718_PCI_SUBSYS_371817AA.xml
+HDAUDIO_DEV_0235_SUBSYS_17AA3711_PCI_SUBSYS_36FD17AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3809_PCI_SUBSYS_381617AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA384B_PCI_SUBSYS_382117AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA383F_PCI_SUBSYS_381017AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA380A_PCI_SUBSYS_381617AA.xml
+HDAUDIO_DEV_0257_SUBSYS_17AA380E_PCI_SUBSYS_381417AA.xml
+HDAUDIO_DEV_0257_SUBSYS_17AA380D_PCI_SUBSYS_381417AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3848_PCI_SUBSYS_382117AA.xml
+INTELAUDIO_DEV_0257_SUBSYS_17AA3840_PCI_SUBSYS_381017AA.xml
+HDAUDIO_DEV_0257_SUBSYS_17AA3842_PCI_SUBSYS_381617AA.xml
+Headphone_Default_Generic_Default_DolbyAudio.xml
+
+[DolbyAPO_CopyFiles_DolbyAudioPremium]
+HDAUDIO_DEV_0274_SUBSYS_17AA3703_PCI_SUBSYS_370317AA.xml
+INTELAUDIO_DEV_0274_SUBSYS_17AA3702_PCI_SUBSYS_370217AA.xml
+Headphone_Default_Generic_Default_DolbyAudioPremium.xml
+
+[DolbyAPO_CopyFiles_DolbyAudioSpeakerSystem]
+DEV_0257_SUBSYS_17AA384C_PCI_SUBSYS_381617AA.xml
+DEV_0257_SUBSYS_17AA3830_PCI_SUBSYS_380F17AA.xml
+Headphone_Default_Generic_Default_DolbyAudioSpeakerSystem.xml
+
+[DolbyAPO_CopyFiles_Gaming]
+Headphone_Default_Generic_Default_Gaming.xml
+
+[DolbyAPO_CopyFiles_DolbyAtmosSpeakerSystemForGaming]
+INTELAUDIO_DEV_0285_SUBSYS_17AA383D_PCI_SUBSYS_382417AA.xml
+INTELAUDIO_DEV_0285_SUBSYS_17AA3807_PCI_SUBSYS_382417AA.xml
+Headphone_Default_Generic_Default_DolbyAtmosSpeakerSystemForGaming.xml
+
+[DolbyAPO_CopyFiles_DolbyAtmosSpeakerSystem_VLLDP120]
+Headphone_Default_Generic_Default_DolbyAtmosSpeakerSystem_VLLDP1.2.xml
+
+[Strings]
+ManufacturerName 	= "Dolby"
+Device.ExtensionDesc = "Dolby Device Extension"
+
+REG_MULTI_SZ_APPEND                           = 0x00010008

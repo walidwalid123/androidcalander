@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Resource Name="Poscalib" Language="da">
+  <Text Name="1">
+    <Value>IRBP Interchange kalibrering</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="2">
+    <Value>IRBP Station kalibrering</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="3">
+    <Value>Start kalibrering af Interchange</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="4">
+    <Value>Start kalibrering af station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="5">
+    <Value>- Tryk afbryd for at afslutte</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="6">
+    <Value>- Tryk OK for at fortsætte</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="7">
+    <Value>Afbryd</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="8">
+    <Value>OK</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Kalibrering færdig.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="10">
+    <Value>Fejl køremåde.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="11">
+    <Value>Tryk OK, skift til MANUEL</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="12">
+    <Value>Tryk OK, skift til MANUEL 100%</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="13">
+    <Value>Tryk OK, skift til AUTO</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="14">
+    <Value>og starte om.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="15">
+    <Value>1. Tryk OK.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="16">
+    <Value>2. Jog roboten til en position hvor</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="17">
+    <Value>   den kan stå imens kalibrering foregår.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="18">
+    <Value>3. Omstart derefter programmet.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="19">
+    <Value>Interchange kan nu bevæge sig.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="20">
+    <Value>Sørg før at holde sikkerhedsafstand.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="21">
+    <Value></Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="22">
+    <Value>Interchange er ikke i position. Tryk</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="23">
+    <Value>OK och jog interchange i position.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="24">
+    <Value></Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="25">
+    <Value>Kalibrerer</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="26">
+    <Value>% færdigt...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="27">
+    <Value>1. Tryk OK.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="28">
+    <Value>2. Finkalibrere</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="29">
+    <Value>axel</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="30">
+    <Value>3. Omstart programmet.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="31">
+    <Value>Moment:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="32">
+    <Value>Vinkel:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="33">
+    <Value>(Nm)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="34">
+    <Value>(deg)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="35">
+    <Value>IRBP interchange kontrol</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="36">
+    <Value>kontrollerer (side 1)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="37">
+    <Value>kontrollerer (side 2)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="38">
+    <Value>kontrollerer (side 3)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="39">
+    <Value>kontrollerer (side 4)...</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="40">
+    <Value>Data er skreven til fil.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="41">
+    <Value>Skal data vises på TPU?</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="42">
+    <Value>Ja</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="43">
+    <Value>Nej</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Side 1. Vinkel 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="45">
+    <Value>Side 1. Vinkel 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="46">
+    <Value>Side 1. Brytvinkel=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Side 2. Vinkel 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Side 2. Vinkel 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Side 2. Brytvinkel=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Side 3. Vinkel 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Side 3. Vinkel 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="52">
+    <Value>Side 3. Brytvinkel=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Side 4. Vinkel 1=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Side 4. Vinkel 2=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="55">
+    <Value>Side 4. Brytvinkel=</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="56">
+    <Value>For stort moment. Fjern vægt og</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="57">
+    <Value>kør kalibrering igen.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="58">
+    <Value></Value>
+    <Comment></Comment>
+  </Text>
+</Resource>

@@ -1,0 +1,137 @@
+!# Variabler för Script
+!#
+IO_Type             =NoAW
+OPT_SIB             =NoAW
+SIB_Type            =NoAW
+IO_Opt_inst         =FALSE
+!# variables for 4 AW systems
+SYS_Typ1            =NoAW
+PROC_Typ1           =
+FType1              =1
+PROC_Alu1           =
+SYS_Typ2            =NoAW
+PROC_Typ2           =
+FType2              =1
+PROC_Alu2           =
+SYS_Typ3            =NoAW
+PROC_Typ3           =
+FType3              =1
+PROC_Alu3           =
+SYS_Typ4            =NoAW
+PROC_Typ4           =
+FType4              =1
+PROC_Alu4           =
+OPT_CollSensor1     =FALSE
+OPT_AWC1            =FALSE
+OPT_CollSensor2     =FALSE
+OPT_AWC2            =FALSE
+OPT_CollSensor3     =FALSE
+OPT_AWC3            =FALSE
+OPT_CollSensor4     =FALSE
+OPT_AWC4            =FALSE
+OPT_Op              =0
+OPT_SmarTac         =FALSE
+OPT_SmarTac1        =FALSE
+OPT_SmarTac2        =FALSE
+OPT_SmarTac3        =FALSE
+OPT_SmarTac4        =FALSE
+CurrSMAsys          =0
+!# variables for cell
+StationCnt          =2
+RobotSys            =MMS
+RobotCnt            =2
+WeldsysCnt          =1
+CurrWeldsys         =0
+OpAreasCnt          =1
+#
+TaskCnt             =4
+TaskCntRob          =2
+TaskCntMech         =3
+TaskListAll         =["T_MAIN"],["T_ROB1"],["T_ROB2"],["T_POS1"]
+TaskListRob         =["T_ROB1"],["T_ROB2"]
+TaskListMech        =["T_ROB1"],["T_ROB2"],["T_POS1"]
+GapTaskList        =T_ROB1:T_ROB2:T_POS1
+#
+PoscalibInst1       =TRUE
+PoscalibInst2       =FALSE
+!# variables for irbp
+IRBP_Antal          =1
+IRBP_Type1          =TYPE_K
+IRBP_Type2          =
+IRBP_Index1         =0
+IRBP_Index2         =0
+IRBP_Stations1      =2
+IRBP_Stations2      =0
+IRBP_Diam1          =1000
+IRBP_Length1        =0
+IRBP_Size1          =250
+IRBP_Diam2          =0
+IRBP_Length2        =0
+IRBP_Size2          =0
+IRBP_SingelAxis1    =FALSE
+IRBP_SingelAxis2    =FALSE
+!#
+!# variables for RTT
+OPT_TRACK           =FALSE
+TRACK_Langd         =
+MaratonPack         =
+!#
+HomeJointStns       ="[1]"
+!#
+StnInd              =FALSE
+StnInd11            =FALSE
+StnInd12            =TRUE
+StnInd13            =FALSE
+StnInd14            =FALSE
+StnInd21            =FALSE
+StnInd22            =FALSE
+StnInd23            =FALSE
+StnInd24            =FALSE
+!#
+CellLevelInst       =1
+!#
+Robot1              =1400
+Robot2              =1400
+Robot3              =
+Robot4              =
+IRB_CB              =
+!#
+!# variables for 4 robots
+Robot1              =1400
+Robot2              =1400
+Robot3              =
+Robot4              =
+!# process options
+OPT_BullsEye        =FALSE
+OPT_BullsEye1       =FALSE
+OPT_BullsEye2       =FALSE
+OPT_BullsEye3       =FALSE
+OPT_BullsEye4       =FALSE
+CurrentBESys        =0
+OPT_TorchCleaner    =FALSE
+!#
+!# VARIABLER FÖR IRC5
+MAJOR_VERSION       =1
+MINOR_VERSION       =0
+REVISION            =1
+BUILD               =1
+TITLE               =3HEA-000-00000
+DESCRIPTION         =Extopt for 00-00000
+!#
+!# Defined (1) if iotools is installed
+IO_TOOLS_FP         =0
+!# Variable for SIB fp config file
+SIB_UNIT1           =
+!#
+!# joint load default
+IRBP_DefLoadVal1    =[250,[0.001,0.001,0.001],[1,0,0,0],30,30,60]
+IRBP_DefLoadVal2    =
+DEF_LOAD_MTC250     ="[250,[0.001,0.001,0.001],[1,0,0,0],30,30,60]"
+DEF_LOAD_MTC500     ="[500,[0.001,0.001,0.001],[1,0,0,0],125,125,250]"
+DEF_LOAD_MTC750     ="[750,[0.001,0.001,0.001],[1,0,0,0],250,250,500]"
+DEF_LOAD_MTC2000    ="[2000,[0.001,0.001,0.001],[1,0,0,0],1250,1250,2500]"
+DEF_LOAD_MTC5000    ="[5000,[0.001,0.001,0.001],[1,0,0,0],3750,3750,7500]"
+DEF_LOAD_MIC1       ="[1000,[0.001,0.001,0.001],[1,0,0,0],500,500,700]"
+DEF_LOAD_MIC2       ="[3000,[0.001,0.001,0.001],[1,0,0,0],1250,1250,700]"
+DEF_LOAD_MTC250D    ="[100,[0.001,0.001,0.001],[1,0,0,0],30,30,60]"
+DEF_LOAD_MTC500D    ="[200,[0.001,0.001,0.001],[1,0,0,0],125,125,250]"

@@ -1,0 +1,77 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE GpOp(SYSMODULE)
+  !**********************************************************
+  !
+  ! (c) ABB Automation Technology Products AB,
+  !     Arc Welding and Application System
+  !
+  !**********************************************************
+  !
+  ! Module:       GpOp.sys
+  !
+  ! Description:  Initiation for 2 OP without safety.
+  !
+  ! Procedures:
+  !
+  ! Created:      2002-10-21
+  !
+  ! Version:
+  !  BUILD REV  = 200
+  !  BUILD DATE = 2008/03/27 13:31:35
+  !
+  ! History:      ver 1.00.00: Stefan Öhrn
+  !                          First version
+  !
+  !                   1.00.01: 2003-06-05 SÖ
+  !                          Added event for restart. No start event when service routine
+  !                          is called before start event accoured.
+  !                   1.00.02: 2003-11-06 SÖ
+  !                          Added event for STOP, QSTOP.
+  !                          New proc RestartOp, StopOp. They are used to check if op is pressed
+  !                          and safety low. If safety low op will be restarted to avoid
+  !                          dangerous behaviour in station.
+  !                   1.00.03: 2005-10-03 SÖ
+  !                          Added event for POWER_ON, fix if RESTART is executed after POWER_ON
+  !
+  !************************************************************
+  !
+  !
+  LOCAL VAR bool bOPInitiated:=FALSE;
+  !
+  PROC InitOp()
+    IF bOPInitiated RETURN;
+
+    !PROC opAdd(
+    !string InSignal,     ! Op ready input signal
+    !\string OptInSignal, ! Optional op ready input signal
+    !string OutSignal,    ! Op ready output signal
+    !string PermSignal    ! Permit entrance output signal
+    !\string AckOutSignal ! ACK output signal
+    !\num AckWaitTime     ! ACK wait time
+    !\string SafeSignal   ! Safety signal
+    !\num SafetyWait      ! how long op should wait when safety is low, with door 2-4 sec. before it is down
+    !\num SafetyFiltPass  ! passive filter for safety signal
+    !\string EnableSignal ! if present and low, op-ready is not queued when pressed
+    !\string Callback1    ! can be used to close door to get safety etc.
+    !\switch WithParam1   ! if callback1 proc takes the button no as param.
+    !\string Callback2    ! can be used to open a roll door etc.
+    !\switch WithParam2   ! if callback2 proc takes the button no as param.
+    !\num Priority)       ! priority for op-ready, 1-10, 10 highest priority.
+
+    ! Add op:s
+    opAdd "diPROC1","doPROC1","doPERM_ENTR1"\Priority:=5;
+    opAdd "diPROC2","doPROC2","doPERM_ENTR2"\Priority:=5;
+
+    ! Initiate all op:s (alias IO and traps)
+    opInit;
+    bOPInitiated:=TRUE;
+  ENDPROC
+
+  PROC PwrOnOp()
+    bOPInitiated:=FALSE;
+  ENDPROC
+ENDMODULE

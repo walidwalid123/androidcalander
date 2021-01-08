@@ -1,0 +1,9 @@
+<LayoutModificationTemplate xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification" xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1">
+  <RequiredStartGroupsCollection>
+    <RequiredStartGroups>
+      <AppendGroup Name="Settings Group">
+        <start:Tile AppUserModelID="WacomTechnologyCorp.157535B83C264_ss941bf8mfs8a!App" Size="2x2" Row="0" Column="0"/> 
+      </AppendGroup>     
+    </RequiredStartGroups>
+  </RequiredStartGroupsCollection> 
+ </LayoutModificationTemplate>

@@ -1,0 +1,146 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE Irbp1EEv(SYSMODULE)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       IrbpD1EEv.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:  cell specifik tasks for irbp D 1.
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:      2004-10-01
+  !
+  ! Version:      1.0.0
+  !
+  ! History:      1.0.0
+  !                 First release
+  !               2005-11-04 SÖ
+  !                 Major changes.
+  !               2006-11-03 SÖ
+  !                 Added subscription to new event EE_ABORT.
+  !                  Deactivates activated MECH after aborted cycle.
+  !                 Added subscription to event EE_START.
+  !                  Deactivates all activated MECHs.
+  !
+  !---------------------------------------------------------------------------!
+  !
+  LOCAL CONST byte GAP_STN_1:=1;
+  LOCAL CONST byte GAP_STN_2:=2;
+  LOCAL VAR num nActMem;
+  !
+  CONST ee_event peEeAbortDeact1:=[EE_ABORT,"EvAbortDeact1","",255,255];
+  CONST ee_event peEeAbortDeactA1:=[EE_START,"EvAbortDeactAll1","",255,255];
+  ! pre part events
+  CONST ee_event pePreFetchPadv1:=[EE_PRE_PROD,"PreFetchPadv1","",1,GAP_STN_1+GAP_STN_2];
+  CONST ee_event peEvIndexToStn1:=[EE_INDEX,"EvIndexToStn1","",1,GAP_STN_1];
+  CONST ee_event peEvIndexToStn2:=[EE_INDEX,"EvIndexToStn2","",1,GAP_STN_2];
+  CONST ee_event peEvActStn1:=[EE_PRE_PART,"EvActStn1","",1,GAP_STN_1];
+  CONST ee_event peEvActStn2:=[EE_PRE_PART,"EvActStn2","",1,GAP_STN_2];
+  !
+  ! part running
+  !
+  ! post part events
+  CONST ee_event peEvDeactStn1:=[EE_POST_PART,"EvDeactStn1","",1,GAP_STN_1];
+  CONST ee_event peEvDeactStn2:=[EE_POST_PART,"EvDeactStn2","",1,GAP_STN_2];
+  !
+  PROC EvAbortDeact1(\switch dummy)
+    IF (nActMem>0) THEN
+      IF (nActMem=1) THEN
+        DeactStn1;
+      ELSEIF(nActMem=2) THEN
+        DeactStn2;
+      ELSEIF (nActMem=3) THEN
+        DeactInterch1;
+      ENDIF
+      nActMem:=0;
+    ENDIF
+  ENDPROC
+
+  PROC EvAbortDeactAll1(\switch dummy)
+    VAR jointtarget jtCurrent;
+
+    IF RobOs() THEN
+      DeactStn1;
+      DeactStn2;
+      DeactInterch1;
+    ELSE
+      DeactStn1;
+      DeactStn2;
+      ActInterch1;
+      jtCurrent:=CJointT();
+      IF (jtCurrent.extax.eax_d <= 1) THEN
+        SetDO soLS_1_INPOS,1;
+        SetDO soLS_2_INPOS,0;
+      ELSEIF (jtCurrent.extax.eax_d >= 179) THEN
+        SetDO soLS_1_INPOS,0;
+        SetDO soLS_2_INPOS,1;
+      ELSE
+        IndexToStn1;
+      ENDIF
+      DeactInterch1;
+    ENDIF
+  ENDPROC
+
+  PROC PreFetchPadv1(\switch dummy)
+    VAR partadv padvTmp;
+    ! fetch adv part data for stn 1 and 2
+    GetNextPartAdv 1,padvTmp;
+    padvStn1:=padvTmp;
+    GetNextPartAdv 2,padvTmp;
+    padvStn2:=padvTmp;
+  ENDPROC
+
+  PROC EvIndexToStn1(\switch dummy)
+    IF (OpMode()<>OP_AUTO) TPWrite "Indexing to station 1";
+    ActInterch1;
+    nActMem:=3;
+    IndexToStn1;
+    DeactInterch1;
+    nActMem:=0;
+  ENDPROC
+
+  PROC EvIndexToStn2(\switch dummy)
+    IF (OpMode()<>OP_AUTO) TPWrite "Indexing to station 2";
+    ActInterch1;
+    nActMem:=3;
+    IndexToStn2;
+    DeactInterch1;
+    nActMem:=0;
+  ENDPROC
+
+  PROC EvActStn1(\switch dummy)
+    IF (OpMode()<>OP_AUTO) TPWrite "Activating station 1";
+    ActStn1;
+    nActMem:=1;
+  ENDPROC
+
+  PROC EvActStn2(\switch dummy)
+    IF (OpMode()<>OP_AUTO) TPWrite "Activating station 2";
+    ActStn2;
+    nActMem:=2;
+  ENDPROC
+
+  PROC EvDeactStn1(\switch dummy)
+    IF (OpMode()<>OP_AUTO) TPWrite "Deactivating station 1";
+    DeactStn1;
+    nActMem:=0;
+  ENDPROC
+
+  PROC EvDeactStn2(\switch dummy)
+    IF (OpMode()<>OP_AUTO) TPWrite "Deactivating station 2";
+    DeactStn2;
+    nActMem:=0;
+  ENDPROC
+ENDMODULE

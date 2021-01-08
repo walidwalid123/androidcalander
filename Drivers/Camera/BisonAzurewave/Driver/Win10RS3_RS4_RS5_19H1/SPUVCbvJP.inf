@@ -1,0 +1,289 @@
+; Localized     04/24/2019 15:00 (GMT+08:00) 5.0.18.44 SPUVCbvJP.inf 
+; Video Capture Driver installation information 
+; Copyright (c) 2012-2019 Sunplus Innovation Tech 
+; Manufacturer: Sunplus Innovation Tech
+
+[OEMInf]
+VerifyMark="SunplusIT Integrated Camera"
+
+[Version]
+signature="$CHICAGO$"
+Class=Camera
+ClassGuid={ca3e7ab9-b4c3-4ae6-8251-579ef933890f}
+Provider=%ProviderName%
+DriverVer=04/24/2019,5.0.18.44
+CatalogFile=SPUVCB.cat
+
+[SignatureAttributes]
+SpITDevMft.dll   = SignatureAttributes.WindowsHello
+SpITDevMft64.dll = SignatureAttributes.WindowsHello
+
+[SignatureAttributes.WindowsHello]
+WindowsHello = true
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SPITDevMft.dll   = 1
+SPITDevMft64.dll =1
+
+[DestinationDirs]
+SPIT.CopyDmft32 = 11
+SPIT.CopyDmft64 = 11
+
+[SPIT.CopyDmft32]
+SPITDevMft.dll
+
+[SPIT.CopyDmft64]
+SPITDevMft64.dll
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+[Manufacturer]
+%SunplusIT.MfgName%=SunplusIT.Section,NTx86,NTamd64
+
+[SunplusIT.Section.NTx86]
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C219&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C21D&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C220&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C221&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C222&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C223&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C224&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C225&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C226&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C227&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C228&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C229&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C22A&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C22B&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C22C&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C22D&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C22E&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_064E&PID_C22F&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_174F&PID_142A&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_174F&PID_1437&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_174F&PID_1443&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_1BCF&PID_280C&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_1BCF&PID_2884&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_1BCF&PID_2C2F&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04CA&PID_7028&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B315&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B37D&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B37F&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B394&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B39A&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B39D&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B39E&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_0266&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_0268&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_0269&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_026A&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_026B&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_1BCF&PID_28A3&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04CA&PID_7035&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04CA&PID_7039&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04CA&PID_703C&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_0366&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B44D&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B451&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_0367&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_1BCF&PID_2C70&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_1BCF&PID_2C82&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B507&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_0706&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_0708&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_070B&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04CA&PID_7058&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04CA&PID_705A&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B542&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_070C&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B596&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_2109&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B5C1&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_13D3&PID_5681&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_1BCF&PID_2C79&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B5AB&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04F2&PID_B5CE&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_1BCF&PID_2C94&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04CA&PID_7066&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_13D3&PID_5682&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_13D3&PID_5684&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_5986&PID_2118&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04CA&PID_7071&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device,USB\VID_04CA&PID_7072&MI_00
+
+[SunplusIT.Section.NTamd64]
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C219&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C21D&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C220&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C221&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C222&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C223&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C224&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C225&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C226&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C227&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C228&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C229&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C22A&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C22B&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C22C&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C22D&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C22E&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_064E&PID_C22F&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_174F&PID_142A&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_174F&PID_1437&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_174F&PID_1443&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_1BCF&PID_280C&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_1BCF&PID_2884&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_1BCF&PID_2C2F&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04CA&PID_7028&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B315&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B37D&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B37F&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B394&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B39A&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B39D&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B39E&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_0266&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_0268&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_0269&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_026A&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_026B&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_1BCF&PID_28A3&MI_00 ;Bulk
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04CA&PID_7035&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04CA&PID_7039&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04CA&PID_703C&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_0366&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B44D&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B451&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_0367&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_1BCF&PID_2C70&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_1BCF&PID_2C82&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B507&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_0706&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_0708&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_070B&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04CA&PID_7058&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04CA&PID_705A&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B542&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_070C&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B596&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_2109&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B5C1&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_13D3&PID_5681&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_1BCF&PID_2C79&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B5AB&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04F2&PID_B5CE&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_1BCF&PID_2C94&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04CA&PID_7066&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_13D3&PID_5682&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_13D3&PID_5684&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_5986&PID_2118&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04CA&PID_7071&MI_00
+%CAMERA.DeviceDesc%=SPUVCb.Device_x64,USB\VID_04CA&PID_7072&MI_00
+
+;----------------------------------------------------------------------------------
+
+[SPUVCb.Device.NT]
+Include   = usbvideo.inf
+Needs     = usbvideo.NT
+CopyFiles = SPIT.CopyDmft32
+AddReg    = SPITDMFT_RegisterDlls_32
+PreferDeviceInfo=1
+
+[SPUVCb.Device_x64.NTamd64]
+Include   = usbvideo.inf
+Needs     = usbvideo.NT
+CopyFiles = SPIT.CopyDmft64
+AddReg    = SPITDMFT_RegisterDlls_64
+PreferDeviceInfo=1
+
+[SPITDMFT_RegisterDlls_32]
+HKCR,CLSID\%SPIT_DMFT_GUID%,,,%SPID_DMFT_DESCRIPTOR%
+HKCR,CLSID\%SPIT_DMFT_GUID%\InprocServer32,,,%SPID_DMFT_NAME32%
+HKCR,CLSID\%SPIT_DMFT_GUID%\InprocServer32,ThreadingModel,,Both
+
+[SPITDMFT_RegisterDlls_64]
+HKCR,CLSID\%SPIT_DMFT_GUID%,,,%SPID_DMFT_DESCRIPTOR%
+HKCR,CLSID\%SPIT_DMFT_GUID%\InprocServer32,,,%SPID_DMFT_NAME64%
+HKCR,CLSID\%SPIT_DMFT_GUID%\InprocServer32,ThreadingModel,,Both
+
+;----------------------------------------------------------------------------------
+
+[SPUVCb.Device.NT.Interfaces]
+include    = usbvideo.inf
+needs      = USBVideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,"GLOBAL",SPUVCB.RGB.VideoCapture,
+AddInterface=%KSCATEGORY_VIDEO%,"GLOBAL",SPUVCB.RGB.VideoCapture,
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,"GLOBAL",SPUVCB.RGB.VideoCapture,
+
+[SPUVCb.Device_x64.NTamd64.Interfaces]
+include    = usbvideo.inf
+needs      = USBVideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,"GLOBAL",SPUVCB.RGB.VideoCapture,
+AddInterface=%KSCATEGORY_VIDEO%,"GLOBAL",SPUVCB.RGB.VideoCapture,
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,"GLOBAL",SPUVCB.RGB.VideoCapture,
+
+[SPUVCB.RGB.VideoCapture]
+AddReg=SPUVCB.RGB.VideoCapture.AddReg
+
+[SPUVCB.RGB.VideoCapture.AddReg]
+;HKR,,CLSID,,%ProxyVCap.CLSID%
+;HKR,,FriendlyName,,%CAMERA.DeviceDesc%
+;HKR,,RTCFlags,0x00010001,0x00000010
+HKR,,FSSensorGroupID,,"{f66fa674-f2be-4d19-98c5-d132329c642f}"
+HKR,,FSSensorGroupName,,"Lenovo Camera Group"
+HKR,,CameraDeviceMftClsid,,%SPIT_DMFT_GUID%
+HKR,,EnableDependentStillPinCapture,0x00010001,0
+HKR,PageAliases,"{71F96464-78F3-11d0-A18C-00A0C9118956}",0x21, 64,64,F9,71, F3,78, D0,11, A1, 8C, 00, A0, C9, 11, 89, 56
+HKR,PageAliases,"{71F96465-78F3-11d0-A18C-00A0C9118956}",0x21, 65,64,F9,71, F3,78, D0,11, A1, 8C, 00, A0, C9, 11, 89, 56
+
+;----------------------------------------------------------------------------------
+
+[SPUVCb.Device.NT.Services]
+include     = usbvideo.inf
+needs       = USBVideo.NT.Services
+
+[SPUVCb.Device_x64.NTamd64.Services]
+include     = usbvideo.inf
+needs       = USBVideo.NT.Services
+
+;----------------------------------------------------------------------------------
+
+[SPUVCb.Device.NT.HW]
+Include = usbvideo.inf
+Needs = usbvideo.NT.HW
+AddReg = SPUVCB.HW.AddReg
+
+[SPUVCb.Device_x64.NTamd64.HW]
+Include = usbvideo.inf
+Needs = usbvideo.NT.HW
+AddReg = SPUVCB.HW.AddReg
+
+[SPUVCB.HW.AddReg]
+HKR,,EnableDshowRedirection,0x00010001,0x00000001
+
+;----------------------------------------------------------------------------------
+
+[Strings]
+ProviderName      = "SunplusIT"
+SunplusIT.MfgName = "SunplusIT"
+DiskName          = "USB WebCam Driver Install Disk"
+CAMERA.DeviceDesc = "Integrated Camera"
+
+ProxyVCap.CLSID          = "{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_CAPTURE       = "{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_RENDER        = "{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_VIDEO         = "{6994AD05-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER_EXT    = "{CC7BFB41-F175-11D1-A392-00E0291F3959}"
+KSCATEGORY_SENSOR_CAMERA = "{24E552D7-6523-47F7-A647-D3465BF1F5CA}"
+KSCATEGORY_VIDEO_CAMERA  = "{E5323777-F976-4f5b-9B55-B94699C46E44}"
+
+SPIT_DMFT_GUID           = "{55DF2DA5-6817-486f-933B-2324858CAE30}"
+SPID_DMFT_DESCRIPTOR     = "SunplusIT Camera Device MFT"
+SPID_DMFT_NAME32         = "SpITDevMft.dll"
+SPID_DMFT_NAME64         = "SpITDevMft64.dll"

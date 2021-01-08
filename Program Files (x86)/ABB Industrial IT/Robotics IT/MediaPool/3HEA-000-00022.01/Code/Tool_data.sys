@@ -1,0 +1,43 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE Tool_data(SYSMODULE)
+  !
+  !--------------------------------------------------------------------------------------------------------
+  !
+  ! (c) ABB Flexible Automation AB, Welding Systems
+  !
+  !--------------------------------------------------------------------------------------------------------
+  !
+  ! Module:       Tool_data.sys (SYSMODULE)
+  !
+  ! Written by:   Simon Johansson
+  !
+  ! Description:  When using Collision Detection it is important to have the right tload in your tool data.
+  !               Always use these tools when you are using a standard gun.
+  !               Duplicate and change the name if you want to make your own tooldata.
+  !               If you use a non-standard gun it is necessary to run the load_identify service routine.
+  !
+  ! Created:      2002-06-25
+  !
+  ! Version:      1.0.1
+  !
+  ! History:      1.0.1 2004-11-11 SÖ
+  !                 Adapted to IRC5
+  !
+  !               ver 1.00.00:
+  !                 First version
+  !
+  !--------------------------------------------------------------------------------------------------------
+  !
+  !
+  TASK PERS tooldata tPSF315R:=[TRUE,[[0,0,0],[1,0,0,0]],[3.4,[-60,0,57],[1,0,0,0],0.01,0.01,0.01]];
+  TASK PERS tooldata tPSF500R:=[TRUE,[[0,0,0],[1,0,0,0]],[3.4,[-60,0,57],[1,0,0,0],0.01,0.01,0.01]];
+  TASK PERS tooldata tPKI500:=[TRUE,[[0,0,0],[1,0,0,0]],[3.4,[-35,0,80],[1,0,0,0],0.01,0.01,0.01]];
+  TASK PERS tooldata tPKI250:=[TRUE,[[0,0,0],[1,0,0,0]],[3.4,[-35,0,80],[1,0,0,0],0.01,0.01,0.01]];
+  TASK PERS tooldata tBinzelWH455:=[TRUE,[[0,0,0],[1,0,0,0]],[3.4,[-35,0,55],[1,0,0,0],0.01,0.01,0.01]];
+  TASK PERS tooldata tDinsePPalu:=[TRUE,[[0,0,0],[1,0,0,0]],[4.5,[-20,0,120],[1,0,0,0],0.01,0.01,0.01]];
+ENDMODULE
+

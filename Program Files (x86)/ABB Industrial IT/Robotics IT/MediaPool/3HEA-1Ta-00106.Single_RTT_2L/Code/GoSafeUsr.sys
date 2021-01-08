@@ -1,0 +1,609 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE GoSafeUsr(SYSMODULE)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       GoSafeUsr.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:  home joint routines for rob.
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:      2004-10-04
+  !
+  ! Version:
+  !  BUILD REV  = 197
+  !  BUILD DATE = 2008/03/20 13:27:50
+  !
+  ! History:      1.0.0
+  !                 First release
+  !               1.0.1 2005-03-11 SÖ
+  !                 Changed SetSafePos/SetParkPos/SetServicePos so user can see
+  !                 position number.
+  !               1.1.0 SÖ
+  !                 All HMI uses UIMsgBox instead of TPWrite/TPReadFK
+  !               2005-11-14 SÖ
+  !                 Replaced "WaitUntil TestAndSet(bSafeMutex)" with
+  !                  "WaitTestAndSet bSafeMutex"
+  !               2005-12-14 SÖ
+  !                 Added default speeddata vSafeDeault.
+  !               2006-09-12 SÖ
+  !                Replaced Stop\NoRegain with Stop\AllMoveTasks for setup of positions.
+  !               2006-12-22 SÖ
+  !                Added switch PromptMove to CheckSafePos/CheckParkPos/CheckServicePos.
+  !                 Prompts before moving, possible to jog before moving.
+  !               2007-01-02 SÖ
+  !                 Added functions RobDistFromPark and RobDistFromServ.
+  !                 Added check in RobDistFromSafe if position is valid.
+  !                 Added check for service and park position in func RobAtHomepos.
+  !               2007-04-17 SÖ
+  !                 Added language support.
+  !               2007-10-01 SÖ
+  !                 Fixed CheckServicePos. Used Park pos instr.
+  !               2007-10-23 SÖ
+  !                 Fixed CheckParkPos and CheckServicePos. Missed initiate text_res_no.
+  !               2007-12-06 SÖ
+  !                 Fixed CheckParkPos when switch PromptMove used, wrong text resource used.
+  !                   Used resource index 7 instead of 16.
+  !                 Fixed RobDistFromPark and RobDistFromServ. Used GetSafePos inside.
+  !                 Added switch PrefHomePos to func RobAtHomepos. If more than one position uses the
+  !                   same target,  RobAtHomepos returns PrefHomePos if dist = dist other pos. but due
+  !                   to sorting not top in the list.
+  !
+  !
+  !---------------------------------------------------------------------------!
+  !
+  PERS bool bSafeMutex:=FALSE;
+  !
+  ! speeddata used default when moving to robots to position
+  PERS speeddata vSafeDeault:=[500,500,1000,180];
+  !
+  LOCAL VAR string sHeader;
+  LOCAL VAR string sMsgLine1;
+  LOCAL VAR string sMsgLine2;
+  LOCAL VAR string sMsgLine3;
+  LOCAL VAR string sMsgLine4;
+  LOCAL VAR string sMsgLine5;
+  !
+  LOCAL FUNC num RobDistFromSafe(
+    num HomeposNo)
+
+    VAR robtarget pAtPoint;
+    VAR robtarget pSafePoint;
+    VAR jointtarget jPos;
+    VAR bool bValid;
+
+    jPos:=GetSafePos(HomeposNo\Valid:=bValid);
+    IF (bValid) THEN
+      pSafePoint:=CalcRobT(jPos,tool0\WObj:=wobj0);
+      pAtPoint:=CRobT(\Tool:=tool0\WObj:=wobj0);
+
+      RETURN VectMagn(pSafePoint.trans-pAtPoint.trans);
+    ELSE
+      RETURN 9E+09;
+    ENDIF
+  ENDFUNC
+
+  LOCAL FUNC num RobDistFromPark(
+    num HomeposNo)
+
+    VAR robtarget pAtPoint;
+    VAR robtarget pParkPoint;
+    VAR jointtarget jPos;
+    VAR bool bValid;
+
+    jPos:=GetParkPos(HomeposNo\Valid:=bValid);
+    IF (bValid) THEN
+      pParkPoint:=CalcRobT(jPos,tool0\WObj:=wobj0);
+      pAtPoint:=CRobT(\Tool:=tool0\WObj:=wobj0);
+
+      RETURN VectMagn(pParkPoint.trans-pAtPoint.trans);
+    ELSE
+      RETURN 9E+09;
+    ENDIF
+  ENDFUNC
+
+  LOCAL FUNC num RobDistFromServ(
+    num HomeposNo)
+
+    VAR robtarget pAtPoint;
+    VAR robtarget pServPoint;
+    VAR jointtarget jPos;
+    VAR bool bValid;
+
+    jPos:=GetServPos(HomeposNo\Valid:=bValid);
+    IF (bValid) THEN
+      pServPoint:=CalcRobT(jPos,tool0\WObj:=wobj0);
+      pAtPoint:=CRobT(\Tool:=tool0\WObj:=wobj0);
+
+      RETURN VectMagn(pServPoint.trans-pAtPoint.trans);
+    ELSE
+      RETURN 9E+09;
+    ENDIF
+  ENDFUNC
+
+  FUNC num RobAtHomepos(
+    \num PrefHomePos)
+
+    VAR num nHomeposDist{6}:=[-1,-1,-1,-1,-1,-1];
+    VAR num nHomeposList{6}:=[1,2,3,4,5,6];
+    VAR num nHomeposCnt;
+    VAR num homepos;
+    VAR num nTemp;
+
+    nHomeposCnt:=HomeJointCount();
+    IF (nHomeposCnt<2) RETURN nHomeposCnt;
+    nTemp:=0;
+    homepos:=0;
+    WHILE (homepos<nHomeposCnt) DO
+      Incr homepos;
+      IF AtSafePos(homepos) nTemp:=homepos;
+      IF AtParkPos(homepos) nTemp:=homepos;
+      IF AtServPos(homepos) nTemp:=homepos;
+      !
+      IF nTemp>0 homepos:=nHomeposCnt;
+    ENDWHILE
+
+    IF (nTemp>0) THEN
+      IF (Present(PrefHomePos) AND (AtServPos(PrefHomePos) OR AtParkPos(PrefHomePos) OR AtSafePos(PrefHomePos))) THEN
+        RETURN PrefHomePos;
+      ELSE
+        RETURN nTemp;
+      ENDIF
+    ENDIF
+    ! robot not at any safe position
+    ! get distance from safe
+    FOR homepos FROM 1 TO nHomeposCnt STEP 1 DO
+      nHomeposDist{homepos}:=RobDistFromSafe(homepos);
+      nTemp:=RobDistFromPark(homepos);
+      IF (nTemp<nHomeposDist{homepos}) nHomeposDist{homepos}:=nTemp;
+      nTemp:=RobDistFromServ(homepos);
+      IF (nTemp<nHomeposDist{homepos}) nHomeposDist{homepos}:=nTemp;
+    ENDFOR
+    ! sort the list, and return homepos for wich the robot is closest its safe
+    FOR i FROM 1 To nHomeposCnt-1 STEP 1 DO
+      FOR homepos FROM 1 To nHomeposCnt-1 STEP 1 DO
+        IF (nHomeposDist{homepos} > nHomeposDist{homepos+1}) THEN
+            ! change place in stn list
+            nTemp:=nHomeposDist{homepos};
+            nHomeposDist{homepos}:=nHomeposDist{homepos+1};
+            nHomeposDist{homepos+1}:=nTemp;
+            ! move up posindex in list
+            nTemp:=nhomeposList{homepos};
+            nHomeposList{homepos}:=nHomeposList{homepos+1};
+            nHomeposList{homepos+1}:=nTemp;
+        ENDIF
+      ENDFOR
+    ENDFOR
+    IF (Present(PrefHomePos)) THEN
+      FOR homepos FROM 1 To nHomeposCnt STEP 1 DO
+        IF (PrefHomePos=nHomeposList{homepos}) THEN
+          IF (homepos<>1) THEN
+            IF (nHomeposDist{homepos}<=nHomeposDist{1}) THEN
+              RETURN PrefHomePos;
+            ELSE
+              ! PrefHomePos>1, return top of list
+              RETURN nHomeposList{1};
+            ENDIF
+          ELSE
+            ! prefered already top of the list
+            RETURN nHomeposList{1};
+          ENDIF
+        ENDIF
+      ENDFOR
+      RETURN nHomeposList{1};
+    ELSE
+      RETURN nHomeposList{1};
+    ENDIF
+  ENDFUNC
+
+  FUNC num RobAtStation(
+    \VAR num PosIndex)
+
+    VAR bool bRet;
+    VAR num nAtIrbp;
+    VAR num nAtStn:=0;
+
+    nAtIrbp:=RobAtHomepos();
+    IF Present(PosIndex) PosIndex:=nAtIrbp;
+
+    nAtStn:=StnIndGetStation(nAtIrbp);
+
+    RETURN nAtStn;
+  ENDFUNC
+
+  PROC SetSafePos(
+    num HomeJointIndex
+    \switch Cancel)
+
+    VAR num nAnswer;
+    VAR buttondata bdBtns;
+    VAR jointtarget jSafe;
+    VAR bool bRelSafeMutex;
+    VAR num text_res_no;
+    !
+    text_res_no:=TextResTabGet("CellText");
+    ! prevent other robot tasks to start setup
+    ! of safe position.
+    WaitTestAndSet bSafeMutex;
+    bRelSafeMutex:=TRUE;
+    ! select button
+    IF (Present(Cancel)) THEN
+      bdBtns:=btnOKCancel;
+    ELSE
+      bdBtns:=btnOK;
+    ENDIF
+
+!    sHeader:="Safe position "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+!    sMsgLine1:="1. Press OK.";
+!    sMsgLine2:="2. Move the robot to a safe position.";
+!    sMsgLine3:="3. Restart program.";
+
+    sHeader:=TextResGet(text_res_no,15)+" "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+    sMsgLine1:=TextResGet(text_res_no,18);
+    sMsgLine2:=TextResGet(text_res_no,19);
+    sMsgLine3:=TextResGet(text_res_no,22);
+    sMsgLine4:="";
+    sMsgLine5:="";
+    UIMsgBox \Header:=sHeader,sMsgLine1\MsgLine2:=sMsgLine2\MsgLine3:=sMsgLine3\MsgLine4:=sMsgLine4\MsgLine5:=sMsgLine5\Buttons:=bdBtns\Icon:=iconInfo\Result:=nAnswer;
+
+    IF (nAnswer=resCancel) THEN
+      bSafeMutex:=FALSE;
+      bRelSafeMutex:=FALSE;
+    ELSE
+      Stop\AllMoveTasks;
+      TPErase;
+      !! jog to safe position
+      jSafe:=CJointT();
+      ! initiate defined safepos
+      HomeJointSafeDef HomeJointIndex,jSafe;
+      bSafeMutex:=FALSE;
+      bRelSafeMutex:=FALSE;
+    ENDIF
+  UNDO
+    IF (bRelSafeMutex) bSafeMutex:=FALSE;
+  ENDPROC
+
+  PROC SetParkPos(
+    num HomeJointIndex
+    \switch Cancel)
+
+    VAR num nAnswer;
+    VAR buttondata bdBtns;
+    VAR jointtarget jPark;
+    VAR bool bRelSafeMutex;
+    VAR num text_res_no;
+    !
+    text_res_no:=TextResTabGet("CellText");
+    ! prevent other robot tasks to start setup
+    ! of park position.
+    WaitTestAndSet bSafeMutex;
+    bRelSafeMutex:=TRUE;
+    ! select button
+    IF (Present(Cancel)) THEN
+      bdBtns:=btnOKCancel;
+    ELSE
+      bdBtns:=btnOK;
+    ENDIF
+
+!    sHeader:="Park position "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+!    sMsgLine1:="1. Press OK.";
+!    sMsgLine2:="2. Move the robot to a park position.";
+!    sMsgLine3:="3. Restart program.";
+
+    sHeader:=TextResGet(text_res_no,16)+" "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+    sMsgLine1:=TextResGet(text_res_no,18);
+    sMsgLine2:=TextResGet(text_res_no,20);
+    sMsgLine3:=TextResGet(text_res_no,22);
+    sMsgLine4:="";
+    sMsgLine5:="";
+    UIMsgBox \Header:=sHeader,sMsgLine1\MsgLine2:=sMsgLine2\MsgLine3:=sMsgLine3\MsgLine4:=sMsgLine4\MsgLine5:=sMsgLine5\Buttons:=bdBtns\Icon:=iconInfo\Result:=nAnswer;
+
+    IF (nAnswer=resCancel) THEN
+      bSafeMutex:=FALSE;
+      bRelSafeMutex:=FALSE;
+    ELSE
+      Stop\AllMoveTasks;
+      TPErase;
+      !! jog to park position
+      jPark:=CJointT();
+      ! initiate defined safepos
+      HomeJointParkDef HomeJointIndex,jPark;
+      bSafeMutex:=FALSE;
+      bRelSafeMutex:=FALSE;
+    ENDIF
+  UNDO
+    IF (bRelSafeMutex) bSafeMutex:=FALSE;
+  ENDPROC
+
+  PROC SetServicePos(
+    num HomeJointIndex
+    \switch Cancel)
+
+    VAR num nAnswer;
+    VAR buttondata bdBtns;
+    VAR jointtarget jService;
+    VAR bool bRelSafeMutex;
+    VAR num text_res_no;
+    !
+    text_res_no:=TextResTabGet("CellText");
+    ! prevent other robot tasks to start setup
+    ! of service position.
+    WaitTestAndSet bSafeMutex;
+    bRelSafeMutex:=TRUE;
+    ! select button
+    IF (Present(Cancel)) THEN
+      bdBtns:=btnOKCancel;
+    ELSE
+      bdBtns:=btnOK;
+    ENDIF
+
+!    sHeader:="Service position "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+!    sMsgLine1:="1. Press OK.";
+!    sMsgLine2:="2. Move the robot to a service position.";
+!    sMsgLine3:="3. Restart program.";
+
+    sHeader:=TextResGet(text_res_no,17)+" "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+    sMsgLine1:=TextResGet(text_res_no,18);
+    sMsgLine2:=TextResGet(text_res_no,21);
+    sMsgLine3:=TextResGet(text_res_no,22);
+    sMsgLine4:="";
+    sMsgLine5:="";
+    UIMsgBox \Header:=sHeader,sMsgLine1\MsgLine2:=sMsgLine2\MsgLine3:=sMsgLine3\MsgLine4:=sMsgLine4\MsgLine5:=sMsgLine5\Buttons:=bdBtns\Icon:=iconInfo\Result:=nAnswer;
+
+    IF (nAnswer=resCancel) THEN
+      bSafeMutex:=FALSE;
+      bRelSafeMutex:=FALSE;
+    ELSE
+      Stop\AllMoveTasks;
+      TPErase;
+      !! jog to service position
+      jService:=CJointT();
+      ! initiate defined safepos
+      HomeJointServDef HomeJointIndex,jService;
+      bSafeMutex:=FALSE;
+      bRelSafeMutex:=FALSE;
+    ENDIF
+  UNDO
+    IF (bRelSafeMutex) bSafeMutex:=FALSE;
+  ENDPROC
+
+  PROC MoveRobSyncPos(
+      \speeddata Speed)
+
+    VAR jointtarget jSync;
+    VAR speeddata vSpeed;
+
+    ! default speed v150
+    vSpeed:=v150;
+    IF (Present(Speed)) vSpeed:=Speed;
+
+    jSync:=CJointT();
+    jSync.robax.rax_1:=0;
+    jSync.robax.rax_2:=0;
+    jSync.robax.rax_3:=0;
+    jSync.robax.rax_4:=0;
+    jSync.robax.rax_5:=0;
+    jSync.robax.rax_6:=0;
+    MoveAbsJ jSync,vSpeed,fine,tool0;
+  ENDPROC
+
+  PROC CheckSafePos(
+    num HomeJointIndex
+    \identno ID
+    \speeddata Speed
+    \switch PromptMove)
+
+    VAR string stButtons{2};
+    VAR string stMsgArray1{6};
+    VAR bool bValid;
+    VAR speeddata vSpeed;
+    VAR num nAnswer;
+    VAR bool bRelSafeMutex;
+    VAR num text_res_no;
+
+    vSpeed:=vSafeDeault;
+    IF (Present(Speed)) vSpeed:=Speed;
+    IF AtSafePos(HomeJointIndex\Valid:=bValid) RETURN;
+
+    IF NOT bValid THEN
+      ! set safe pos
+      SetSafePos HomeJointIndex;
+    ELSE
+      ! move to safe for pos.
+      IF (Present(PromptMove)) THEN
+        text_res_no:=TextResTabGet("CellText");
+
+        !stButtons{2}:=["MANUAL",
+        !               "AUTO"];
+        !stMsgArray1{6}:=["Robot not in safe position",
+        !                 "Please choose MANUAL or AUTO",
+        !                 "",
+        !                 "MANUAL => move robot by joystick to safe position",
+        !                 "",
+        !                 "AUTO   => robot moves directly to safe position"];
+
+        stButtons{1}:=TextResGet(text_res_no,23);
+        stButtons{2}:=TextResGet(text_res_no,24);
+        stMsgArray1{1}:=TextResGet(text_res_no,25);
+        stMsgArray1{2}:=TextResGet(text_res_no,28);
+        stMsgArray1{3}:="";
+        stMsgArray1{4}:=TextResGet(text_res_no,29);
+        stMsgArray1{5}:="";
+        stMsgArray1{6}:=TextResGet(text_res_no,30);
+
+        WaitTestAndSet bSafeMutex;
+        bRelSafeMutex:=TRUE;
+        WHILE (NOT AtSafePos(HomeJointIndex)) DO
+          !sHeader:="Safe position "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+          sHeader:=TextResGet(text_res_no,15)+" "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+          nAnswer:=UIMessageBox(\Header:=sHeader\MsgArray:=stMsgArray1\BtnArray:=stButtons\Icon:=iconWarning);
+          IF (nAnswer=1) THEN
+            Stop\AllMoveTasks;
+            TPErase;
+            !! jog to safe position
+          ELSE
+            ! move to safe for pos.
+            MoveToSafe HomeJointIndex\ID?ID,vSpeed,tool0;
+          ENDIF
+        ENDWHILE
+        bSafeMutex:=FALSE;
+        bRelSafeMutex:=FALSE;
+      ELSE
+        ! move to safe for pos.
+        MoveToSafe HomeJointIndex\ID?ID,vSpeed,tool0;
+      ENDIF
+    ENDIF
+  UNDO
+    IF (bRelSafeMutex) bSafeMutex:=FALSE;
+  ENDPROC
+
+  PROC CheckParkPos(
+    num HomeJointIndex
+    \identno ID
+    \speeddata Speed
+    \switch PromptMove)
+
+    VAR string stButtons{2};
+    VAR string stMsgArray1{6};
+    VAR bool bValid;
+    VAR speeddata vSpeed;
+    VAR num nAnswer;
+    VAR bool bRelSafeMutex;
+    VAR num text_res_no;
+
+    vSpeed:=vSafeDeault;
+    IF (Present(Speed)) vSpeed:=Speed;
+    IF AtParkPos(HomeJointIndex\Valid:=bValid) RETURN;
+
+    IF NOT bValid THEN
+      ! set park pos
+      SetParkPos HomeJointIndex;
+    ELSE
+      IF (Present(PromptMove)) THEN
+        text_res_no:=TextResTabGet("CellText");
+
+        !stButtons{2}:=["MANUAL",
+        !               "AUTO"];
+        !stMsgArray1{6}:=["Robot not in park position",
+        !                 "Please choose MANUAL or AUTO",
+        !                 "",
+        !                 "MANUAL => move robot by joystick to park position",
+        !                 "",
+        !                 "AUTO   => robot moves directly to park position"];
+
+        stButtons{1}:=TextResGet(text_res_no,23);
+        stButtons{2}:=TextResGet(text_res_no,24);
+        stMsgArray1{1}:=TextResGet(text_res_no,26);
+        stMsgArray1{2}:=TextResGet(text_res_no,28);
+        stMsgArray1{3}:="";
+        stMsgArray1{4}:=TextResGet(text_res_no,31);
+        stMsgArray1{5}:="";
+        stMsgArray1{6}:=TextResGet(text_res_no,32);
+
+        WaitTestAndSet bSafeMutex;
+        bRelSafeMutex:=TRUE;
+        WHILE (NOT AtParkPos(HomeJointIndex)) DO
+          !sHeader:="Park position "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+          sHeader:=TextResGet(text_res_no,16)+" "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+          nAnswer:=UIMessageBox(\Header:=sHeader\MsgArray:=stMsgArray1\BtnArray:=stButtons\Icon:=iconWarning);
+          IF (nAnswer=1) THEN
+            Stop\AllMoveTasks;
+            TPErase;
+            !! jog to park position
+          ELSE
+            ! move to park for pos.
+            MoveToPark HomeJointIndex\ID?ID,vSpeed,tool0;
+          ENDIF
+        ENDWHILE
+        bSafeMutex:=FALSE;
+        bRelSafeMutex:=FALSE;
+      ELSE
+        ! move to park for pos.
+        MoveToPark HomeJointIndex\ID?ID,vSpeed,tool0;
+      ENDIF
+    ENDIF
+  UNDO
+    IF (bRelSafeMutex) bSafeMutex:=FALSE;
+  ENDPROC
+
+  PROC CheckServicePos(
+    num HomeJointIndex
+    \identno ID
+    \speeddata Speed
+    \switch PromptMove)
+
+    VAR string stButtons{2};
+    VAR string stMsgArray1{6};
+    VAR bool bValid;
+    VAR speeddata vSpeed;
+    VAR num nAnswer;
+    VAR bool bRelSafeMutex;
+    VAR num text_res_no;
+
+    vSpeed:=vSafeDeault;
+    IF (Present(Speed)) vSpeed:=Speed;
+    IF AtServPos(HomeJointIndex\Valid:=bValid) RETURN;
+
+    IF NOT bValid THEN
+      ! set service pos
+      SetServicePos HomeJointIndex;
+    ELSE
+      IF (Present(PromptMove)) THEN
+        text_res_no:=TextResTabGet("CellText");
+
+        !stButtons{2}:=["MANUAL",
+        !               "AUTO"];
+        !stMsgArray1{6}:=["Robot not in service position",
+        !                 "Please choose MANUAL or AUTO",
+        !                 "",
+        !                 "MANUAL => move robot by joystick to service position",
+        !                 "",
+        !                 "AUTO   => robot moves directly to service position"];
+
+        stButtons{1}:=TextResGet(text_res_no,23);
+        stButtons{2}:=TextResGet(text_res_no,24);
+        stMsgArray1{1}:=TextResGet(text_res_no,27);
+        stMsgArray1{2}:=TextResGet(text_res_no,28);
+        stMsgArray1{3}:="";
+        stMsgArray1{4}:=TextResGet(text_res_no,33);
+        stMsgArray1{5}:="";
+        stMsgArray1{6}:=TextResGet(text_res_no,34);
+
+        WaitTestAndSet bSafeMutex;
+        bRelSafeMutex:=TRUE;
+        WHILE (NOT AtServPos(HomeJointIndex)) DO
+          !sHeader:="Service position "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+          sHeader:=TextResGet(text_res_no,17)+" "+ValToStr(HomeJointIndex)+" ("+GetTaskName()+")";
+          nAnswer:=UIMessageBox(\Header:=sHeader\MsgArray:=stMsgArray1\BtnArray:=stButtons\Icon:=iconWarning);
+          IF (nAnswer=1) THEN
+            Stop\AllMoveTasks;
+            TPErase;
+            !! jog to service position
+          ELSE
+            ! move to service for pos.
+            MoveToServ HomeJointIndex\ID?ID,vSpeed,tool0;
+          ENDIF
+        ENDWHILE
+        bSafeMutex:=FALSE;
+        bRelSafeMutex:=FALSE;
+      ELSE
+        ! move to service for pos.
+        MoveToServ HomeJointIndex\ID?ID,vSpeed,tool0;
+      ENDIF
+    ENDIF
+  UNDO
+    IF (bRelSafeMutex) bSafeMutex:=FALSE;
+  ENDPROC
+ENDMODULE

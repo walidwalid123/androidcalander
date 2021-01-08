@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MUPDefinition xmlns="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd mupdefinition.xsd">
+  <packageinformation>
+    <installertype>installshield installscript</installertype>
+    <packagegrouping>single_package</packagegrouping>
+    <packagingtype>zip</packagingtype>
+    <releasetype>DRVR</releasetype>
+    <mupspecificationversion>2.4.4</mupspecificationversion>
+    <name>Graphics </name>
+    <version>25.20.100.6847</version>
+    <supportedoperatingsystems>
+      <osidentifier name="Windows8" architecture="x64" />
+      <osidentifier name="W2K12" architecture="x64" />
+      <osidentifier name="Windows8.1" architecture="x64" />
+      <osidentifier name="W2K12R2" architecture="x64" />
+      <osidentifier name="Windows10" architecture="x64" />
+    </supportedoperatingsystems>
+    <content>
+      <Device componentID="103292">
+        <Image type="DRVR" version="11.1.0.6">
+          <file>Production\Windows8.1-x64\IntcDAud.inf\11.1.0.6\IntcDAud.inf</file>
+          <file>Production\Windows8.1-x64\IntcDAud.inf\11.1.0.6\IntcDAud.cat</file>
+          <file>Production\Windows8-x64\IntcDAud.inf\11.1.0.6\IntcDAud.inf</file>
+          <file>Production\Windows8-x64\IntcDAud.inf\11.1.0.6\IntcDAud.cat</file>
+          <file>Production\Windows10-x64\msdk.inf\25.20.100.6847\DisplayAudio\11.1\IntcDAud.inf</file>
+          <file>Production\Windows10-x64\msdk.inf\25.20.100.6847\DisplayAudio\11.1\IntcDAud.cat</file>
+          <file>Production\Windows10-x64\IntcDAud.inf\11.1.0.6\IntcDAud.inf</file>
+          <file>Production\Windows10-x64\IntcDAud.inf\11.1.0.6\IntcDAud.cat</file>
+          <file>Production\Windows10-x64\iigd_dch.inf\25.20.100.6847\DisplayAudio\11.1\IntcDAud.inf</file>
+          <file>Production\Windows10-x64\iigd_dch.inf\25.20.100.6847\DisplayAudio\11.1\IntcDAud.cat</file>
+          <file>Production\Windows10-x64\HdBusExt.inf\25.20.100.6847\DisplayAudio\11.1\IntcDAud.inf</file>
+          <file>Production\Windows10-x64\HdBusExt.inf\25.20.100.6847\DisplayAudio\11.1\IntcDAud.cat</file>
+          <file>Production\Windows10-x64\cui_dch.inf\25.20.100.6847\DisplayAudio\11.1\IntcDAud.inf</file>
+          <file>Production\Windows10-x64\cui_dch.inf\25.20.100.6847\DisplayAudio\11.1\IntcDAud.cat</file>
+          <file>Production\W2K12R2-x64\IntcDAud.inf\11.1.0.6\IntcDAud.inf</file>
+          <file>Production\W2K12R2-x64\IntcDAud.inf\11.1.0.6\IntcDAud.cat</file>
+          <file>Production\W2K12-x64\IntcDAud.inf\11.1.0.6\IntcDAud.inf</file>
+          <file>Production\W2K12-x64\IntcDAud.inf\11.1.0.6\IntcDAud.cat</file>
+        </Image>
+      </Device>
+      <Device componentID="103292">
+        <Image type="DRVR" version="25.20.100.6847">
+          <file>Production\Windows10-x64\msdk.inf\25.20.100.6847\cui_dch.inf</file>
+          <file>Production\Windows10-x64\msdk.inf\25.20.100.6847\igdlh.cat</file>
+          <file>Production\Windows10-x64\msdk.inf\25.20.100.6847\HdBusExt.inf</file>
+          <file>Production\Windows10-x64\msdk.inf\25.20.100.6847\HdBusExt.cat</file>
+          <file>Production\Windows10-x64\msdk.inf\25.20.100.6847\iigd_dch.inf</file>
+          <file>Production\Windows10-x64\msdk.inf\25.20.100.6847\iigd_ext.inf</file>
+          <file>Production\Windows10-x64\msdk.inf\25.20.100.6847\extinf.cat</file>
+          <file>Production\Windows10-x64\msdk.inf\25.20.100.6847\msdk.inf</file>
+          <file>Production\Windows10-x64\iigd_dch.inf\25.20.100.6847\cui_dch.inf</file>
+          <file>Production\Windows10-x64\iigd_dch.inf\25.20.100.6847\igdlh.cat</file>
+          <file>Production\Windows10-x64\iigd_dch.inf\25.20.100.6847\HdBusExt.inf</file>
+          <file>Production\Windows10-x64\iigd_dch.inf\25.20.100.6847\HdBusExt.cat</file>
+          <file>Production\Windows10-x64\iigd_dch.inf\25.20.100.6847\iigd_dch.inf</file>
+          <file>Production\Windows10-x64\iigd_dch.inf\25.20.100.6847\iigd_ext.inf</file>
+          <file>Production\Windows10-x64\iigd_dch.inf\25.20.100.6847\extinf.cat</file>
+          <file>Production\Windows10-x64\iigd_dch.inf\25.20.100.6847\msdk.inf</file>
+          <file>Production\Windows10-x64\HdBusExt.inf\25.20.100.6847\cui_dch.inf</file>
+          <file>Production\Windows10-x64\HdBusExt.inf\25.20.100.6847\igdlh.cat</file>
+          <file>Production\Windows10-x64\HdBusExt.inf\25.20.100.6847\HdBusExt.inf</file>
+          <file>Production\Windows10-x64\HdBusExt.inf\25.20.100.6847\HdBusExt.cat</file>
+          <file>Production\Windows10-x64\HdBusExt.inf\25.20.100.6847\iigd_dch.inf</file>
+          <file>Production\Windows10-x64\HdBusExt.inf\25.20.100.6847\iigd_ext.inf</file>
+          <file>Production\Windows10-x64\HdBusExt.inf\25.20.100.6847\extinf.cat</file>
+          <file>Production\Windows10-x64\HdBusExt.inf\25.20.100.6847\msdk.inf</file>
+          <file>Production\Windows10-x64\cui_dch.inf\25.20.100.6847\cui_dch.inf</file>
+          <file>Production\Windows10-x64\cui_dch.inf\25.20.100.6847\igdlh.cat</file>
+          <file>Production\Windows10-x64\cui_dch.inf\25.20.100.6847\HdBusExt.inf</file>
+          <file>Production\Windows10-x64\cui_dch.inf\25.20.100.6847\HdBusExt.cat</file>
+          <file>Production\Windows10-x64\cui_dch.inf\25.20.100.6847\iigd_dch.inf</file>
+          <file>Production\Windows10-x64\cui_dch.inf\25.20.100.6847\iigd_ext.inf</file>
+          <file>Production\Windows10-x64\cui_dch.inf\25.20.100.6847\extinf.cat</file>
+          <file>Production\Windows10-x64\cui_dch.inf\25.20.100.6847\msdk.inf</file>
+        </Image>
+      </Device>
+    </content>
+  </packageinformation>
+  <executable>
+    <executablename>igxpin.exe</executablename>
+  </executable>
+  <behaviors>
+    <behavior name="freshinstall">
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="false">s</optionvalue>
+      </vendoroption>
+    </behavior>
+    <behavior name="extractdrivers">
+      <vendoroption>
+        <container>
+          <containervalue switch="/" requiresvalue="false" valuedelimiter=" " enclose="&quot;">v</containervalue>
+          <optionvalue switch="" requiresvalue="true" valuedelimiter="=" enclose="\&quot;">ExtractDrivers</optionvalue>
+        </container>
+      </vendoroption>
+    </behavior>
+    <behavior name="attended" />
+    <behavior name="unattended">
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="false">s</optionvalue>
+      </vendoroption>
+    </behavior>
+  </behaviors>
+  <parameters>
+    <parametermapping name="force">
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="false">overwrite</optionvalue>
+      </vendoroption>
+    </parametermapping>
+    <parametermapping name="logfile">
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="true" valuedelimiter=" " enclose="&quot;">report</optionvalue>
+      </vendoroption>
+    </parametermapping>
+  </parameters>
+  <returncodes>
+    <returncodemapping name="REBOOTING_SYSTEM">
+      <vendorreturncode>15</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="PASSWORD_REQUIRED">
+      <vendorreturncode>2</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="NO_DOWNGRADE">
+      <!--Always able to DownGrade, Installer Doesn't need to support-->
+      <vendorreturncode>9999</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="REBOOT_UPDATE_PENDING">
+      <!--Installer only Reboots Once, Installer Doesn't need to support-->
+      <vendorreturncode>99999</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="DEP_SOFT_ERROR">
+      <vendorreturncode>7</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="DEP_HARD_ERROR">
+      <vendorreturncode>5</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="SUCCESS">
+      <vendorreturncode>0</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR">
+      <vendorreturncode>10</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="REBOOT_REQUIRED">
+      <vendorreturncode>14</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR_INSTALL_PLATFORM_UNSUPPORTED">
+      <vendorreturncode>3</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="UNKNOWN_OPTION">
+      <vendorreturncode>1</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR">
+      <vendorreturncode>9</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR">
+      <vendorreturncode>6</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR">
+      <vendorreturncode>4</vendorreturncode>
+    </returncodemapping>
+  </returncodes>
+  <inventorymetadata>
+    <fullpackageidentifier>
+      <registrykeys>
+        <registrykey componentID="103292">
+          <name>HKEY_LOCAL_MACHINE\SOFTWARE\Dell\ManageableUpdatePackage\Intel\GraphicsVersion</name>
+          <value>25.20.100.6847</value>
+          <displayName>HKEY_LOCAL_MACHINE\SOFTWARE\Dell\ManageableUpdatePackage\Intel\DisplayName</displayName>
+          <displayValue>Graphics</displayValue>
+        </registrykey>
+      </registrykeys>
+    </fullpackageidentifier>
+  </inventorymetadata>
+</MUPDefinition>

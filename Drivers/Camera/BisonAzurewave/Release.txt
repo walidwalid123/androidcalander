@@ -1,0 +1,206 @@
+SunplusIT NB camera Driver Revision History
+===========================================
+
+Version 5.0.18.44 (2019/04/24) [WHQL: Win 10 RS3/RS4/RS5/19H1] 
+------------------------------------------------------------------------------- 
+- Update TSP v2.6. 
+
+Version 5.0.18.43 (2019/04/22)
+-------------------------------------------------------------------------------
+- Update TSP v2.5.
+
+Version 5.0.18.42 (2019/04/18) [WHQL: Win 10 RS3/RS4/RS5/19H1]
+-------------------------------------------------------------------------------
+- Fix privacy checkbox behavior with TSP v2.4 shutter mode.
+
+Version 5.0.18.41 (2019/04/12)
+-------------------------------------------------------------------------------
+- Update TSP v2.4.
+
+Version 5.0.18.40 (2019/04/08)
+-------------------------------------------------------------------------------
+- Update ECP to TSP v2.3.
+
+Version 5.0.18.39 (2019/03/11) [WHQL: Win 10 RS3/RS4/RS5]
+-------------------------------------------------------------------------------
+- Add BIOS ID 9YCN.
+
+Version 5.0.18.38 (2019/03/05) [WHQL: Win 10 RS3/RS4/RS5]
+-------------------------------------------------------------------------------
+- Fix ECP exit issue.
+
+Version 5.0.18.37 (2019/02/14) [WHQL: Win 10 RS3/RS4/RS5]
+-------------------------------------------------------------------------------
+- Exchange the roll orientation of 90 and 270 degree.
+- Add BIOS IDs N2NE, N2OE and R16E.
+
+Version 5.0.18.36 (2018/12/04) [WHQL: Win 10 RS3/RS4/RS5]
+-------------------------------------------------------------------------------
+- Add BIOS IDs R12E & R13E for ECP.
+
+Version 5.0.18.35 (2018/11/16) [WHQL: Win 10 RS3/RS4/RS5]
+-------------------------------------------------------------------------------
+- Hang up issue solution for all platform.
+
+Version 5.0.18.34 (2018/11/02) [WHQL: Win 10 RS3/RS4/RS5]
+-------------------------------------------------------------------------------
+- Fix preview hang up issue in outdoor for 7SF101N2 & BNFH1NKSJ.
+
+Version 5.0.18.33 (2018/11/02)
+-------------------------------------------------------------------------------
+- Fix preview hang up issue in outdoor.
+
+Version 5.0.18.32 (2018/10/22) [WHQL: Win 10 RS3/RS4/RS5]
+-------------------------------------------------------------------------------
+- Fix Privacy setting no function issue.
+- Change zoom value from 10~40 to 100~400.
+
+Version 5.0.18.31 (2018/10/17) [WHQL: Win 10 RS3/RS4/RS5]
+-------------------------------------------------------------------------------
+- Enable RGB24 for 04F2/B68E and 04CA/70A0.
+
+Version 5.0.18.30 (2018/10/16)
+-------------------------------------------------------------------------------
+- Enable AFD for 04F2/B68E and 04CA/70A0.
+- Workarround for RS5 HLK "MediaCapture - TestFrameReaderWithAllSupportedMediaFormats" failed with 0x8007001F.
+
+Version 5.0.18.29 (2018/10/08) [WHQL: Win 10 RS3/RS4/RS5]
+-------------------------------------------------------------------------------
+- Fix preview hang up issue in outdoor.
+
+Version 5.0.18.28 (2018/09/14) [WHQL: Win 10 RS3/RS4]
+-------------------------------------------------------------------------------
+- Add BIOS IDs R0WE & R0XE for ECP.
+
+Version 5.0.18.27 (2018/08/31)
+-------------------------------------------------------------------------------
+- Enable face AE for 04F2/B68E and 04CA/70A0.
+
+Version 5.0.18.26 (2018/08/29) [WHQL: Win 10 RS3/RS4]
+-------------------------------------------------------------------------------
+- Fix RS5 HLK "Camera Driver System Test - MediaCapture - TestExposureControl" fail for IR Camera.
+
+Version 5.0.18.25 (2018/08/16)
+-------------------------------------------------------------------------------
+- Add one VID/PID.
+
+Version 5.0.18.24 (2018/08/10) [WHQL: Win 10 RS3/RS4]
+-------------------------------------------------------------------------------
+- Fix ColorEnable checkbox gray issue in Win10 RS5.
+- Fix 0x80070057 error in opened camera app after face login.
+- Add Hello 4.0 SignatureAttributes in INF files.
+
+Version 5.0.18.23 (2018/08/07)
+-------------------------------------------------------------------------------
+- Add one VID/PID.
+- Add IR Camera Profile.
+
+Version 5.0.18.22 (2018/07/23) [WHQL: Win 10 RS3/RS4]
+-------------------------------------------------------------------------------
+- Add BIOS IDs.
+
+Version 5.0.18.21 (2018/06/21) [WHQL: Win 10 RS3/RS4]
+-------------------------------------------------------------------------------
+- Fix privacy hot key icon display not sync issue.
+- Fix Lenovo Vantage privacy button issue.
+
+Version 5.0.18.20 (2018/06/08) [WHQL: Win 10 RS3/RS4]
+-------------------------------------------------------------------------------
+- Modify the formula of YUY2 to RGB24, to avoid dark lines in light area.
+
+Version 5.0.18.19 (2018/05/15) [WHQL: Win 10 RS3/RS4]
+-------------------------------------------------------------------------------
+- Fix ECP behavior in a specific scenario.
+
+Version 5.0.18.18 (2018/04/19) [WHQL: Win 10 RS3/RS4]
+-------------------------------------------------------------------------------
+- Fix ECP issue on 320x240. Lenovo Vantage uses this resolution.
+- Get Win10 RS4 WHQL signature.(2018/05/09, Version A)
+
+Version 5.0.18.17 (2018/04/12) [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Fix RS4 HLK test fail issues. Modify the solution for RS4 HLK TestFrameReader issue in v5.0.18.13. Old soultion had side effect that lead to "Camera Driver Test ¡V Preview, Record H.264 Video and AAC Audio from each Capture Stream type" and "Camera Driver Test - Preview (Sample Grabber), Record H.264 Video and AAC Audio from each Capture Stream type" fail, and Amcap record issue.
+
+Version 5.0.18.16 (2018/04/10)
+-------------------------------------------------------------------------------
+- Enhance AFD function.
+- Modify privacy behavior with ECP enable.
+- Fix RS4 HLK "Camera Driver Test ¡V Preview, Record H.264 Video and AAC Audio from each Capture Stream type" and "Camera Driver Test - Preview (Sample Grabber), Record H.264 Video and AAC Audio from each Capture Stream type" fail.
+
+Version 5.0.18.15 (2018/03/28) [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Fix Lite-On one camera module AFD function.
+- Fix IR camera RS4 HLK "Sensor Camera Driver Controls System Test - Face Authentication - Alt Frame Illum Enable for Video Record" fail issue.
+
+Version 5.0.18.14 (2018/03/23) [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Fix Chicony two camera modules AFD function.
+
+Version 5.0.18.13 (2018/03/19) [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Fix RS4 HLK test fail issue.
+
+Version 5.0.18.12 (2018/03/15) [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Disable full time TNR and face AE on specific platform. BIOS ID "7YCN".
+- Don't stop WbioSrv when driver install.
+
+Version 5.0.18.11 (2018/03/14)
+-------------------------------------------------------------------------------
+- Disable full time TNR on specific platform. BIOS ID "7YCN".
+- Add BIOS ID "N2EE", and remove "N1ZE".
+- Modify AFD.
+- Fix 5M camera issue.
+
+Version 5.0.18.10 (2018/02/14) [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Fix 4K panel color solution check bug.
+- Improve performance for EasyCamera.
+- Save property value by VID/PID.
+
+Version 5.0.18.9 (2018/02/09)
+-------------------------------------------------------------------------------
+- Solve 4K panel color issue.
+- Enable ECP shutter mode in Win10 RS4.
+- Fix face AE issue.
+
+Version 5.0.18.8 (2018/02/02)  [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Enable DShow Redirection.
+- Add one IR VID/PID.
+- Remove TargetOSVersion in INF files.
+
+Version 5.0.18.7 (2018/01/18)  [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Support Chicony Lenovo JP two modules IR face AE.
+- Support Bison one module TNR function.
+
+Version 5.0.18.6 (2018/01/04)  [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Add BIOS IDs.
+- Fix frame rate issue on DShow AP.
+- Add two sets of VID/PID.
+- Add TargetOSVersion in INF files.
+- Don't add uninstall item in "Programs & Features" if use Setup.exe to install driver.
+
+Version 5.0.18.5 (2017/12/28)  [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Improve temporal denoise function.
+
+Version 5.0.18.4 (2017/12/26)
+-------------------------------------------------------------------------------
+- Support Lenovo CN & JP.
+
+Version 5.0.18.3 (2017/12/19)  [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Remove WarmStart to avoid HLK test error and BSOD.
+- Fix RGB24 black flash issue.
+- Support IR face AE.
+
+Version 5.0.18.2 (2017/11/24)  [WHQL: Win 10 RS3]
+-------------------------------------------------------------------------------
+- Add RGB24 format.
+
+Version 5.0.18.1 (2017/11/21)
+-------------------------------------------------------------------------------
+- Win10 RS3 DMFT driver.

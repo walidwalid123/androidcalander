@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Resource Name="CellText" Language="nl">
+  <Text Name="1">
+    <Value>Instel TCP</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="2">
+    <Value>TCP Controle frequencie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="3">
+    <Value>TCP Controle</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="4">
+    <Value>TCP Vernieuwen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="5">
+    <Value>TCP Op Controlepunt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="7">
+    <Value>(0 om TCP Controle te uitschakelen tijdens productie)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="8">
+    <Value>Huidige Waarde:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Toets Nieuwe Waarde (freq)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="15">
+    <Value>Veilig positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="16">
+    <Value>Park positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="17">
+    <Value>Service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="18">
+    <Value>1. Druk OK.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="19">
+    <Value>2. Beweeg robot naar een veilig positie.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="20">
+    <Value>2. Beweeg robot naar een park positie.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="21">
+    <Value>2. Beweeg robot naar een service positie.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="22">
+    <Value>3. Herstart programmama.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="23">
+    <Value>MANUEEL</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="24">
+    <Value>AUTO</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="25">
+    <Value>Robot niet in veilig positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="26">
+    <Value>Robot niet in park positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="27">
+    <Value>Robot niet in service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="28">
+    <Value>Aub kiezen MANUEEL of AUTO</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="29">
+    <Value>MANUEEL=> beweeg robot met joystick naar veilig positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="30">
+    <Value>AUTO   => robot beweegt direct naar de veilig positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="31">
+    <Value>MANUEEL=> beweeg robot met joystick naar park positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="32">
+    <Value>AUTO   => robot beweegt direct naar de park positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="33">
+    <Value>MANUEEL=>  beweeg robot met joystick to service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="34">
+    <Value>AUTO   => robot beweegt direct naar de service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="35">
+    <Value>Beweeg robot naar sync positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="36">
+    <Value>Beweeg robot naar veilig positie 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="37">
+    <Value>Beweeg robot naar veilig positie 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="38">
+    <Value>Beweeg robot naar veilig positie 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="39">
+    <Value>Beweeg robot naar veilig positie 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="40">
+    <Value>Beweeg robot naar veilig positie 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="41">
+    <Value>Beweeg robot naar service positie 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="42">
+    <Value>Beweeg robot naar service positie 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="43">
+    <Value>Beweeg robot naar service positie 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Beweeg robot naar service positie 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="45">
+    <Value>Beweeg robot naar service positie 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="46">
+    <Value>Beweeg robot naar park positie 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Beweeg robot naar park positie 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Beweeg robot naar park positie 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Beweeg robot naar park positie 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Beweeg robot naar park positie 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Set/Change robot veilig positie 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="52">
+    <Value>Set/Change robot veilig positie 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Set/Change robot veilig positie 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Set/Change robot veilig positie 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="55">
+    <Value>Set/Change robot veilig positie 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="56">
+    <Value>Set/Change robot service positie 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="57">
+    <Value>Set/Change robot service positie 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="58">
+    <Value>Set/Change robot service positie 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="59">
+    <Value>Set/Change robot service positie 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="60">
+    <Value>Set/Change robot service positie 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="61">
+    <Value>Set/Change robot park positie 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="62">
+    <Value>Set/Change robot park positie 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="63">
+    <Value>Set/Change robot park positie 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="64">
+    <Value>Set/Change robot park positie 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="65">
+    <Value>Set/Change robot park positie 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="75">
+    <Value>Load identify interchange 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="76">
+    <Value>Load identify interchange 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="77">
+    <Value>Load identify interchange 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="78">
+    <Value>Load identify interchange 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="79">
+    <Value>Load identify station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="80">
+    <Value>Load identify station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="81">
+    <Value>Load identify station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="82">
+    <Value>Load identify station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="83">
+    <Value>Load identify station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="84">
+    <Value>Load identify station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="85">
+    <Value>Load identify station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="86">
+    <Value>Load identify station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="95">
+    <Value>Set/Change load positie for station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="96">
+    <Value>Set/Change load positie for station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="97">
+    <Value>Set/Change load positie for station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="98">
+    <Value>Set/Change load positie for station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="99">
+    <Value>Set/Change load positie for station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="100">
+    <Value>Set/Change load positie for station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="101">
+    <Value>Set/Change load positie for station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="102">
+    <Value>Set/Change load positie for station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="103">
+    <Value>Set/Change process positie for station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="104">
+    <Value>Set/Change process positie for station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="105">
+    <Value>Set/Change process positie for station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="106">
+    <Value>Set/Change process positie for station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="107">
+    <Value>Set/Change process positie for station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="108">
+    <Value>Set/Change process positie for station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="109">
+    <Value>Set/Change process positie for station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="110">
+    <Value>Set/Change process positie for station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="111">
+    <Value>Set/Change service positie for station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="112">
+    <Value>Set/Change service positie for station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="113">
+    <Value>Set/Change service positie for station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="114">
+    <Value>Set/Change service positie for station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="115">
+    <Value>Set/Change service positie for station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="116">
+    <Value>Set/Change service positie for station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="117">
+    <Value>Set/Change service positie for station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="118">
+    <Value>Set/Change service positie for station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="119">
+    <Value>Calibrate irbp1 interchange posities</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="120">
+    <Value>Calibrate irbp2 interchange posities</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="121">
+    <Value>Calibrate irbp3 interchange posities</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="122">
+    <Value>Calibrate irbp4 interchange posities</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="135">
+    <Value>Index naar station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="136">
+    <Value>Index naar station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="137">
+    <Value>Index naar station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="138">
+    <Value>Index naar station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="139">
+    <Value>Index naar station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="140">
+    <Value>Index naar station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="141">
+    <Value>Index naar station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="142">
+    <Value>Index naar station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="143">
+    <Value>Beweeg station 1 naar load positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="144">
+    <Value>Beweeg station 2 naar load positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="145">
+    <Value>Beweeg station 3 naar load positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="146">
+    <Value>Beweeg station 4 naar load positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="147">
+    <Value>Beweeg station 5 naar load positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="148">
+    <Value>Beweeg station 6 naar load positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="149">
+    <Value>Beweeg station 7 naar load positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="150">
+    <Value>Beweeg station 8 naar load positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="151">
+    <Value>Beweeg station 1 naar process positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="152">
+    <Value>Beweeg station 2 naar process positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="153">
+    <Value>Beweeg station 3 naar process positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="154">
+    <Value>Beweeg station 4 naar process positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="155">
+    <Value>Beweeg station 5 naar process positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="156">
+    <Value>Beweeg station 6 naar process positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="157">
+    <Value>Beweeg station 7 naar process positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="158">
+    <Value>Beweeg station 8 naar process positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="159">
+    <Value>Beweeg station 1 naar service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="160">
+    <Value>Beweeg station 2 naar service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="161">
+    <Value>Beweeg station 3 naar service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="162">
+    <Value>Beweeg station 4 naar service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="163">
+    <Value>Beweeg station 5 naar service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="164">
+    <Value>Beweeg station 6 naar service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="165">
+    <Value>Beweeg station 7 naar service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="166">
+    <Value>Beweeg station 8 naar service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="167">
+    <Value>Beweeg irbp1 naar sync positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="168">
+    <Value>Beweeg irbp2 naar sync positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="169">
+    <Value>Beweeg irbp3 naar sync positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="170">
+    <Value>Beweeg irbp4 naar sync positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="171">
+    <Value>Beweeg irbp5 naar sync positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="172">
+    <Value>Beweeg irbp6 naar sync positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="173">
+    <Value>Beweeg irbp7 naar sync positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="174">
+    <Value>Beweeg irbp8 naar sync positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="190">
+    <Value>IRBP Load positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="191">
+    <Value>IRBP Process positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="192">
+    <Value>IRBP Service positie</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="193">
+    <Value>Load positie Error</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="194">
+    <Value>Process positie Error</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="195">
+    <Value>Service positie Error</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="196">
+    <Value>As</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="197">
+    <Value>Huidige Waarde:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="198">
+    <Value>Toets Nieuwe Waarde (grad)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="199">
+    <Value>Update van load positie for station mislukt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="200">
+    <Value>Update van proces positie for station mislukt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="201">
+    <Value>Update van service positie for station mislukt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="202">
+    <Value>No onderdeel selected for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="203">
+    <Value>Select onderdeel and redo operation for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="204">
+    <Value>Geen advpart gedefineered in gekozen onderdeel for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="205">
+    <Value>Defineer advpart in gekozen onderdeel en probeer opnieuw voor station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="206">
+    <Value>Load ID Fout</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="207">
+    <Value>Update van loaddata voor station mislukt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="208">
+    <Value>Geen load gedefineerd for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="209">
+    <Value>Default load waarde zal worden gebruikt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="210">
+    <Value>Load positie Waarschuwing</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="211">
+    <Value>Process positie Waarschuwing</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="212">
+    <Value>Service positie Waarschuwing</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="213">
+    <Value>Default waardes voor load hoek zal worden gebruikt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="214">
+    <Value>Default waardes voor process hoek zal worden gebruikt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="215">
+    <Value>Default waardes voor service hoek zal worden gebruikt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="216">
+    <Value>Activatie Waarschuwing</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="217">
+    <Value>WAARSCHUWING</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="218">
+    <Value>Interchange Waarschuwing</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="219">
+    <Value>Interchange kan nu beweegen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="220">
+    <Value>Houd een velige afstand</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="221">
+    <Value>Station</Value>
+    <Comment></Comment>
+  </Text>
+</Resource>

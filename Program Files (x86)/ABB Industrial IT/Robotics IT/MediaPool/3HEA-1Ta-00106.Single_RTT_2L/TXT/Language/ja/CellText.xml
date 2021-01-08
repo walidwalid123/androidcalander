@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Resource Name="CellText" Language="ja">
+  <Text Name="1">
+    <Value>TCP Setup</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="2">
+    <Value>TCP Check frequency</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="3">
+    <Value>TCP Check</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="4">
+    <Value>TCP Update</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="5">
+    <Value>TCP At reference pointer</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="7">
+    <Value>(0 to disable TCP check during production)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="8">
+    <Value>Current value:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Enter new value (freq)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="15">
+    <Value>Safe position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="16">
+    <Value>Park position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="17">
+    <Value>Service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="18">
+    <Value>1. Press OK.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="19">
+    <Value>2. Move the robot to a safe position.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="20">
+    <Value>2. Move the robot to a park position.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="21">
+    <Value>2. Move the robot to a service position.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="22">
+    <Value>3. Restart program.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="23">
+    <Value>MANUAL</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="24">
+    <Value>AUTO</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="25">
+    <Value>Robot not in safe position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="26">
+    <Value>Robot not in park position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="27">
+    <Value>Robot not in service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="28">
+    <Value>Please choose MANUAL or AUTO</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="29">
+    <Value>MANUAL => move robot by joystick to safe position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="30">
+    <Value>AUTO   => robot moves directly to safe position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="31">
+    <Value>MANUAL => move robot by joystick to park position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="32">
+    <Value>AUTO   => robot moves directly to park position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="33">
+    <Value>MANUAL => move robot by joystick to service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="34">
+    <Value>AUTO   => robot moves directly to service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="35">
+    <Value>Move robot to sync position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="36">
+    <Value>Move robot to safe position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="37">
+    <Value>Move robot to safe position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="38">
+    <Value>Move robot to safe position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="39">
+    <Value>Move robot to safe position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="40">
+    <Value>Move robot to safe position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="41">
+    <Value>Move robot to service position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="42">
+    <Value>Move robot to service position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="43">
+    <Value>Move robot to service position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Move robot to service position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="45">
+    <Value>Move robot to service position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="46">
+    <Value>Move robot to park position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Move robot to park position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Move robot to park position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Move robot to park position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Move robot to park position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Set/Change robot safe position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="52">
+    <Value>Set/Change robot safe position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Set/Change robot safe position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Set/Change robot safe position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="55">
+    <Value>Set/Change robot safe position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="56">
+    <Value>Set/Change robot service position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="57">
+    <Value>Set/Change robot service position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="58">
+    <Value>Set/Change robot service position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="59">
+    <Value>Set/Change robot service position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="60">
+    <Value>Set/Change robot service position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="61">
+    <Value>Set/Change robot park position 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="62">
+    <Value>Set/Change robot park position 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="63">
+    <Value>Set/Change robot park position 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="64">
+    <Value>Set/Change robot park position 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="65">
+    <Value>Set/Change robot park position 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="75">
+    <Value>Load identify interchange 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="76">
+    <Value>Load identify interchange 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="77">
+    <Value>Load identify interchange 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="78">
+    <Value>Load identify interchange 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="79">
+    <Value>Load identify station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="80">
+    <Value>Load identify station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="81">
+    <Value>Load identify station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="82">
+    <Value>Load identify station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="83">
+    <Value>Load identify station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="84">
+    <Value>Load identify station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="85">
+    <Value>Load identify station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="86">
+    <Value>Load identify station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="95">
+    <Value>Set/Change load position for station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="96">
+    <Value>Set/Change load position for station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="97">
+    <Value>Set/Change load position for station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="98">
+    <Value>Set/Change load position for station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="99">
+    <Value>Set/Change load position for station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="100">
+    <Value>Set/Change load position for station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="101">
+    <Value>Set/Change load position for station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="102">
+    <Value>Set/Change load position for station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="103">
+    <Value>Set/Change process position for station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="104">
+    <Value>Set/Change process position for station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="105">
+    <Value>Set/Change process position for station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="106">
+    <Value>Set/Change process position for station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="107">
+    <Value>Set/Change process position for station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="108">
+    <Value>Set/Change process position for station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="109">
+    <Value>Set/Change process position for station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="110">
+    <Value>Set/Change process position for station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="111">
+    <Value>Set/Change service position for station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="112">
+    <Value>Set/Change service position for station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="113">
+    <Value>Set/Change service position for station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="114">
+    <Value>Set/Change service position for station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="115">
+    <Value>Set/Change service position for station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="116">
+    <Value>Set/Change service position for station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="117">
+    <Value>Set/Change service position for station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="118">
+    <Value>Set/Change service position for station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="119">
+    <Value>Calibrate irbp1 interchange positions</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="120">
+    <Value>Calibrate irbp2 interchange positions</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="121">
+    <Value>Calibrate irbp3 interchange positions</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="122">
+    <Value>Calibrate irbp4 interchange positions</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="135">
+    <Value>Index to station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="136">
+    <Value>Index to station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="137">
+    <Value>Index to station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="138">
+    <Value>Index to station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="139">
+    <Value>Index to station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="140">
+    <Value>Index to station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="141">
+    <Value>Index to station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="142">
+    <Value>Index to station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="143">
+    <Value>Move station 1 to load position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="144">
+    <Value>Move station 2 to load position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="145">
+    <Value>Move station 3 to load position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="146">
+    <Value>Move station 4 to load position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="147">
+    <Value>Move station 5 to load position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="148">
+    <Value>Move station 6 to load position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="149">
+    <Value>Move station 7 to load position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="150">
+    <Value>Move station 8 to load position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="151">
+    <Value>Move station 1 to process position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="152">
+    <Value>Move station 2 to process position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="153">
+    <Value>Move station 3 to process position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="154">
+    <Value>Move station 4 to process position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="155">
+    <Value>Move station 5 to process position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="156">
+    <Value>Move station 6 to process position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="157">
+    <Value>Move station 7 to process position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="158">
+    <Value>Move station 8 to process position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="159">
+    <Value>Move station 1 to service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="160">
+    <Value>Move station 2 to service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="161">
+    <Value>Move station 3 to service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="162">
+    <Value>Move station 4 to service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="163">
+    <Value>Move station 5 to service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="164">
+    <Value>Move station 6 to service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="165">
+    <Value>Move station 7 to service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="166">
+    <Value>Move station 8 to service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="167">
+    <Value>Move irbp1 to sync position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="168">
+    <Value>Move irbp2 to sync position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="169">
+    <Value>Move irbp3 to sync position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="170">
+    <Value>Move irbp4 to sync position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="171">
+    <Value>Move irbp5 to sync position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="172">
+    <Value>Move irbp6 to sync position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="173">
+    <Value>Move irbp7 to sync position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="174">
+    <Value>Move irbp8 to sync position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="190">
+    <Value>IRBP Load position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="191">
+    <Value>IRBP Process position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="192">
+    <Value>IRBP Service position</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="193">
+    <Value>Load position Error</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="194">
+    <Value>Process position Error</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="195">
+    <Value>Service position Error</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="196">
+    <Value>Axis</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="197">
+    <Value>Current value: </Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="198">
+    <Value>Enter new value (deg)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="199">
+    <Value>Failed to update load position for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="200">
+    <Value>Failed to update process position for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="201">
+    <Value>Failed to update service position for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="202">
+    <Value>No part selected for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="203">
+    <Value>Select part and redo operation for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="204">
+    <Value>No advpart defined in selected part for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="205">
+    <Value>Define advpart in selected part and redo operation for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="206">
+    <Value>Load ID Error</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="207">
+    <Value>Failed to update loaddata for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="208">
+    <Value>No load defined for station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="209">
+    <Value>Default load will be used</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="210">
+    <Value>Load position Warning</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="211">
+    <Value>Process position Warning</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="212">
+    <Value>Service position Warning</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="213">
+    <Value>Default values for load angle will be used</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="214">
+    <Value>Default values for process angle will be used</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="215">
+    <Value>Default values for service angle will be used</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="216">
+    <Value>Activation Warning</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="217">
+    <Value>WARNING</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="218">
+    <Value>Interchange Warning</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="219">
+    <Value>Interchange might now move</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="220">
+    <Value>Make sure that you keep your safety distance</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="221">
+    <Value>Station</Value>
+    <Comment></Comment>
+  </Text>
+</Resource>

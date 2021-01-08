@@ -1,0 +1,46 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE Irbp1Data(SYSMODULE)
+  !*****************************************************************************
+  !
+  !  MODULE: IrbpR1Data
+  !
+  !  Description: Module used for irbp R 1 data
+  !
+  !  History:  2004-10-01
+  !             Created
+  !            2005-11-09 SÖ
+  !             Added data for service position
+  !             Added var for Max torque.
+  !
+  !*****************************************************************************
+  !
+  ! Speeddata for interchange calib
+  CONST speeddata sdInterchCalib1:=[1000,500,5000,0.25];
+  ! Speeddata for interchange
+  TASK PERS speeddata sdInterch1:=[1000,500,5000,180];
+  ! test if interchange is calibrated
+  TASK PERS bool bInterchCalib1:=FALSE;
+  !
+  ! Interchange positions
+  TASK PERS num nInterchStn1:=0;
+  TASK PERS num nInterchStn2:=180;
+  !
+  TASK PERS num nTorqueTime:=0.4;
+  CONST num nMaxTorque1:=12;
+  !
+  ! adv partdata
+  TASK PERS partadv padvStn1:=[[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,[0,0,0],[0,0,0,0],0,0,0]];
+  TASK PERS partadv padvStn2:=[[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,[0,0,0],[0,0,0,0],0,0,0]];
+  !
+  ! Loaddata
+  CONST loaddata ldDefLoadStn1:=[250,[0.001,0.001,0.001],[1,0,0,0],30,30,60];
+  CONST loaddata ldDefLoadStn2:=[250,[0.001,0.001,0.001],[1,0,0,0],30,30,60];
+  TASK PERS loaddata ldLoadStn1:=[0,[0,0,0],[0,0,0,0],0,0,0];
+  TASK PERS loaddata ldLoadStn2:=[0,[0,0,0],[0,0,0,0],0,0,0];
+  TASK PERS loaddata ldTemp1:=[0.001,[0,0,0.001],[1,0,0,0],0,0,0];
+  !
+ENDMODULE

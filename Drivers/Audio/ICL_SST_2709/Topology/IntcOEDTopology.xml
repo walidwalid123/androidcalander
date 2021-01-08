@@ -1,0 +1,521 @@
+<Topology Version="2.0" BuildVersion="10.24.00.2709">
+    <Path Name="Render passthrough" Id="eIntcPathRenderPassthrough">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_PASS" Direction="INTC_OE_PATH_DIRECTION_RENDER" Priority="0" Longbuf="false" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeDma" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeDma" />
+        </Node>
+    </Path>
+    <Path Name="Render chained" Id="eIntcPathRenderChained">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_PASS" Direction="INTC_OE_PATH_DIRECTION_RENDER" Priority="0" Longbuf="false" />
+        <Node Id="0" ModuleType="eFakeCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeDma" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eFakeCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeDma" />
+        </Node>
+    </Path>
+    <Path Name="Render system pin" Id="eIntcPathRenderSystem">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_HOST" Direction="INTC_OE_PATH_DIRECTION_RENDER" Priority="0" Longbuf="false" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeDma" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="ePeakVolModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="2" ModuleType="eMixInModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypePath" />
+        </Node>
+    </Path>
+    <Path Name="Render offload pin" Id="eIntcPathRenderOffload">
+        <Caps SFX="1" HostLink="INTC_OE_PATH_HOSTLINK_HOST" Direction="INTC_OE_PATH_DIRECTION_RENDER" Priority="0" Longbuf="true" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeDma" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eFxModule" Optional="true">
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_DEFAULT" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_SPEECH" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_MEDIA" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_MOVIE" />
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="2" ModuleType="ePeakVolModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="3" ModuleType="eMixInModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypePath" />
+        </Node>
+    </Path>
+    <Path Name="Render MFX" Id="eIntcPathRenderMfx">
+        <Caps MFX="1" HostLink="INTC_OE_PATH_HOSTLINK_OTHER" Direction="INTC_OE_PATH_DIRECTION_RENDER" Priority="1" Longbuf="false" />
+        <Node Id="0" ModuleType="eMixOutModule" Optional="false">
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eFxModule" Optional="false">
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_DEFAULT" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_SPEECH" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_MEDIA" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_MOVIE" />
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="2" ModuleType="eMixInModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypePath" />
+        </Node>
+    </Path>
+    <Path Name="Render link" Id="eIntcPathRenderLink">
+        <Caps EFX="1" FXF="1" HostLink="INTC_OE_PATH_HOSTLINK_LINK" Direction="INTC_OE_PATH_DIRECTION_RENDER" Priority="2" Longbuf="false" />
+        <Node Id="0" ModuleType="eMixOutModule" Optional="false">
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <InQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eFxModule" Optional="true">
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_RAW" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_DEFAULT" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_SPEECH" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_MEDIA" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_MOVIE" />
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="2" ModuleType="ePeakVolModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="3" ModuleType="eFxFModule" Optional="true">
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_RAW" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_DEFAULT" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_SPEECH" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_MEDIA" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_MOVIE" />
+            <InQueue entryType="eEntryTypeGeneral" />
+            <InQueue entryType="eEntryTypeFeedback" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="4" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeDma" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+        </Node>
+    </Path>
+    <Path Name="Render link feedback" Id="eIntcPathRenderLinkFeedback">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_LINK" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="3" Longbuf="false" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeDma" />
+            <OutQueue entryType="eEntryTypeFeedback" />
+        </Node>
+    </Path>
+    <Path Name="Render loopback" Id="eIntcPathRenderLoopback">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_HOST" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="3" Longbuf="false" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="ePeakVolModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="2" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeDma" />
+        </Node>
+    </Path>
+    <Path Name="Capture passthrough" Id="eIntcPathCapturePassthrough">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_PASS" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="0" Longbuf="false" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeDma" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeDma" />
+        </Node>
+    </Path>
+    <Path Name="Capture chained" Id="eIntcPathCaptureChained">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_PASS" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="0" Longbuf="false" />
+        <Node Id="0" ModuleType="eFakeCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeDma" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eFakeCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeDma" />
+        </Node>
+    </Path>
+    <Path Name="Capture system pin" Id="eIntcPathCaptureSystem">
+        <Caps MFX="1" HostLink="INTC_OE_PATH_HOSTLINK_HOST" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="5" Longbuf="false" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eFxModule" Optional="true">
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_SPEECH" />
+            <InQueue entryType="eEntryTypeGeneral" />
+            <InQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="2" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeDma" />
+        </Node>
+    </Path>
+    <Path Name="Capture Windows VAD pin" Id="eIntcPathCaptureWindowsVAD">
+        <Caps EFX="1" HostLink="INTC_OE_PATH_HOSTLINK_HOST" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="6" Longbuf="false" />
+        <Node Id="0" ModuleType="eMicSelectModule" Optional="false">
+            <InQueue entryType="eEntryTypeWindowsVAD" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eFxModule" Optional="true">
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_RAW" />
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="2" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeDma" />
+        </Node>
+    </Path>
+    <Path Name="Capture speech pin" Id="eIntcPathCaptureSpeech">
+        <Caps EFX="1" HostLink="INTC_OE_PATH_HOSTLINK_HOST" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="6" Longbuf="true" />
+        <Node Id="0" ModuleType="eMicSelectModule" Optional="false">
+            <InQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eFxModule" Optional="true">
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_RAW" />
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="2" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeDma" />
+        </Node>
+    </Path>
+    <Path Name="Capture detect pin" Id="eIntcPathCaptureDetect">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_OTHER" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="6" Longbuf="false" />
+        <Node Id="0" ModuleType="eMicSelectModule" Optional="false">
+            <InQueue entryType="eEntryTypeDetect" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eAecModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <InQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="2" ModuleType="eWovModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+        </Node>
+    </Path>
+    <Path Name="Capture system pin process" Id="eIntcPathCaptureSystemProcess">
+        <Caps EFX="1" HostLink="INTC_OE_PATH_HOSTLINK_OTHER" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="1" Longbuf="false" />
+        <Node Id="0" ModuleType="eMicSelectModule" Optional="false">
+            <InQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eFxModule" Optional="true">
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_RAW" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS" />
+            <InMode Name="AUDIO_SIGNALPROCESSINGMODE_SPEECH" />
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="2" ModuleType="ePeakVolModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="3" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+        </Node>
+    </Path>
+    <Path Name="Capture KPB" Id="eIntcPathCaptureKpb">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_OTHER" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="5" Longbuf="false" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eKpbModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeDetect" />
+            <OutQueue entryType="eEntryTypeWindowsVAD" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+        </Node>
+    </Path>
+    <Path Name="Capture speech process" Id="eIntcPathCaptureSpeechProcess">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_OTHER" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="1" Longbuf="false" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eMuxModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <InQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypePath" />
+        </Node>
+    </Path>
+    <Path Name="Capture link" Id="eIntcPathCaptureLink">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_LINK" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="0" Longbuf="false" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeDma" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+            <OutQueue entryType="eEntryTypePath" />
+        </Node>
+    </Path>
+    <Path Name="Capture link speech DMIC" Id="eIntcPathCaptureLinkSpeechDmic">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_LINK" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="0" Longbuf="false" />
+        <Node Id="0" ModuleType="eWhmModule" Optional="false">
+            <InQueue entryType="eEntryTypeDma" />
+            <InQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypePath" />
+        </Node>
+    </Path>
+    <Path Name="Capture reference" Id="eIntcPathCaptureReference">
+        <Caps HostLink="INTC_OE_PATH_HOSTLINK_OTHER" Direction="INTC_OE_PATH_DIRECTION_CAPTURE" Priority="4" Longbuf="false" />
+        <Node Id="0" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeGeneral" />
+        </Node>
+        <Node Id="1" ModuleType="eCopierModule" Optional="false">
+            <InQueue entryType="eEntryTypeGeneral" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+            <OutQueue entryType="eEntryTypeReference" />
+        </Node>
+    </Path>
+    <Stream Id="eIntcStreamRenderLegacy" Name="Render legacy" HandlePath="eIntcPathRenderPassthrough">
+        <StreamType Direction="eIntcGraphDirectionRender" Link="eLinkNone" Type="eIntcGraphLegacy" Pipe="eIntcOERenderPipeSystem" />
+        <PathItem Id="0" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathRenderPassthrough" Optional="false" />
+            <DstPath Id="INTC_OE_NO_PATH" Optional="false" />
+        </PathItem>
+    </Stream>
+    <Stream Id="eIntcStreamRenderChained" Name="Render chained" HandlePath="eIntcPathRenderChained">
+        <StreamType Direction="eIntcGraphDirectionRender" Link="eLinkNone" Type="eIntcGraphChained" Pipe="eIntcOERenderPipeSystem" />
+        <PathItem Id="0" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathRenderChained" Optional="false" />
+            <DstPath Id="INTC_OE_NO_PATH" Optional="false" />
+        </PathItem>
+    </Stream>
+    <Stream Id="eIntcStreamRenderSystem" Name="Render system pin" HandlePath="eIntcPathRenderSystem">
+        <StreamType Direction="eIntcGraphDirectionRender" Link="eLinkNone" Type="eIntcGraphOffload" Pipe="eIntcOERenderPipeSystem" />
+        <PathItem Id="0" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathRenderSystem" Optional="false" />
+            <DstPath Id="eIntcPathRenderMfx" Optional="true" MFX="1" />
+        </PathItem>
+        <PathItem Id="1" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathRenderMfx" Optional="true" MFX="1" />
+            <DstPath Id="eIntcPathRenderLink" Optional="false" />
+        </PathItem>
+        <PathItem Id="2" BindType="eEntryTypeFeedback">
+            <SrcPath Id="eIntcPathRenderLinkFeedback" Optional="true" FXF="1" />
+            <DstPath Id="eIntcPathRenderLink" Optional="false" />
+        </PathItem>
+    </Stream>
+    <Stream Id="eIntcStreamRenderOffload" Name="Render offload pin" HandlePath="eIntcPathRenderOffload">
+        <StreamType Direction="eIntcGraphDirectionRender" Link="eLinkNone" Type="eIntcGraphOffload" Pipe="eIntcOERenderPipeOffload" />
+        <PathItem Id="0" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathRenderOffload" Optional="false" />
+            <DstPath Id="eIntcPathRenderMfx" Optional="true" MFX="1" />
+        </PathItem>
+        <PathItem Id="1" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathRenderMfx" Optional="true" MFX="1" />
+            <DstPath Id="eIntcPathRenderLink" Optional="false" />
+        </PathItem>
+        <PathItem Id="2" BindType="eEntryTypeFeedback">
+            <SrcPath Id="eIntcPathRenderLinkFeedback" Optional="true" FXF="1" />
+            <DstPath Id="eIntcPathRenderLink" Optional="false" />
+        </PathItem>
+    </Stream>
+    <Stream Id="eIntcStreamLoopback" Name="Loopback pin" HandlePath="eIntcPathRenderLoopback">
+        <StreamType Direction="eIntcGraphDirectionRender" Link="eLinkNone" Type="eIntcGraphOffload" Pipe="eIntcOERenderPipeLoopback" />
+        <PathItem Id="0" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathRenderLink" Optional="false" />
+            <DstPath Id="eIntcPathRenderLoopback" Optional="false" />
+        </PathItem>
+    </Stream>
+    <Stream Id="eIntcStreamCaptureLegacy" Name="Capture legacy" HandlePath="eIntcPathCapturePassthrough">
+        <StreamType Direction="eIntcGraphDirectionCapture" Link="eLinkNone" Type="eIntcGraphLegacy" Pipe="eIntcOECapturePipeSystem" />
+        <PathItem Id="0" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathCapturePassthrough" Optional="false" />
+            <DstPath Id="INTC_OE_NO_PATH" Optional="false" />
+        </PathItem>
+    </Stream>
+    <Stream Id="eIntcStreamCaptureChained" Name="Capture chained" HandlePath="eIntcPathCaptureChained">
+        <StreamType Direction="eIntcGraphDirectionCapture" Link="eLinkNone" Type="eIntcGraphChained" Pipe="eIntcOECapturePipeSystem" />
+        <PathItem Id="0" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathCaptureChained" Optional="false" />
+            <DstPath Id="INTC_OE_NO_PATH" Optional="false" />
+        </PathItem>
+    </Stream>
+    <Stream Id="eIntcStreamCaptureSystem" Name="Capture system pin" HandlePath="eIntcPathCaptureSystem">
+        <StreamType Direction="eIntcGraphDirectionCapture" Link="eLinkNone" Type="eIntcGraphOffload" Pipe="eIntcOECapturePipeSystem" />
+        <PathItem Id="0" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathCaptureLink" Optional="false" />
+            <DstPath Id="eIntcPathCaptureSystemProcess" Optional="false" />
+        </PathItem>
+        <PathItem Id="1" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathCaptureSystemProcess" Optional="false" />
+            <DstPath Id="eIntcPathCaptureSystem" Optional="false" />
+        </PathItem>
+        <PathItem Id="2" BindType="eEntryTypeReference">
+            <SrcPath Id="eIntcPathRenderLink" Optional="true" />
+            <DstPath Id="eIntcPathCaptureReference" Optional="true" />
+        </PathItem>
+        <PathItem Id="3" BindType="eEntryTypeReference">
+            <SrcPath Id="eIntcPathCaptureReference" Optional="true" />
+            <DstPath Id="eIntcPathCaptureSystem" Optional="false" />
+        </PathItem>
+    </Stream>
+    <Stream Id="eIntcStreamCaptureWindowsVAD" Name="Capture Windows VAD pin" HandlePath="eIntcPathCaptureWindowsVAD">
+        <StreamType Direction="eIntcGraphDirectionCapture" Link="eLinkNone" Type="eIntcGraphOffload" Pipe="eIntcOECapturePipeWindowsVAD" />
+        <PathItem Id="0" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathCaptureLink" Optional="false" />
+            <DstPath Id="eIntcPathCaptureSpeechProcess" Optional="false" />
+        </PathItem>
+        <PathItem Id="1" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathCaptureSpeechProcess" Optional="false" />
+            <DstPath Id="eIntcPathCaptureKpb" Optional="false" />
+        </PathItem>
+        <PathItem Id="2" BindType="eEntryTypeWindowsVAD">
+            <SrcPath Id="eIntcPathCaptureKpb" Optional="false" />
+            <DstPath Id="eIntcPathCaptureWindowsVAD" Optional="false" />
+        </PathItem>
+        <PathItem Id="3" BindType="eEntryTypeDetect">
+            <SrcPath Id="eIntcPathCaptureKpb" Optional="false" />
+            <DstPath Id="eIntcPathCaptureDetect" Optional="true" />
+        </PathItem>
+        <PathItem Id="4" BindType="eEntryTypeReference">
+            <SrcPath Id="eIntcPathRenderLink" Optional="true" />
+            <DstPath Id="eIntcPathCaptureReference" Optional="true" />
+        </PathItem>
+        <PathItem Id="5" BindType="eEntryTypeReference">
+            <SrcPath Id="eIntcPathCaptureReference" Optional="true" />
+            <DstPath Id="eIntcPathCaptureSpeechProcess" Optional="false" />
+        </PathItem>
+        <PathItem Id="6" BindType="eEntryTypeReference">
+            <SrcPath Id="eIntcPathCaptureReference" Optional="true" />
+            <DstPath Id="eIntcPathCaptureDetect" Optional="true" />
+        </PathItem>
+    </Stream>
+    <Stream Id="eIntcStreamCaptureSpeech" Name="Capture speech pin" HandlePath="eIntcPathCaptureSpeech">
+        <StreamType Direction="eIntcGraphDirectionCapture" Link="eLinkNone" Type="eIntcGraphOffload" Pipe="eIntcOECapturePipeSpeech" />
+        <PathItem Id="0" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathCaptureLink" Optional="false" />
+            <DstPath Id="eIntcPathCaptureSpeechProcess" Optional="false" />
+        </PathItem>
+        <PathItem Id="1" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathCaptureSpeechProcess" Optional="false" />
+            <DstPath Id="eIntcPathCaptureKpb" Optional="false" />
+        </PathItem>
+        <PathItem Id="2" BindType="eEntryTypePath">
+            <SrcPath Id="eIntcPathCaptureKpb" Optional="false" />
+            <DstPath Id="eIntcPathCaptureSpeech" Optional="false" />
+        </PathItem>
+        <PathItem Id="3" BindType="eEntryTypeDetect">
+            <SrcPath Id="eIntcPathCaptureKpb" Optional="false" />
+            <DstPath Id="eIntcPathCaptureDetect" Optional="true" />
+        </PathItem>
+        <PathItem Id="4" BindType="eEntryTypeReference">
+            <SrcPath Id="eIntcPathRenderLink" Optional="true" />
+            <DstPath Id="eIntcPathCaptureReference" Optional="true" />
+        </PathItem>
+        <PathItem Id="5" BindType="eEntryTypeReference">
+            <SrcPath Id="eIntcPathCaptureReference" Optional="true" />
+            <DstPath Id="eIntcPathCaptureSpeechProcess" Optional="false" />
+        </PathItem>
+        <PathItem Id="6" BindType="eEntryTypeReference">
+            <SrcPath Id="eIntcPathCaptureReference" Optional="true" />
+            <DstPath Id="eIntcPathCaptureDetect" Optional="true" />
+        </PathItem>
+    </Stream>
+    <RenderModes>
+        <Mode Name="AUDIO_SIGNALPROCESSINGMODE_RAW" GUID="9E90EA20-B493-4FD1-A1A8-7E1361A956CF" />
+        <Mode Name="AUDIO_SIGNALPROCESSINGMODE_DEFAULT" GUID="C18E2F7E-933D-4965-B7D1-1EEF228D2AF3" />
+        <Mode Name="AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS" GUID="98951333-B9CD-48B1-A0A3-FF40682D73F7" />
+        <Mode Name="AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION" GUID="9CF2A70B-F377-403B-BD6B-360863E0355C" />
+        <Mode Name="AUDIO_SIGNALPROCESSINGMODE_MEDIA" GUID="4780004E-7133-41D8-8C74-660DADD2C0EE" />
+        <Mode Name="AUDIO_SIGNALPROCESSINGMODE_MOVIE" GUID="B26FEB0D-EC94-477C-9494-D1AB8E753F6E" />
+    </RenderModes>
+    <CaptureModes>
+        <Mode Name="AUDIO_SIGNALPROCESSINGMODE_RAW" GUID="9E90EA20-B493-4FD1-A1A8-7E1361A956CF" />
+        <Mode Name="AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS" GUID="98951333-B9CD-48B1-A0A3-FF40682D73F7" />
+        <Mode Name="AUDIO_SIGNALPROCESSINGMODE_SPEECH" GUID="FC1CFC9B-B9D6-4CFA-B5E0-4BB2166878B2" />
+    </CaptureModes>
+    <RenderPipes>
+        <Pipe Name="eIntcOERenderPipeSystem" Id="0" />
+        <Pipe Name="eIntcOERenderPipeOffload" Id="2" />
+        <Pipe Name="eIntcOERenderPipeLoopback" Id="3" />
+    </RenderPipes>
+    <CapturePipes>
+        <Pipe Name="eIntcOECapturePipeSystem" Id="0" />
+        <Pipe Name="eIntcOECapturePipeSpeech" Id="2" />
+        <Pipe Name="eIntcOECapturePipeWindowsVAD" Id="3" />
+    </CapturePipes>
+</Topology>

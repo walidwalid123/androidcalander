@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="FwUpdateTool.WizardSteps.ConfirmationScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:fwUpdateTool="clr-namespace:FwUpdateTool"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="500">
+
+    <Grid>
+        <Label Content="Current NVM Version:" Margin="10,18,164,0" Height="26" VerticalAlignment="Top" />
+        <Label Content="{Binding NvmVersion}" Margin="136,18,126,0" Height="26" VerticalAlignment="Top" />
+        <Label Content="Current PD Version:" Margin="10,52,164,0" Height="26" VerticalAlignment="Top" />
+        <Label Content="{Binding PdVersion}" Margin="136,52,126,0" Height="26" VerticalAlignment="Top" />
+        <Label Content="File NVM Version:" Margin="248,18,-74,0" Height="26" VerticalAlignment="Top" />
+        <Label Content="{Binding NvmFileVersion}" Margin="374,18,-112,0" Height="26" VerticalAlignment="Top" />
+        <Label Content="File PD Version:" Margin="248,52,-74,0" Height="26" VerticalAlignment="Top" />
+        <Label Content="{Binding PdFileVersion}" Margin="374,52,-112,0" Height="26" VerticalAlignment="Top" />
+        <Grid>
+            <Grid.Resources>
+                <fwUpdateTool:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+                <fwUpdateTool:BoolToStringConverter x:Key="BooleanToStringConverter" FalseValue="Disabled"
+                                                    TrueValue="Enabled" NullValue="N/A" />
+            </Grid.Resources>
+            <Grid.Visibility>
+                <Binding Path="IsHost" Converter="{StaticResource BoolToVisibilityConverter}" />
+            </Grid.Visibility>
+            <Label Content="Current Native Express mode:" Margin="10,86,325,0" Height="26" VerticalAlignment="Top" />
+            <Label Content="{Binding OsNativePciEnumeration, Converter={StaticResource BooleanToStringConverter}}"
+                   Margin="175,86,252,0" Height="26" VerticalAlignment="Top" />
+            <Label Content="File Native Express mode:" Margin="248,86,109,0" Height="26" VerticalAlignment="Top" />
+            <Label Content="{Binding OsNativePciEnumerationFile, Converter={StaticResource BooleanToStringConverter}}"
+                   Margin="391,86,36,0" Height="26" VerticalAlignment="Top" />
+        </Grid>
+
+        <Label Content="Your Thunderbolt™ firmware will be updated..." HorizontalAlignment="Left" Margin="10,125,0,0"
+               VerticalAlignment="Top" />
+        <Button x:Name="StartButton" Content="Start Thunderbolt™ firmware update" Margin="10,156,10,0"
+                VerticalAlignment="Top" Height="82" FontSize="16" Background="White" Click="StartButton_Click"
+                Cursor="Hand">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="13" />
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,154 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE Irbp1Mnu(SYSMODULE)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       IrbpK1Mnu.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:  cell specifik tasks for irbp K 1.
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:      2004-10-01
+  !
+  ! Version:      1.0.0
+  !
+  ! History:      1.0.0
+  !                 First release
+  !               2006-11-06 SÖ
+  !                 Added menu for move to sync position.
+  !               2007-04-17 SÖ
+  !                 Added language support for menus.
+  !
+  !---------------------------------------------------------------------------!
+  !
+  CONST ee_event peIrbp1MnuLang:=[EE_START,"Irbp1Mnu:ChangeMenuLang","",255,255];
+  !
+  !SETUP MENUS
+  TASK PERS menudata mdCalibIntch1:=["Calibrate irbp1 interchange positions","GapMicCalibrate32.gif","Irbp1Mnu:mnuCalibIntch1",255,"",3,TRUE,1,0,TRUE,0];
+  TASK PERS menudata mdLoadIdStn1:=["Load identify station 1","GapMtcLoadId32.gif","Irbp1Mnu:mnuLoadIdentStn1",255,"",3,TRUE,1,0,TRUE,0];
+  TASK PERS menudata mdLoadIdStn2:=["Load identify station 2","GapMtcLoadId32.gif","Irbp1Mnu:mnuLoadIdentStn2",255,"",3,TRUE,1,0,TRUE,0];
+  TASK PERS menudata mdSetLoadPosStn1:=["Set/Change load position for station 1","GapMtcLoadPos32.gif","Irbp1Mnu:mnuSetLdPosStn1",255,"",3,TRUE,1,0,TRUE,0];
+  TASK PERS menudata mdSetLoadPosStn2:=["Set/Change load position for station 2","GapMtcLoadPos32.gif","Irbp1Mnu:mnuSetLdPosStn2",255,"",3,TRUE,1,0,TRUE,0];
+  TASK PERS menudata mdSetProcPosStn1:=["Set/Change process position for station 1","GapMtcProcessPos32.gif","Irbp1Mnu:mnuSetPrcPosStn1",255,"",3,TRUE,1,0,TRUE,0];
+  TASK PERS menudata mdSetProcPosStn2:=["Set/Change process position for station 2","GapMtcProcessPos32.gif","Irbp1Mnu:mnuSetPrcPosStn2",255,"",3,TRUE,1,0,TRUE,0];
+  TASK PERS menudata mdSetServPosStn1:=["Set/Change service position for station 1","GapMtcProcessPos32.gif","Irbp1Mnu:mnuSetSrvPosStn1",255,"",3,TRUE,1,0,TRUE,0];
+  TASK PERS menudata mdSetServPosStn2:=["Set/Change service position for station 2","GapMtcProcessPos32.gif","Irbp1Mnu:mnuSetSrvPosStn2",255,"",3,TRUE,1,0,TRUE,0];
+  !
+  !SERVICE MENUS
+  TASK PERS menudata mdMoveSyncPos1:=["Move irbp1 to sync position","GapMic32Rotate.gif","Irbp1Mnu:mnuMoveSyncPos1",255,"",3,TRUE,2,0,TRUE,0];
+  TASK PERS menudata mdIntchStn1:=["Index to station 1","GapMic32Rotate.gif","Irbp1Mnu:mnuIndexToStn1",255,"",3,TRUE,2,0,TRUE,0];
+  TASK PERS menudata mdIntchStn2:=["Index to station 2","GapMic32Rotate.gif","Irbp1Mnu:mnuIndexToStn2",255,"",3,TRUE,2,0,TRUE,0];
+  TASK PERS menudata mdMoveLdPosStn1:=["Move station 1 to load position","GapMtc32Rotate.gif","Irbp1Mnu:mnuMoveLdPosStn1",255,"",3,TRUE,2,0,TRUE,0];
+  TASK PERS menudata mdMoveLdPosStn2:=["Move station 2 to load position","GapMtc32Rotate.gif","Irbp1Mnu:mnuMoveLdPosStn2",255,"",3,TRUE,2,0,TRUE,0];
+  TASK PERS menudata mdMovePrcPosStn1:=["Move station 1 to process position","GapMtc32Rotate.gif","Irbp1Mnu:mnuMovePrPosStn1",255,"",3,TRUE,2,0,TRUE,0];
+  TASK PERS menudata mdMovePrcPosStn2:=["Move station 2 to process position","GapMtc32Rotate.gif","Irbp1Mnu:mnuMovePrPosStn2",255,"",3,TRUE,2,0,TRUE,0];
+  TASK PERS menudata mdMoveSrvPosStn1:=["Move station 1 to service position","GapMtc32Rotate.gif","Irbp1Mnu:mnuMoveSePosStn1",255,"",3,TRUE,2,0,TRUE,0];
+  TASK PERS menudata mdMoveSrvPosStn2:=["Move station 2 to service position","GapMtc32Rotate.gif","Irbp1Mnu:mnuMoveSePosStn2",255,"",3,TRUE,2,0,TRUE,0];
+  !
+  LOCAL PROC ChangeMenuLang(\switch dummy)
+    VAR num text_res_no;
+    text_res_no:=TextResTabGet("CellText");
+    mdCalibIntch1.description:=TextResGet(text_res_no,119);
+    mdLoadIdStn1.description:=TextResGet(text_res_no,79);
+    mdLoadIdStn2.description:=TextResGet(text_res_no,80);
+    mdSetLoadPosStn1.description:=TextResGet(text_res_no,95);
+    mdSetLoadPosStn2.description:=TextResGet(text_res_no,96);
+    mdSetProcPosStn1.description:=TextResGet(text_res_no,103);
+    mdSetProcPosStn2.description:=TextResGet(text_res_no,104);
+    mdSetServPosStn1.description:=TextResGet(text_res_no,111);
+    mdSetServPosStn2.description:=TextResGet(text_res_no,112);
+    mdMoveSyncPos1.description:=TextResGet(text_res_no,167);
+    mdIntchStn1.description:=TextResGet(text_res_no,135);
+    mdIntchStn2.description:=TextResGet(text_res_no,136);
+    mdMoveLdPosStn1.description:=TextResGet(text_res_no,143);
+    mdMoveLdPosStn2.description:=TextResGet(text_res_no,144);
+    mdMovePrcPosStn1.description:=TextResGet(text_res_no,151);
+    mdMovePrcPosStn2.description:=TextResGet(text_res_no,152);
+    mdMoveSrvPosStn1.description:=TextResGet(text_res_no,159);
+    mdMoveSrvPosStn2.description:=TextResGet(text_res_no,160);
+  ENDPROC
+
+  LOCAL PROC mnuCalibIntch1(\switch dummy)
+    CalibIntch1;
+  ENDPROC
+
+  LOCAL PROC mnuLoadIdentStn1(\switch dummy)
+    LoadIdentStn1;
+  ENDPROC
+
+  LOCAL PROC mnuLoadIdentStn2(\switch dummy)
+    LoadIdentStn2;
+  ENDPROC
+
+  LOCAL PROC mnuSetLdPosStn1(\switch dummy)
+    SetLoadPosStn1;
+  ENDPROC
+
+  LOCAL PROC mnuSetLdPosStn2(\switch dummy)
+    SetLoadPosStn2;
+  ENDPROC
+
+  LOCAL PROC mnuSetPrcPosStn1(\switch dummy)
+    SetProcPosStn1;
+  ENDPROC
+
+  LOCAL PROC mnuSetPrcPosStn2(\switch dummy)
+    SetProcPosStn2;
+  ENDPROC
+
+  LOCAL PROC mnuSetSrvPosStn1(\switch dummy)
+    SetServPosStn1;
+  ENDPROC
+
+  LOCAL PROC mnuSetSrvPosStn2(\switch dummy)
+    SetServPosStn2;
+  ENDPROC
+
+  LOCAL PROC mnuMoveLdPosStn1(\switch dummy)
+    MoveLoadPosStn1;
+  ENDPROC
+
+  LOCAL PROC mnuMoveLdPosStn2(\switch dummy)
+    MoveLoadPosStn2;
+  ENDPROC
+
+  LOCAL PROC mnuMovePrPosStn1(\switch dummy)
+    MoveProcPosStn1;
+  ENDPROC
+
+  LOCAL PROC mnuMovePrPosStn2(\switch dummy)
+    MoveProcPosStn2;
+  ENDPROC
+
+  LOCAL PROC mnuMoveSePosStn1(\switch dummy)
+    MoveServPosStn1;
+  ENDPROC
+
+  LOCAL PROC mnuMoveSePosStn2(\switch dummy)
+    MoveServPosStn2;
+  ENDPROC
+
+  LOCAL PROC mnuIndexToStn1()
+    IndexToStn1;
+  ENDPROC
+
+  LOCAL PROC mnuIndexToStn2()
+    IndexToStn2;
+  ENDPROC
+
+  LOCAL PROC mnuMoveSyncPos1(\switch dummy)
+    MoveSyncPos1;
+  ENDPROC
+ENDMODULE

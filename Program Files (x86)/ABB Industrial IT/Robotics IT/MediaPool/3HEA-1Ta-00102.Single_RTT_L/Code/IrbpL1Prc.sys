@@ -1,0 +1,407 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE Irbp1Prc(SYSMODULE)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       IrbpL1Prc.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:  cell specifik tasks for irbp L 1.
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:      2004-10-01
+  !
+  ! Version:      1.0.0
+  !
+  ! History:      1.0.0
+  !                 First release
+  !               2005-11-04 SÖ
+  !                 Wrong station in error message in proc MoveProcPosStn1
+  !               2005-11-04 SÖ
+  !                 Added procedures for service position.
+  !               2005-11-08 SÖ
+  !                 Wrong station in error message in proc MoveProcPosStn1
+  !               2005-04-07 SÖ
+  !                 Added instr EXIT after Loadid is finished to clear current path
+  !               2006-07-14 SÖ
+  !                 Wrong header in instr SetServPosStn1
+  !                 Changed check of loaddata in ActStn1
+  !               2006-11-06 SÖ
+  !                 Added instr for move to sync position.
+  !               2007-02-15 SÖ
+  !                 Fix move to sync, take care of robot axis.
+  !               2007-04-26 SÖ
+  !                 Added language support
+  !
+  !---------------------------------------------------------------------------!
+  !
+  LOCAL VAR string sHeader;
+  LOCAL VAR string sMsgArr{5};
+  LOCAL VAR num retCode1;
+  LOCAL VAR partadv padvTmp1;
+  LOCAL VAR num text_res_no;
+
+  PROC LoadIdentStn1()
+    VAR bool load_def;
+
+    ! get partadv for station
+    GetNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+
+    IF (retCode1=0) THEN
+      ActUnit STN1;
+      %"ManLoadIdProc"%\ParIdType:=IRBP_L\MechUnit:=STN1\AxisNumber:=1\PayLoad:=ldTemp1\ConfigAngle:=90\AlreadyActive\DefinedFlag:=load_def;
+      DeactUnit STN1;
+      IF (load_def) THEN
+        padvTmp1.load:=ldTemp1;
+        UpdNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+        IF (retCode1<>0) THEN
+          text_res_no:=TextResTabGet("CellText");
+          sHeader:=TextResGet(text_res_no,206);
+          sMsgArr{1}:=TextResGet(text_res_no,207)+" 1";
+          sMsgArr{2}:="";
+          sMsgArr{3}:="";
+          sMsgArr{4}:="";
+          ErrWrite sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+        ENDIF
+        EXIT;
+      ENDIF
+    ELSE
+      ! not valid part or no part advanced defined in part.
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,206);
+      IF (retCode1=-1) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,202)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,203)+" 1";
+      ELSEIF (retCode1=-2) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,204)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,205)+" 1";
+      ENDIF
+      sMsgArr{3}:="";
+      sMsgArr{4}:="";
+      ErrWrite sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+    ENDIF
+  ENDPROC
+
+  PROC IndexToStn1()
+    !
+  ENDPROC
+
+  PROC SetLoadPosStn1()
+    VAR num nValue;
+
+    ! get partadv for station
+    GetNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+
+    IF (retCode1=0) THEN
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,190);
+      sMsgArr{1}:=TextResGet(text_res_no,221)+" 1, "+TextResGet(text_res_no,196)+" 1";
+      sMsgArr{2}:=TextResGet(text_res_no,197)+" "+ValToStr(padvTmp1.loadAngle.eax_e);
+      sMsgArr{3}:="";
+      sMsgArr{4}:=TextResGet(text_res_no,198);
+      sMsgArr{5}:="";
+      nValue:=UINumEntry(\Header:=sHeader\MsgArray:=sMsgArr\Icon:=iconInfo\InitValue:=padvTmp1.loadAngle.eax_e);
+      padvTmp1.loadAngle.eax_e:=nValue;
+
+      ! update partadv data for station
+      UpdNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+      IF (retCode1<>0) THEN
+        sHeader:=TextResGet(text_res_no,193);
+        sMsgArr{1}:=TextResGet(text_res_no,199)+" 1";
+        sMsgArr{2}:="";
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+        ErrWrite sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ENDIF
+    ELSE
+      ! not valid part or no part advanced defined in part.
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,193);
+      IF (retCode1=-1) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,202)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,203)+" 1";
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+      ELSEIF (retCode1=-2) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,204)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,205)+" 1";
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+      ENDIF
+      ErrWrite sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+    ENDIF
+  ENDPROC
+
+  PROC SetProcPosStn1()
+    VAR num nValue;
+
+    ! get partadv for station
+    GetNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+
+    IF (retCode1=0) THEN
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,191);
+      sMsgArr{1}:=TextResGet(text_res_no,221)+" 1, "+TextResGet(text_res_no,196)+" 1";
+      sMsgArr{2}:=TextResGet(text_res_no,197)+" "+ValToStr(padvTmp1.procAngle.eax_e);
+      sMsgArr{3}:="";
+      sMsgArr{4}:=TextResGet(text_res_no,198);
+      sMsgArr{5}:="";
+      nValue:=UINumEntry(\Header:=sHeader\MsgArray:=sMsgArr\Icon:=iconInfo\InitValue:=padvTmp1.procAngle.eax_e);
+      padvTmp1.procAngle.eax_e:=nValue;
+
+      ! update partadv data for station
+      UpdNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+      IF (retCode1<>0) THEN
+        sHeader:=TextResGet(text_res_no,194);
+        sMsgArr{1}:=TextResGet(text_res_no,200)+" 1";
+        sMsgArr{2}:="";
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+        ErrWrite sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ENDIF
+    ELSE
+      ! not valid part or no part advanced defined in part.
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,194);
+      IF (retCode1=-1) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,202)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,203)+" 1";
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+      ELSEIF (retCode1=-2) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,204)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,205)+" 1";
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+      ENDIF
+      ErrWrite sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+    ENDIF
+  ENDPROC
+
+  PROC SetServPosStn1()
+    VAR num nValue;
+
+    ! get partadv for station
+    GetNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+
+    IF (retCode1=0) THEN
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,192);
+      sMsgArr{1}:=TextResGet(text_res_no,221)+" 1, "+TextResGet(text_res_no,196)+" 1";
+      sMsgArr{2}:=TextResGet(text_res_no,197)+" "+ValToStr(padvTmp1.serviceAngle.eax_e);
+      sMsgArr{3}:="";
+      sMsgArr{4}:=TextResGet(text_res_no,198);
+      sMsgArr{5}:="";
+      nValue:=UINumEntry(\Header:=sHeader\MsgArray:=sMsgArr\Icon:=iconInfo\InitValue:=padvTmp1.serviceAngle.eax_e);
+      padvTmp1.serviceAngle.eax_e:=nValue;
+
+      ! update partadv data for station
+      UpdNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+      IF (retCode1<>0) THEN
+        sHeader:=TextResGet(text_res_no,195);
+        sMsgArr{1}:=TextResGet(text_res_no,201)+" 1";
+        sMsgArr{2}:="";
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+        ErrWrite sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ENDIF
+    ELSE
+      ! not valid part or no part advanced defined in part.
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,195);
+      IF (retCode1=-1) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,202)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,203)+" 1";
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+      ELSEIF (retCode1=-2) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,204)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,205)+" 1";
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+      ENDIF
+      ErrWrite sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+    ENDIF
+  ENDPROC
+
+  PROC MoveSyncPos1()
+    VAR jointtarget jtCurrent;
+
+    jtCurrent:=CJointT();
+    jtCurrent.extax.eax_e:=0;
+    ActStn1;
+    IF (TaskRunRob()) THEN
+      MoveAbsJ jtCurrent,v100,fine,tool0;
+    ELSE
+      %"MoveExtJ"% jtCurrent,v100,fine;
+    ENDIF
+    DeactStn1;
+  ENDPROC
+
+  PROC MoveLoadPosStn1()
+    VAR bool bActive;
+    VAR jointtarget jtCurrent;
+
+    ! get partadv for station
+    GetNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+
+    bActive:=IsMechUnitActive(STN1);
+    IF (NOT bActive) ActStn1;
+    jtCurrent:=CJointT();
+    IF (retCode1=0) THEN
+      jtCurrent.extax.eax_e:=padvTmp1.loadAngle.eax_e;
+    ELSE
+      jtCurrent.extax.eax_e:=0;
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,210);
+      IF (retcode1=-1) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,202)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,213);
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+        ErrWrite\W,sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ELSEIF (retcode1=-2) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,204)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,205)+" 1";
+        sMsgArr{3}:=TextResGet(text_res_no,213);
+        sMsgArr{4}:="";
+        ErrWrite\W,sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ENDIF
+    ENDIF
+    IF (TaskRunRob()) THEN
+      MoveAbsJ jtCurrent,v400,fine,tool0;
+    ELSE
+      %"MoveExtJ"% jtCurrent,v400,fine;
+    ENDIF
+    IF (NOT bActive) DeactStn1;
+  ENDPROC
+
+  PROC MoveProcPosStn1()
+    VAR bool bActive;
+    VAR jointtarget jtCurrent;
+
+    ! get partadv for station
+    GetNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+
+    bActive:=IsMechUnitActive(STN1);
+    IF (NOT bActive) ActStn1;
+    jtCurrent:=CJointT();
+    IF (retCode1=0) THEN
+      jtCurrent.extax.eax_e:=padvTmp1.procAngle.eax_e;
+    ELSE
+      jtCurrent.extax.eax_e:=0;
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,211);
+      IF (retcode1=-1) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,202)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,214);
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+        ErrWrite\W,sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ELSEIF (retcode1=-2) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,204)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,205)+" 1";
+        sMsgArr{3}:=TextResGet(text_res_no,214);
+        sMsgArr{4}:="";
+        ErrWrite\W,sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ENDIF
+    ENDIF
+    IF (TaskRunRob()) THEN
+      MoveAbsJ jtCurrent,v400,fine,tool0;
+    ELSE
+      %"MoveExtJ"% jtCurrent,v400,fine;
+    ENDIF
+    IF (NOT bActive) DeactStn1;
+  ENDPROC
+
+  PROC MoveServPosStn1()
+    VAR bool bActive;
+    VAR jointtarget jtCurrent;
+
+    ! get partadv for station
+    GetNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+
+    bActive:=IsMechUnitActive(STN1);
+    IF (NOT bActive) ActStn1;
+    jtCurrent:=CJointT();
+    IF (retCode1=0) THEN
+      jtCurrent.extax.eax_e:=padvTmp1.serviceAngle.eax_e;
+    ELSE
+      jtCurrent.extax.eax_e:=0;
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,212);
+      IF (retcode1=-1) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,202)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,215);
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+        ErrWrite\W,sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ELSEIF (retcode1=-2) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,204)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,205)+" 1";
+        sMsgArr{3}:=TextResGet(text_res_no,215);
+        sMsgArr{4}:="";
+        ErrWrite\W,sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ENDIF
+    ENDIF
+    IF (TaskRunRob()) THEN
+      MoveAbsJ jtCurrent,v400,fine,tool0;
+    ELSE
+      %"MoveExtJ"% jtCurrent,v400,fine;
+    ENDIF
+    IF (NOT bActive) DeactStn1;
+  ENDPROC
+
+  PROC ActStn1()
+    ! get partadv for station
+    GetNextPartAdv 1,padvTmp1\statusCode:=retCode1;
+    ldLoadStn1:=padvTmp1.load;
+
+    IF (retCode1=0) THEN
+      IF (padvTmp1.load.mass<=0.001) THEN
+        ldLoadStn1:=ldDefLoadStn1;
+        text_res_no:=TextResTabGet("CellText");
+        sHeader:=TextResGet(text_res_no,216);
+        sMsgArr{1}:=TextResGet(text_res_no,208)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,209);
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+        ErrWrite\W,sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ENDIF
+    ELSE
+      ldLoadStn1:=ldDefLoadStn1;
+      text_res_no:=TextResTabGet("CellText");
+      sHeader:=TextResGet(text_res_no,216);
+      IF (retcode1=-1) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,202)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,209);
+        sMsgArr{3}:="";
+        sMsgArr{4}:="";
+        ErrWrite\W,sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ELSEIF (retcode1=-2) THEN
+        sMsgArr{1}:=TextResGet(text_res_no,204)+" 1";
+        sMsgArr{2}:=TextResGet(text_res_no,205)+" 1";
+        sMsgArr{3}:=TextResGet(text_res_no,209);
+        sMsgArr{4}:="";
+        ErrWrite\W,sHeader,sMsgArr{1}\RL2:=sMsgArr{2}\RL3:=sMsgArr{3}\RL4:=sMsgArr{4};
+      ENDIF
+    ENDIF
+    ActUnit STN1;
+    MechUnitLoad STN1,1,ldLoadStn1;
+  ENDPROC
+
+  PROC DeactStn1()
+    DeactUnit STN1;
+  ENDPROC
+ENDMODULE

@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Resource Name="CellText" Language="de">
+  <Text Name="1">
+    <Value>Setup TCP</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="2">
+    <Value>Check TCP Zyklus</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="3">
+    <Value>Check TCP</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="4">
+    <Value>Update TCP</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="5">
+    <Value>TCP zur Referenzspitze</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="7">
+    <Value>(0 deaktiviert zyklische Überprüfung des TCP)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="8">
+    <Value>Aktueller Wert:</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Neuen Wert Eingeben (freq)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="15">
+    <Value>Grundstellung</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="16">
+    <Value>Parkposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="17">
+    <Value>Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="18">
+    <Value>1. Weiter mit OK.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="19">
+    <Value>2. Bewege Roboter in Grundstellung.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="20">
+    <Value>2. Bewege Roboter in Parkposition.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="21">
+    <Value>2. Bewege Roboter in Grundstellung</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="22">
+    <Value>3. Starte Programm neu.</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="23">
+    <Value>MANUELL</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="24">
+    <Value>AUTO</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="25">
+    <Value>Roboter nicht in Grundstellung</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="26">
+    <Value>Roboter nicht in Parkpostion</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="27">
+    <Value>Roboter nicht in Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="28">
+    <Value>Wähle MANUELL oder AUTO</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="29">
+    <Value>MANUELL => Roboter mit dem Joystick in Grundstellung bewegen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="30">
+    <Value>AUTO   => Roboter bewegt sich direkt in Grundstellung</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="31">
+    <Value>MANUAL => Roboter mit dem Joystick in Parkposition bewegen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="32">
+    <Value>AUTO   => Roboter bewegt sich direkt in Parkposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="33">
+    <Value>MANUAL => Roboter mit dem Joystick in Serviceposition bewegen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="34">
+    <Value>AUTO   => Roboter bewegt sich direkt in Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="35">
+    <Value>Bewege Roboter in Kalibrierposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="36">
+    <Value>Bewege Roboter in Grundstellung 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="37">
+    <Value>Bewege Roboter in Grundstellung 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="38">
+    <Value>Bewege Roboter in Grundstellung 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="39">
+    <Value>Bewege Roboter in Grundstellung 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="40">
+    <Value>Bewege Roboter in Grundstellung 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="41">
+    <Value>Bewege Roboter in Serviceposition 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="42">
+    <Value>Bewege Roboter in Serviceposition 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="43">
+    <Value>Bewege Roboter in Serviceposition 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Bewege Roboter in Serviceposition 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="45">
+    <Value>Bewege Roboter in Serviceposition 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="46">
+    <Value>Bewege Roboter in Parkposition 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Bewege Roboter in Parkposition 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Bewege Roboter in Parkposition 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Bewege Roboter in Parkposition 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Bewege Roboter in Parkposition 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Festlegen/Ändern der Grundstellung 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="52">
+    <Value>Festlegen/Ändern der Grundstellung 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Festlegen/Ändern der Grundstellung 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Festlegen/Ändern der Grundstellung 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="55">
+    <Value>Festlegen/Ändern der Grundstellung 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="56">
+    <Value>Festlegen/Ändern der Serviceposition 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="57">
+    <Value>Festlegen/Ändern der Serviceposition 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="58">
+    <Value>Festlegen/Ändern der Serviceposition 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="59">
+    <Value>Festlegen/Ändern der Serviceposition 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="60">
+    <Value>Festlegen/Ändern der Serviceposition 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="61">
+    <Value>Festlegen/Ändern der Parkposition 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="62">
+    <Value>Festlegen/Ändern der Parkposition 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="63">
+    <Value>Festlegen/Ändern der Parkposition 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="64">
+    <Value>Festlegen/Ändern der Parkposition 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="65">
+    <Value>Festlegen/Ändern der Parkposition 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="75">
+    <Value>Lastidentifikation interchange 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="76">
+    <Value>Lastidentifikation interchange 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="77">
+    <Value>Lastidentifikation interchange 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="78">
+    <Value>Lastidentifikation interchange 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="79">
+    <Value>Lastidentifikation Station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="80">
+    <Value>Lastidentifikation Station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="81">
+    <Value>Lastidentifikation Station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="82">
+    <Value>Lastidentifikation Station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="83">
+    <Value>Lastidentifikation Station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="84">
+    <Value>Lastidentifikation Station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="85">
+    <Value>Lastidentifikation Station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="86">
+    <Value>Lastidentifikation Station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="95">
+    <Value>Festlegen/Ändern der Einlegeposition für Station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="96">
+    <Value>Festlegen/Ändern der Einlegeposition für Station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="97">
+    <Value>Festlegen/Ändern der Einlegeposition für Station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="98">
+    <Value>Festlegen/Ändern der Einlegeposition für Station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="99">
+    <Value>Festlegen/Ändern der Einlegeposition für Station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="100">
+    <Value>Festlegen/Ändern der Einlegeposition für Station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="101">
+    <Value>Festlegen/Ändern der Einlegeposition für Station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="102">
+    <Value>Festlegen/Ändern der Einlegeposition für Station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="103">
+    <Value>Festlegen/Ändern der Prozessposition für Station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="104">
+    <Value>Festlegen/Ändern der Prozessposition für Station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="105">
+    <Value>Festlegen/Ändern der Prozessposition für Station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="106">
+    <Value>Festlegen/Ändern der Prozessposition für Station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="107">
+    <Value>Festlegen/Ändern der Prozessposition für Station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="108">
+    <Value>Festlegen/Ändern der Prozessposition für Station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="109">
+    <Value>Festlegen/Ändern der Prozessposition für Station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="110">
+    <Value>Festlegen/Ändern der Prozessposition für Station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="111">
+    <Value>Festlegen/Ändern der Serviceposition für Station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="112">
+    <Value>Festlegen/Ändern der Serviceposition für Station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="113">
+    <Value>Festlegen/Ändern der Serviceposition für Station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="114">
+    <Value>Festlegen/Ändern der Serviceposition für Station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="115">
+    <Value>Festlegen/Ändern der Serviceposition für Station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="116">
+    <Value>Festlegen/Ändern der Serviceposition für Station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="117">
+    <Value>Festlegen/Ändern der Serviceposition für Station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="118">
+    <Value>Festlegen/Ändern der Serviceposition für Station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="119">
+    <Value>Kalibriere irbp1 Interchange Positionen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="120">
+    <Value>Kalibriere irbp2 Interchange Positionen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="121">
+    <Value>Kalibriere irbp3 Interchange Positionen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="122">
+    <Value>Kalibriere irbp4 Interchange Positionen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="135">
+    <Value>Index zu Station 1</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="136">
+    <Value>Index zu Station 2</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="137">
+    <Value>Index zu Station 3</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="138">
+    <Value>Index zu Station 4</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="139">
+    <Value>Index zu Station 5</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="140">
+    <Value>Index zu Station 6</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="141">
+    <Value>Index zu Station 7</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="142">
+    <Value>Index zu Station 8</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="143">
+    <Value>Bewege Station 1 in Einlegeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="144">
+    <Value>Bewege Station 2 in Einlegeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="145">
+    <Value>Bewege Station 3 in Einlegeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="146">
+    <Value>Bewege Station 4 in Einlegeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="147">
+    <Value>Bewege Station 5 in Einlegeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="148">
+    <Value>Bewege Station 6 in Einlegeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="149">
+    <Value>Bewege Station 7 in Einlegeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="150">
+    <Value>Bewege Station 8 in Einlegeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="151">
+    <Value>Bewege Station 1 in Prozessposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="152">
+    <Value>Bewege Station 2 in Prozessposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="153">
+    <Value>Bewege Station 3 in Prozessposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="154">
+    <Value>Bewege Station 4 in Prozessposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="155">
+    <Value>Bewege Station 5 in Prozessposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="156">
+    <Value>Bewege Station 6 in Prozessposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="157">
+    <Value>Bewege Station 7 in Prozessposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="158">
+    <Value>Bewege Station 8 in Prozessposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="159">
+    <Value>Bewege Station 1 in Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="160">
+    <Value>Bewege Station 2 in Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="161">
+    <Value>Bewege Station 3 in Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="162">
+    <Value>Bewege Station 4 in Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="163">
+    <Value>Bewege Station 5 in Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="164">
+    <Value>Bewege Station 6 in Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="165">
+    <Value>Bewege Station 7 in Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="166">
+    <Value>Bewege Station 8 in Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="167">
+    <Value>Bewege irbp1 in Kalibrierposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="168">
+    <Value>Bewege irbp2 in Kalibrierposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="169">
+    <Value>Bewege irbp3 in Kalibrierposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="170">
+    <Value>Bewege irbp4 in Kalibrierposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="171">
+    <Value>Bewege irbp5 in Kalibrierposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="172">
+    <Value>Bewege irbp6 in Kalibrierposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="173">
+    <Value>Bewege irbp7 in Kalibrierposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="174">
+    <Value>Bewege irbp8 in Kalibrierposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="190">
+    <Value>IRBP Einlegeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="191">
+    <Value>IRBP Prozessposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="192">
+    <Value>IRBP Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="193">
+    <Value>Fehler Einlegeposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="194">
+    <Value>Fehler Prozessposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="195">
+    <Value>Fehler Serviceposition</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="196">
+    <Value>Achse</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="197">
+    <Value>Aktueller Wert: </Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="198">
+    <Value>Neuen Wert eingeben (Grad)</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="199">
+    <Value>Einlegeposition konnte nicht aktualisiert werden für Station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="200">
+    <Value>Prozessposition konnte nicht aktualisiert werden für Station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="201">
+    <Value>Serviceposition konnte nicht aktualisiert werden für Station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="202">
+    <Value>Kein Bauteil ausgewählt für Station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="203">
+    <Value>Bauteil auswählen und Aktion wiederholen für Station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="204">
+    <Value>Kein advpart definiert in ausgewähltem Bauteil für Station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="205">
+    <Value>Definiere advpart in ausgewähltem Bauteil und wiederhole Aktion für Station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="206">
+    <Value>Fehler bei Lastidentifikation</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="207">
+    <Value>Lastdaten konnten nicht aktualisiert werden für Station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="208">
+    <Value>Keine Last definiert für Station</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="209">
+    <Value>Standard-Lastdaten werden benutzt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="210">
+    <Value>Einlegeposition Warnung</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="211">
+    <Value>Prozessposition Warnung</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="212">
+    <Value>Serviceposition Warnung</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="213">
+    <Value>Standardwerte werden für Einlegeposition benutzt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="214">
+    <Value>Standardwerte werden für Prozessposition benutzt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="215">
+    <Value>Standardwerte werden für Serviceposition benutzt</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="216">
+    <Value>Aktivierungswarnung</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="217">
+    <Value>WARNUNG</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="218">
+    <Value>Interchange Warnung</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="219">
+    <Value>Interchange kann sich bewegen</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="220">
+    <Value>Auf ausreichenden Sicherheitsabstand achten</Value>
+    <Comment></Comment>
+  </Text>
+  <Text Name="221">
+    <Value>Station</Value>
+    <Comment></Comment>
+  </Text>
+</Resource>

@@ -1,0 +1,29 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE Irbp2Data(SYSMODULE)
+  !*****************************************************************************
+  !
+  !  MODULE: IrbpL2Data
+  !
+  !  History:  2004-10-01
+  !             Created
+  !
+  !  Description: Module used for irbp L 2 data
+  !
+  !  History:     2005-11-09 SÖ
+  !                 Added data for service position
+  !
+  !*****************************************************************************
+  !
+  ! adv partdata
+  TASK PERS partadv padvStn2:=[[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,[0,0,0],[0,0,0,0],0,0,0]];
+  !
+  ! Loaddata
+  CONST loaddata ldDefLoadStn2:=[250,[0.001,0.001,0.001],[1,0,0,0],30,30,60];
+  TASK PERS loaddata ldLoadStn2:=[0,[0,0,0],[0,0,0,0],0,0,0];
+  TASK PERS loaddata ldTemp2:=[0.001,[0,0,0.001],[1,0,0,0],0,0,0];
+  !
+ENDMODULE

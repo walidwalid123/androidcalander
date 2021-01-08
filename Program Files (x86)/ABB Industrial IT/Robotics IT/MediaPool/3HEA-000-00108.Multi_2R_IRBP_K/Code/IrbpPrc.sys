@@ -1,0 +1,88 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE IrbpPrc(SYSMODULE)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       IrbpPrc.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:  cell specifik tasks for irbp.
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:      2004-10-01
+  !
+  ! Version:      1.0.0
+  !
+  ! History:      1.0.0
+  !                 First release
+  !               2007-02-21 SÖ
+  !                 Added proc MoveServPos.
+  !
+  !---------------------------------------------------------------------------!
+  !
+  PROC IndexToStn(
+    num station)
+
+    VAR string sIndexProc;
+
+    sIndexProc:="IndexToStn"+ValToStr(station);
+    %sIndexProc%;
+  ENDPROC
+
+  PROC MoveLoadPos(
+    num station)
+
+    VAR string sLoadPosProc;
+
+    sLoadPosProc:="MoveLoadPosStn"+ValToStr(station);
+    %sLoadPosProc%;
+  ENDPROC
+
+  PROC MoveProcPos(
+    num station)
+
+    VAR string sProcPosProc;
+
+    sProcPosProc:="MoveProcPosStn"+ValToStr(station);
+    %sProcPosProc%;
+  ENDPROC
+
+  PROC MoveServPos(
+    num station)
+
+    VAR string sProcPosProc;
+
+    sProcPosProc:="MoveServPosStn"+ValToStr(station);
+    %sProcPosProc%;
+  ENDPROC
+
+  PROC ActStation(
+    num station)
+
+    VAR string sActProc;
+
+    sActProc:="ActStn"+ValToStr(station);
+    %sActProc%;
+  ENDPROC
+
+  PROC DeactStation(
+    num station)
+
+    VAR string sDeactProc;
+
+    sDeactProc:="DeactStn"+ValToStr(station);
+    %sDeactProc%;
+  ERROR
+  ENDPROC
+ENDMODULE

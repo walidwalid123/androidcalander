@@ -1,0 +1,70 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE PCALtxtCon(SYSMODULE)
+  !---------------------------------------------------------------------------!
+  ! Module PCALtxtCon(SYSMODULE)
+  !---------------------------------------------------------------------------!
+  ! Module of Const definition for the text files 
+  ! (c)Copyright ABB - 2004-06-29 14:28:32
+  !---------------------------------------------------------------------------!
+  CONST num tdrvIntrchCal:=0;
+  CONST num tdrvStnCal:=1;
+  CONST num tdrvIntCalStart:=2;
+  CONST num tdrvStnCalStart:=3;
+  CONST num tdrvCancelTxt:=4;
+  CONST num tdrvOKTxt:=5;
+  CONST num tdrvFkCancel:=6;
+  CONST num tdrvFkOK:=7;
+  CONST num tdrvCalibFin:=8;
+  CONST num tdrvWrongOpMode:=9;
+  CONST num tdrvOpModeMan:=10;
+  CONST num tdrvOpModeManFs:=11;
+  CONST num tdrvOpModeAuto:=12;
+  CONST num tdrvOpModeRest:=13;
+  CONST num tdrvRobMov1:=14;
+  CONST num tdrvRobMov2:=15;
+  CONST num tdrvRobMov3:=16;
+  CONST num tdrvIntchMov1:=17;
+  CONST num tdrvIntchMov2:=18;
+  CONST num tdrvIntchMov3:=19;
+  CONST num tdrvIntchPos1:=20;
+  CONST num tdrvIntchPos2:=21;
+  CONST num tdrvIntchPos3:=22;
+  CONST num tdrvCalDone1:=23;
+  CONST num tdrvCalDone2:=24;
+  CONST num tdrvCalOkPr:=25;
+  CONST num tdrvCalFine1:=26;
+  CONST num tdrvCalFine2:=27;
+  CONST num tdrvCalRest:=28;
+  CONST num tdrvTorque:=29;
+  CONST num tdrvAngle:=30;
+  CONST num tdrvNM:=31;
+  CONST num tdrvDeg:=32;
+  CONST num tdrvItchChk:=33;
+  CONST num tdrvChkPos1:=34;
+  CONST num tdrvChkPos2:=35;
+  CONST num tdrvChkPos3:=36;
+  CONST num tdrvChkPos4:=37;
+  CONST num tdrvDataWrite:=38;
+  CONST num tdrvTPU:=39;
+  CONST num tdrvYES:=40;
+  CONST num tdrvNO:=41;
+  CONST num tdrvStnLA1:=42;
+  CONST num tdrvStnRA1:=43;
+  CONST num tdrvStnBA1:=44;
+  CONST num tdrvStnLA2:=45;
+  CONST num tdrvStnRA2:=46;
+  CONST num tdrvStnBA:=47;
+  CONST num tdrvStnLA3:=48;
+  CONST num tdrvStnRA3:=49;
+  CONST num tdrvStnBA3:=50;
+  CONST num tdrvStnLA4:=51;
+  CONST num tdrvStnRA4:=52;
+  CONST num tdrvStnBA4:=53;
+  CONST num tdrvTorqueErr1:=54;
+  CONST num tdrvTorqueErr2:=55;
+  CONST num tdrvTorqueErr3:=56;
+ENDMODULE

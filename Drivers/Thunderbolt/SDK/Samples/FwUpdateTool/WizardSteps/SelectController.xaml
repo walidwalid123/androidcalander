@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="FwUpdateTool.WizardSteps.SelectController"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prop="clr-namespace:FwUpdateApiSample;assembly=FwUpdateApiSample"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="350">
+
+    <UserControl.Resources>
+        <Style x:Key="ItemStyle" TargetType="TreeViewItem">
+            <Setter Property="IsExpanded" Value="True" />
+            <Setter Property="Focusable" Value="{Binding IsSelectable}" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSelectable}" Value="False">
+                    <Setter Property="Foreground" Value="#FF888888" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <DataTemplate x:Key="DeviceTemplate">
+            <StackPanel Orientation="Horizontal" Margin="0,0,10,0">
+                <TextBlock Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left"
+                           Margin="0,0,10,0" />
+            </StackPanel>
+        </DataTemplate>
+
+        <HierarchicalDataTemplate x:Key="PortTemplate"
+                                  ItemsSource="{Binding Devices}"
+                                  ItemTemplate="{StaticResource DeviceTemplate}">
+            <TextBlock Text="{Binding DisplayName}" Margin="0,0,10,0" />
+
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="ControllerTemplate"
+                                  ItemsSource="{Binding Ports}"
+                                  ItemTemplate="{StaticResource PortTemplate}"
+                                  ItemContainerStyle="{StaticResource ItemStyle}">
+            <TextBlock Text="{Binding DisplayName}" Margin="0,0,10,0" />
+        </HierarchicalDataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Please select the controller/device you want to update:" VerticalAlignment="Top"
+               HorizontalAlignment="Left" Grid.Row="0" />
+        <TreeView x:Name="DevicesTree"
+                  SelectedItemChanged="OnSelectedItemChanged" HorizontalContentAlignment='Stretch'
+                  ItemTemplate="{StaticResource ControllerTemplate}"
+                  ItemContainerStyle="{StaticResource ItemStyle}" Grid.Row="1" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,195 @@
+%%%
+   VERSION: 1
+   LANGUAGE: ENGLISH
+%%%
+
+MODULE Irbp1Prc(SYSMODULE)
+  !---------------------------------------------------------------------------!
+  !
+  ! (c) ABB
+  !
+  !---------------------------------------------------------------------------!
+  !
+  ! Module:       IrbpC1Prc.sys
+  !
+  ! Written by:   Stefan Öhrn
+  !
+  ! Description:  cell specifik tasks for irbp C 1.
+  !
+  ! Procedures:
+  !
+  ! Functions:
+  !
+  ! Created:      2004-10-01
+  !
+  ! Version:      1.0.0
+  !
+  ! History:      1.0.0
+  !                 First release
+  !               2005-10-20 SÖ
+  !                 Changed declaration of proc LoadIdentIntch1, removed LOCAL
+  !               2005-11-09 SÖ
+  !                 Max torque from var instead of fixed value.
+  !               2005-04-07 SÖ
+  !                 Added instr EXIT after Loadid is finished to clear current path
+  !               2006-11-06 SÖ
+  !                 Added instr for move to sync position.
+  !               2007-02-15 SÖ
+  !                 Fix move to sync, take care of robot axis.
+  !               2007-04-25 SÖ
+  !                 Added inpos signals for VC.
+  !               2007-04-27 SÖ
+  !                 Added language support
+  !               2007-05-04 SÖ
+  !                 Changed intch. calib for VC. Default values used.
+  !
+  !---------------------------------------------------------------------------!
+  !
+  LOCAL VAR string sHeader;
+  LOCAL VAR string sMsgArr{5};
+  LOCAL VAR num text_res_no;
+
+  PROC CalibIntch1()
+    VAR bool calib_done;
+    VAR extjoint extax_side1;
+    VAR extjoint extax_side2;
+
+    IF (RobOS()) THEN
+      CalibInterch1 INTERCH,1,10,nMaxTorque1,extax_side1,extax_side2,sdInterchCalib1,tool0,calib_done;
+      IF (calib_done=TRUE) THEN
+        bInterchCalib1:=TRUE;
+        nInterchStn1:=extax_side1.eax_d;
+        nInterchStn2:=extax_side2.eax_d;
+      ENDIF
+    ELSE
+      nInterchStn1:=0;
+      nInterchStn2:=180;
+    ENDIF
+  ENDPROC
+
+  PROC LoadIdentIntch1()
+    VAR bool load_def;
+    VAR jointtarget jtCurrent;
+    VAR num nAnswer;
+
+    IF (NOT bInterchCalib1) CalibIntch1;
+    ActUnit INTERCH;
+    text_res_no:=TextResTabGet("CellText");
+    sHeader:=TextResGet(text_res_no,217);
+    sMsgArr{1}:=TextResGet(text_res_no,219);
+    sMsgArr{2}:=TextResGet(text_res_no,220);
+    sMsgArr{3}:="";
+    sMsgArr{4}:="";
+    sMsgArr{5}:="";
+    UIMsgBox \Header:=sHeader,sMsgArr{1}\MsgLine2:=sMsgArr{2}\MsgLine3:=sMsgArr{3}\MsgLine4:=sMsgArr{4}\MsgLine5:=sMsgArr{5}\Buttons:=btnOK\Icon:=iconWarning;
+    !
+    jtCurrent:=CJointT();
+    jtCurrent.extax.eax_d:=nInterchStn1+45;
+    ! move away from mec stop
+    IF (TaskRunRob()) THEN
+      MoveAbsJ jtCurrent,sdInterch1,fine,tool0;
+    ELSE
+      %"MoveExtJ"% jtCurrent,sdInterch1,fine;
+    ENDIF
+    %"ManLoadIdProc"%\ParIdType:=IRBP_C\MechUnit:=INTERCH\AxisNumber:=1\PayLoad:=ldTemp1\ConfigAngle:=45\AlreadyActive\DefinedFlag:=load_def;
+    jtCurrent:=CJointT();
+    jtCurrent.extax.eax_d:=nInterchStn1;
+    ! move back to mec stop
+    IF (TaskRunRob()) THEN
+      MoveAbsJ jtCurrent,sdInterch1,fine,tool0;
+    ELSE
+      %"MoveExtJ"% jtCurrent,sdInterch1,fine;
+    ENDIF
+    WaitTime nTorqueTime;
+    DeactUnit INTERCH;
+    IF (load_def) THEN
+      ldLoadInterch1:=ldTemp1;
+      EXIT;
+    ENDIF
+  ENDPROC
+
+  PROC IndexToStn1()
+    VAR bool bActive;
+    VAR jointtarget jtCurrent;
+
+    IF (NOT bInterchCalib1) CalibIntch1;
+    ! reset inpos signals used in vc
+    Reset soLS_1_INPOS;
+	  Reset soLS_2_INPOS;
+    bActive:=IsMechUnitActive(INTERCH);
+    IF (NOT bActive) ActInterch1;
+    jtCurrent:=CJointT();
+    jtCurrent.extax.eax_d:=nInterchStn1;
+    IF (TaskRunRob()) THEN
+      MoveAbsJ jtCurrent,sdInterch1,fine,tool0;
+    ELSE
+      %"MoveExtJ"% jtCurrent,sdInterch1,fine;
+    ENDIF
+    IF (NOT RobOS()) Set soLS_1_INPOS;
+    WaitTime nTorqueTime;
+    IF (NOT bActive) DeactInterch1;
+  ENDPROC
+
+  PROC IndexToStn2()
+    VAR bool bActive;
+    VAR jointtarget jtCurrent;
+
+    IF (NOT bInterchCalib1) CalibIntch1;
+    ! reset inpos signals used in vc
+    Reset soLS_1_INPOS;
+	  Reset soLS_2_INPOS;
+    bActive:=IsMechUnitActive(INTERCH);
+    IF (NOT bActive) ActInterch1;
+    jtCurrent:=CJointT();
+    jtCurrent.extax.eax_d:=nInterchStn2;
+    IF (TaskRunRob()) THEN
+      MoveAbsJ jtCurrent,sdInterch1,fine,tool0;
+    ELSE
+      %"MoveExtJ"% jtCurrent,sdInterch1,fine;
+    ENDIF
+    IF (NOT RobOS()) Set soLS_2_INPOS;
+    WaitTime nTorqueTime;
+    IF (NOT bActive) DeactInterch1;
+  ENDPROC
+
+  PROC MoveSyncPos1()
+    VAR jointtarget jtCurrent;
+
+    jtCurrent:=CJointT();
+    ! apply interchange position
+    jtCurrent.extax.eax_d:=0;
+    ActInterch1;
+    IF (TaskRunRob()) THEN
+      MoveAbsJ jtCurrent,v100,fine,tool0;
+    ELSE
+      %"MoveExtJ"% jtCurrent,v100,fine;
+    ENDIF
+    WaitTime nTorqueTime;
+    DeactInterch1;
+  ENDPROC
+
+  PROC ActStn1()
+    !
+  ENDPROC
+
+  PROC ActStn2()
+    !
+  ENDPROC
+
+  PROC ActInterch1()
+    ActUnit INTERCH;
+    MechUnitLoad INTERCH,1,ldLoadInterch1;
+  ENDPROC
+
+  PROC DeactStn1()
+    !
+  ENDPROC
+
+  PROC DeactStn2()
+    !
+  ENDPROC
+
+  PROC DeactInterch1()
+    DeactUnit INTERCH;
+  ENDPROC
+ENDMODULE
